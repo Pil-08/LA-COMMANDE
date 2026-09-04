@@ -1,1 +1,4 @@
-* -text
+*.html -text
+*.png -text
+*.ico -text
+*.py text eol=lf
