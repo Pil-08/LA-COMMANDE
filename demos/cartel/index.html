@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kemuri · Demo de ramen y cocina callejera · La Commande</title>
+<meta name="description" content="Demo de diseño para ramen, cocina callejera y locales de noche. Hecho por La Commande.">
+<meta name="theme-color" content="#D8292E">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<style>
+:root{--rojo:#D8292E;--negro:#101010;--negro2:#1A1816;--crema:#F6EFE0;--ambar:#E8A33B;--cond:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--sans:'Barlow',system-ui,sans-serif;--marco:clamp(10px,1.6vw,22px);--pad:clamp(18px,4.4vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--rojo);padding:var(--marco);color:var(--crema);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+svg{display:block;max-width:100%}
+.lienzo{background:var(--negro);overflow:hidden;position:relative}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px var(--pad);position:relative;z-index:3}
+.logo{font:900 34px/.9 var(--cond);letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.logo b{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--rojo);color:var(--crema);font-size:21px;letter-spacing:0}
+.logo small{display:block;font:600 11px/1 var(--sans);letter-spacing:.34em;color:var(--ambar);margin-top:4px}
+header nav{display:flex;gap:clamp(18px,3vw,40px);font:700 15px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase}
+header nav a{padding:6px 0;border-bottom:2px solid transparent}
+header nav a:hover{border-color:var(--rojo)}
+.pedir{font:800 15px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;background:var(--crema);color:var(--negro);padding:14px 20px;transition:background .15s,color .15s}
+.pedir:hover{background:var(--rojo);color:var(--crema)}
+
+.portada{display:grid;grid-template-columns:1.18fr .82fr;align-items:center;gap:clamp(6px,2vw,30px);padding:clamp(10px,2vw,30px) var(--pad) clamp(40px,5vw,70px);position:relative;overflow:hidden}
+.puntos{position:absolute;right:-6%;top:-12%;width:62%;aspect-ratio:1;border-radius:50%;background-image:radial-gradient(var(--rojo) 24%,transparent 26%);background-size:16px 16px;opacity:.5;-webkit-mask-image:radial-gradient(circle at 55% 50%,#000 20%,transparent 68%);mask-image:radial-gradient(circle at 55% 50%,#000 20%,transparent 68%)}
+.kicker{font:700 14px/1 var(--cond);letter-spacing:.34em;text-transform:uppercase;color:var(--ambar);position:relative}
+h1{font:900 clamp(72px,10.6vw,176px)/.82 var(--cond);text-transform:uppercase;letter-spacing:-.005em;margin:22px 0 26px;position:relative}
+h1 span{display:block}
+h1 em{font-style:normal;color:var(--rojo)}
+.lead{max-width:40ch;font-size:clamp(16px,1.3vw,19px);color:rgba(246,239,224,.82);position:relative}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;position:relative}
+.boton{display:inline-flex;align-items:center;gap:12px;font:800 18px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;padding:18px 28px;background:var(--rojo);color:var(--crema);transition:transform .15s}
+.boton:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--crema)}
+.boton.borde{background:transparent;box-shadow:inset 0 0 0 2px var(--crema)}
+.boton.borde:hover{box-shadow:inset 0 0 0 2px var(--crema),5px 5px 0 var(--rojo)}
+.cuenco{position:relative;justify-self:center;width:min(100%,470px)}
+.cuenco svg{width:100%;height:auto;filter:drop-shadow(0 22px 24px rgba(0,0,0,.5))}
+.sello{position:absolute;display:grid;place-items:center;text-align:center;font:900 19px/.95 var(--cond);text-transform:uppercase;letter-spacing:.04em}
+.sello.uno{left:-5%;top:-2%;width:clamp(96px,11vw,132px);aspect-ratio:1;border-radius:50%;background:var(--ambar);color:var(--negro);transform:rotate(-12deg);font-size:clamp(17px,1.7vw,21px)}
+.sello.uno b{display:block;font-size:2.1em;letter-spacing:-.01em}
+.sello.dos{right:-2%;bottom:4%;background:var(--crema);color:var(--negro);padding:10px 16px;transform:rotate(6deg);font-size:clamp(16px,1.6vw,20px);letter-spacing:.1em;box-shadow:4px 4px 0 var(--rojo)}
+
+.carta{background:var(--crema);color:var(--negro);padding:clamp(54px,8vw,120px) var(--pad)}
+.carta .cab{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 40px;margin-bottom:clamp(24px,4vw,52px)}
+.carta h2{font:900 clamp(60px,10vw,150px)/.82 var(--cond);text-transform:uppercase}
+.carta h2 em{font-style:normal;color:var(--rojo)}
+.carta .cab p{max-width:32ch;font-weight:500;color:rgba(16,16,16,.7)}
+.cols{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,5vw,80px)}
+.cols h3{font:800 18px/1 var(--cond);letter-spacing:.3em;text-transform:uppercase;padding-bottom:12px;border-bottom:4px solid var(--negro);margin-bottom:4px}
+.pl{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:6px 18px;padding:15px 0;border-bottom:2px solid rgba(16,16,16,.14)}
+.pl .n{font:900 clamp(32px,3.4vw,46px)/1 var(--cond);color:var(--rojo);min-width:1.6em}
+.pl b{font:900 clamp(28px,2.8vw,38px)/1 var(--cond);text-transform:uppercase;letter-spacing:.02em}
+.pl small{grid-column:2;display:block;font-size:14.5px;font-weight:500;color:rgba(16,16,16,.66);margin-top:-2px}
+.pl strong{font:900 clamp(26px,2.6vw,34px)/1 var(--cond);grid-row:1;grid-column:3}
+.lat{background:var(--negro);color:var(--crema);padding:clamp(20px,3vw,34px);align-self:start;position:relative}
+.lat h3{border-color:var(--rojo);color:var(--ambar)}
+.lat .pl{border-color:rgba(246,239,224,.2)}
+.lat .pl b{font-size:clamp(24px,2.3vw,30px)}
+.lat .pl small{color:rgba(246,239,224,.62)}
+.lat .pl strong{color:var(--ambar)}
+
+.reglas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:6px solid var(--rojo)}
+.reglas div{padding:clamp(24px,3.4vw,46px) clamp(18px,3vw,40px);background:var(--negro2)}
+.reglas div+div{border-left:2px solid rgba(246,239,224,.14)}
+.reglas b{display:block;font:900 clamp(48px,6vw,84px)/.9 var(--cond);color:var(--rojo)}
+.reglas h4{font:900 clamp(24px,2.4vw,32px)/1 var(--cond);text-transform:uppercase;letter-spacing:.04em;margin:10px 0 8px}
+.reglas p{font-size:15px;color:rgba(246,239,224,.7)}
+
+.visita{display:grid;grid-template-columns:1fr 1fr;background:var(--negro)}
+.visita > div{padding:clamp(44px,6vw,92px) var(--pad)}
+.visita h2{font:900 clamp(48px,7vw,104px)/.85 var(--cond);text-transform:uppercase;margin-bottom:22px}
+.visita address{font-style:normal;font-size:19px;margin-bottom:26px}
+.horas div{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-top:2px solid rgba(246,239,224,.2);font:700 19px/1.2 var(--cond);letter-spacing:.12em;text-transform:uppercase}
+.horas div:last-child{border-bottom:2px solid rgba(246,239,224,.2)}
+.horas span:last-child{color:var(--ambar)}
+.llevar{background:var(--rojo);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
+.llevar h2{margin:0}
+.llevar p{max-width:34ch;font-weight:500}
+.llevar .boton{background:var(--negro)}
+.llevar .boton:hover{box-shadow:5px 5px 0 var(--crema)}
+footer{background:var(--negro);color:rgba(246,239,224,.55);padding:24px var(--pad);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:13.5px;border-top:2px solid rgba(246,239,224,.14)}
+footer a{color:var(--crema)}
+
+.demo{position:fixed;right:calc(var(--marco) + 10px);bottom:calc(var(--marco) + 10px);z-index:50;background:#fff;color:#111;font:800 12px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;padding:12px 15px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.demo:hover{background:#FF231D;color:#fff}
+.shot .demo{display:none}
+
+@media (max-width:900px){
+  header nav{display:none}
+  .portada{grid-template-columns:1fr}
+  .cuenco{width:min(78%,340px);order:-1;margin-top:6px}
+  .cols,.visita{grid-template-columns:1fr}
+  .reglas{grid-template-columns:1fr}
+  .reglas div+div{border-left:0;border-top:2px solid rgba(246,239,224,.14)}
+}
+@media (max-width:520px){
+  .acciones .boton{flex:1 1 100%;justify-content:center}
+  .pedir{padding:12px 14px}
+  .logo{font-size:28px}
+  .logo b{width:32px;height:32px;font-size:17px}
+  .sello.dos{right:0}
+}
+</style>
+<script>if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+</head>
+<body>
+<div class="lienzo">
+
+<header>
+  <a class="logo" href="#"><b>K</b><span>Kemuri<small>Ramen · Donostia</small></span></a>
+  <nav><a href="#carta">Carta</a><a href="#reglas">La casa</a><a href="#visita">Horario</a></nav>
+  <a class="pedir" href="#visita">Pedir</a>
+</header>
+
+<section class="portada">
+  <div class="puntos" aria-hidden="true"></div>
+  <div>
+    <p class="kicker">Ramen · gyozas · highball</p>
+    <h1><span>Ramen</span><span><em>&amp;</em> highball</span></h1>
+    <p class="lead">Caldo de doce horas, fideos amasados cada mañana y barra abierta hasta las dos. Cocina japonesa sin ceremonia, para comer con las manos y reírse alto.</p>
+    <div class="acciones"><a class="boton" href="#carta">Ver la carta →</a><a class="boton borde" href="#visita">Pedir para llevar</a></div>
+  </div>
+  <div class="cuenco">
+    <svg viewBox="0 0 460 440" role="img" aria-label="Cuenco de ramen con huevo, chashu y cebollino">
+      <defs><clipPath id="caldo"><ellipse cx="230" cy="196" rx="184" ry="42"/></clipPath></defs>
+      <g fill="none" stroke="#F6EFE0" stroke-width="7" stroke-linecap="round" opacity=".55"><path d="M150 112c-24-22 22-36 0-62"/><path d="M230 104c-24-24 22-40 0-70"/><path d="M310 112c-24-22 22-36 0-62"/></g>
+      <path d="M26 196h408c0 112-82 196-204 196S26 308 26 196z" fill="#D8292E"/>
+      <path d="M26 196h408c-1 22-5 42-12 60H38c-7-18-11-38-12-60z" fill="#B71F25"/>
+      <g fill="#F6EFE0" opacity=".9"><circle cx="86" cy="296" r="12"/><circle cx="130" cy="326" r="12"/><circle cx="180" cy="344" r="12"/><circle cx="230" cy="350" r="12"/><circle cx="280" cy="344" r="12"/><circle cx="330" cy="326" r="12"/><circle cx="374" cy="296" r="12"/></g>
+      <ellipse cx="230" cy="196" rx="204" ry="50" fill="#F6EFE0"/>
+      <ellipse cx="230" cy="196" rx="184" ry="42" fill="#E8A33B"/>
+      <g clip-path="url(#caldo)" fill="none" stroke="#F6EFE0" stroke-width="9" stroke-linecap="round"><path d="M70 186q24-24 48 0t48 0t48 0t48 0t48 0t48 0"/><path d="M60 204q24-24 48 0t48 0t48 0t48 0t48 0t48 0t48 0"/><path d="M80 220q24-22 48 0t48 0t48 0t48 0t48 0t48 0"/></g>
+      <ellipse cx="170" cy="190" rx="38" ry="25" fill="#F6EFE0"/><ellipse cx="176" cy="192" rx="17" ry="12" fill="#F2A21F"/>
+      <circle cx="296" cy="200" r="31" fill="#B8714A"/><circle cx="296" cy="200" r="22" fill="none" stroke="#E0A67F" stroke-width="5"/>
+      <rect x="318" y="146" width="58" height="76" rx="3" fill="#1F3A2C" transform="rotate(14 347 184)"/>
+      <circle cx="238" cy="172" r="19" fill="#F6EFE0"/><path d="M238 172m-11 0a11 11 0 1 1 22 0m-8 0a3 3 0 1 0-6 0" fill="none" stroke="#D8292E" stroke-width="3"/>
+      <g fill="#7FB13F"><circle cx="214" cy="212" r="6"/><circle cx="244" cy="218" r="6"/><circle cx="262" cy="176" r="5"/><circle cx="130" cy="214" r="5"/><circle cx="336" cy="224" r="5"/><circle cx="196" cy="168" r="5"/></g>
+      <g stroke="#C58B4E" stroke-width="9" stroke-linecap="round"><path d="M392 34L262 178"/><path d="M420 54L290 192"/></g>
+    </svg>
+    <div class="sello uno"><div>Abierto<b>2:00</b>h.</div></div>
+    <div class="sello dos">Sin reserva</div>
+  </div>
+</section>
+
+<section class="carta" id="carta">
+  <div class="cab"><h2>La <em>carta</em></h2><p>Todo se hace a diario. Cuando se acaba el caldo, se acaba el ramen.</p></div>
+  <div class="cols">
+    <div>
+      <h3>Ramen</h3>
+      <div class="pl"><span class="n">01</span><b>Tonkotsu</b><strong>13,50</strong><small>Cerdo, 12 horas de caldo, chashu y huevo marinado</small></div>
+      <div class="pl"><span class="n">02</span><b>Shoyu</b><strong>12,50</strong><small>Pollo y soja, ligero, con menma y cebollino</small></div>
+      <div class="pl"><span class="n">03</span><b>Miso picante</b><strong>13,50</strong><small>Miso rojo, maíz, mantequilla y chile</small></div>
+      <div class="pl"><span class="n">04</span><b>Vegano</b><strong>12,00</strong><small>Caldo de kombu y shiitake, tofu y sésamo</small></div>
+    </div>
+    <div class="lat">
+      <h3>Para picar</h3>
+      <div class="pl"><b>Gyozas (6)</b><strong>6,50</strong><small>De cerdo o de verduras</small></div>
+      <div class="pl"><b>Karaage</b><strong>7,00</strong><small>Pollo frito con mayonesa japonesa</small></div>
+      <div class="pl"><b>Edamame</b><strong>4,00</strong><small>Con sal en escamas</small></div>
+      <div class="pl"><b>Highball</b><strong>6,50</strong><small>Whisky japonés y soda, bien frío</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="reglas" id="reglas">
+  <div><b>01</b><h4>Sin reservas</h4><p>Llegas, te sientas en la barra y te ponemos el caldo. Si hay cola, merece la pena.</p></div>
+  <div><b>02</b><h4>Sorber está permitido</h4><p>De hecho, es la señal de que el fideo está en su punto. Come caliente, come rápido.</p></div>
+  <div><b>03</b><h4>Highball a 5 €</h4><p>De lunes a jueves hasta las nueve de la noche. Para empezar con buen pie.</p></div>
+</section>
+
+<section class="visita" id="visita">
+  <div>
+    <h2>Ven con<br>hambre</h2>
+    <address>Calle Mayor, 12<br>20003 Donostia</address>
+    <div class="horas">
+      <div><span>Martes – jueves</span><span>13:00 – 23:30</span></div>
+      <div><span>Viernes y sábado</span><span>13:00 – 02:00</span></div>
+      <div><span>Domingo</span><span>13:00 – 17:00</span></div>
+    </div>
+  </div>
+  <div class="llevar">
+    <h2>¿Para<br>llevar?</h2>
+    <p>Pídelo por WhatsApp y lo tienes listo en quince minutos, en su envase y con el caldo aparte.</p>
+    <a class="boton" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20un%20pedido%20para%20llevar">Pedir por WhatsApp →</a>
+  </div>
+</section>
+<footer><span>© Kemuri · Demo de ramen y cocina callejera</span><span>Web hecha por <a href="https://la-commande.pages.dev/">La Commande</a></span></footer>
+
+</div>
+<a class="demo" href="https://la-commande.pages.dev/#disenos">Demo · La Commande</a>
+</body>
+</html>

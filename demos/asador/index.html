@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Asador Txingar · Demo de asador · La Commande</title>
+<meta name="description" content="Demo de diseño para asadores, sidrerías y parrillas. Hecho por La Commande.">
+<meta name="theme-color" content="#151513">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<style>
+:root{--carbon:#151513;--carbon2:#1E1D1A;--brasa:#D9531E;--brasa-c:#F08A24;--marfil:#FAF8F3;--trigo:#D8C9A8;--serif:'Newsreader',Georgia,serif;--sans:'Barlow',system-ui,sans-serif;--pad:clamp(20px,5vw,80px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--carbon);color:var(--marfil);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+svg{display:block;max-width:100%}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px var(--pad)}
+.logo{font:300 30px/1 var(--serif);letter-spacing:.2em;text-transform:uppercase}
+.logo small{display:block;font:500 10px/1 var(--sans);letter-spacing:.42em;color:var(--brasa-c);margin-top:9px}
+header nav{display:flex;gap:clamp(20px,3.4vw,46px);font:500 13px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase}
+header nav a{padding:6px 0;border-bottom:1px solid transparent;color:rgba(250,248,243,.78)}
+header nav a:hover{color:var(--marfil);border-color:var(--brasa)}
+.reservar{font:600 12.5px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;padding:15px 22px;border:1px solid var(--brasa);color:var(--marfil);transition:background .2s}
+.reservar:hover{background:var(--brasa)}
+
+.portada{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:clamp(10px,3vw,50px);padding:clamp(10px,2vw,30px) var(--pad) clamp(30px,4vw,56px);position:relative}
+.kicker{font:500 12.5px/1 var(--sans);letter-spacing:.36em;text-transform:uppercase;color:var(--brasa-c)}
+h1{font:300 clamp(54px,8.6vw,138px)/.92 var(--serif);letter-spacing:-.025em;margin:26px 0 28px}
+h1 em{font-style:italic;color:var(--brasa);font-weight:300}
+.lead{max-width:42ch;font-size:clamp(16.5px,1.4vw,19.5px);color:rgba(250,248,243,.78)}
+.acciones{display:flex;flex-wrap:wrap;align-items:center;gap:16px 30px;margin-top:38px}
+.boton{display:inline-flex;align-items:center;gap:12px;background:var(--brasa);color:var(--marfil);font:600 13px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;padding:20px 30px;transition:background .2s}
+.boton:hover{background:#ec6126}
+.enlace{font:500 13px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;border-bottom:1px solid rgba(250,248,243,.5);padding-bottom:7px}
+.enlace:hover{border-color:var(--brasa-c);color:var(--brasa-c)}
+.llama{justify-self:center;width:min(100%,370px);position:relative}
+.llama svg{width:100%;height:auto;filter:drop-shadow(0 0 70px rgba(217,83,30,.38))}
+.cifras{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(10px,2vw,28px);border-top:1px solid rgba(250,248,243,.2)}
+.cifras div{padding:22px 0 0}
+.cifras div+div{padding-left:clamp(16px,3vw,44px);border-left:1px solid rgba(250,248,243,.2)}
+.cifras b{display:block;font:300 clamp(38px,4.6vw,62px)/1 var(--serif);letter-spacing:-.02em;color:var(--marfil)}
+.cifras b i{font-style:italic;color:var(--brasa)}
+.cifras span{display:block;margin-top:8px;font:500 12px/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:rgba(250,248,243,.6)}
+
+.piezas{background:var(--marfil);color:var(--carbon);padding:clamp(70px,9vw,140px) var(--pad)}
+.piezas .cab{display:grid;grid-template-columns:1fr 1fr;gap:20px 60px;align-items:end;margin-bottom:clamp(30px,5vw,64px)}
+.piezas h2{font:300 clamp(42px,6vw,92px)/.98 var(--serif);letter-spacing:-.02em}
+.piezas h2 em{font-style:italic;color:var(--brasa)}
+.piezas .cab p{max-width:40ch;color:rgba(21,21,19,.7);justify-self:end}
+.corte{display:grid;grid-template-columns:1.2fr .6fr .5fr;align-items:baseline;gap:18px;padding:22px 0;border-top:1px solid rgba(21,21,19,.2)}
+.corte:last-of-type{border-bottom:1px solid rgba(21,21,19,.2)}
+.corte b{font:400 clamp(24px,2.6vw,36px)/1.1 var(--serif);letter-spacing:-.01em}
+.corte small{display:block;font:500 12px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(21,21,19,.55);margin-top:5px}
+.corte .peso{font:500 14px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:rgba(21,21,19,.7)}
+.corte strong{font:400 clamp(26px,2.8vw,38px)/1 var(--serif);text-align:right;color:var(--brasa);font-variant-numeric:lining-nums tabular-nums}
+.corte strong small{display:inline;font-size:11px;letter-spacing:.2em;color:rgba(21,21,19,.55);margin-left:6px}
+.estrella{margin-top:clamp(30px,4vw,56px);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(18px,4vw,56px);background:var(--carbon);color:var(--marfil);padding:clamp(24px,3.6vw,48px) clamp(24px,4vw,60px)}
+.estrella .sello{font:italic 300 clamp(44px,6vw,84px)/.9 var(--serif);color:var(--brasa)}
+.estrella h3{font:300 clamp(26px,3vw,42px)/1.05 var(--serif);margin-bottom:8px}
+.estrella p{font-size:15.5px;color:rgba(250,248,243,.72);max-width:50ch}
+.estrella strong{font:300 clamp(40px,5vw,68px)/1 var(--serif);white-space:nowrap}
+
+.fuego{display:grid;grid-template-columns:1fr 1fr;background:var(--carbon2)}
+.fuego > div{padding:clamp(54px,7vw,110px) var(--pad)}
+.fuego h2{font:300 clamp(36px,4.8vw,70px)/1 var(--serif);letter-spacing:-.02em;margin-bottom:24px}
+.fuego p{max-width:44ch;color:rgba(250,248,243,.76)}
+.horas{margin-top:34px}
+.horas div{display:flex;justify-content:space-between;gap:22px;padding:15px 0;border-top:1px solid rgba(250,248,243,.2);font:500 14px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.horas div:last-child{border-bottom:1px solid rgba(250,248,243,.2)}
+.horas span:last-child{color:var(--brasa-c);font-variant-numeric:tabular-nums}
+.mesa{background:var(--brasa);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px}
+.mesa h2{margin:0}
+.mesa address{font:300 clamp(22px,2.4vw,32px)/1.2 var(--serif);font-style:normal}
+.mesa .boton{background:var(--carbon);color:var(--marfil)}
+.mesa .boton:hover{background:#000}
+footer{background:var(--carbon);color:rgba(250,248,243,.55);padding:26px var(--pad);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:13.5px;letter-spacing:.04em}
+footer a{color:var(--marfil)}
+
+.demo{position:fixed;right:14px;bottom:14px;z-index:50;background:#FAF8F3;color:#111;font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:12px 15px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.demo:hover{background:#FF231D;color:#fff}
+.shot .demo{display:none}
+
+@media (max-width:900px){
+  header nav{display:none}
+  .portada{grid-template-columns:1fr}
+  .llama{width:min(66%,300px);order:-1;margin-top:-6px}
+  .piezas .cab,.fuego{grid-template-columns:1fr}
+  .piezas .cab p{justify-self:start}
+  .estrella{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:560px){
+  .corte{grid-template-columns:1fr auto}
+  .corte .peso{grid-column:1;grid-row:2;margin-top:-6px}
+  .corte strong{grid-column:2;grid-row:1}
+  .cifras b{font-size:34px}
+  .cifras span{font-size:10.5px;letter-spacing:.14em}
+  .reservar{padding:13px 16px;font-size:11.5px;letter-spacing:.18em}
+  .acciones .boton{flex:1 1 100%;justify-content:center}
+}
+@media (max-width:400px){
+  header{gap:12px}
+  .logo{font-size:23px;letter-spacing:.14em}
+  .logo small{letter-spacing:.3em}
+  .reservar{padding:12px 13px;font-size:11px;letter-spacing:.14em}
+}
+</style>
+<script>if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#">Txingar<small>Asador</small></a>
+  <nav><a href="#piezas">Las piezas</a><a href="#fuego">El fuego</a><a href="#mesa">Reservas</a></nav>
+  <a class="reservar" href="#mesa">Reservar</a>
+</header>
+
+<section class="portada">
+  <div>
+    <p class="kicker">Brasa de encina · desde 1994</p>
+    <h1>Brasa y <em>paciencia</em></h1>
+    <p class="lead">Carne madurada, pescado del día y una parrilla que no se apaga hasta que se va el último comensal. Cocina sencilla, con fuego de verdad.</p>
+    <div class="acciones"><a class="boton" href="#mesa">Reservar mesa</a><a class="enlace" href="#piezas">Ver las piezas</a></div>
+  </div>
+  <div class="llama">
+    <svg viewBox="0 0 400 480" role="img" aria-label="Llama de una parrilla de brasa">
+      <path d="M200 14c34 84 112 128 112 238 0 78-48 142-112 142S88 330 88 252c0-58 28-92 52-128 8 44 32 62 46 66-18-62-4-120 14-176z" fill="#D9531E"/>
+      <path d="M204 118c24 56 80 90 80 162 0 56-34 100-84 100s-84-44-84-100c0-40 20-62 36-90 6 32 22 44 34 46-12-44-4-82 18-118z" fill="#F08A24"/>
+      <path d="M202 216c16 34 44 54 44 94 0 32-20 56-46 56s-46-24-46-56c0-22 12-36 22-52 4 18 14 26 22 28-8-26-2-50 4-70z" fill="#F8C14A"/>
+      <g fill="#F08A24"><circle cx="318" cy="120" r="5"/><circle cx="104" cy="96" r="3.4"/><circle cx="340" cy="190" r="3"/><circle cx="76" cy="190" r="4.4"/><circle cx="270" cy="60" r="3"/></g>
+      <g stroke="#FAF8F3" stroke-width="5" stroke-linecap="round" opacity=".92"><path d="M30 408h340"/><path d="M30 430h340"/><path d="M54 408v22M110 408v22M166 408v22M222 408v22M278 408v22M334 408v22" stroke-width="3.5"/></g>
+      <g fill="#2a2926"><rect x="40" y="446" width="64" height="26" rx="8"/><rect x="120" y="450" width="58" height="22" rx="8"/><rect x="194" y="446" width="66" height="26" rx="8"/><rect x="276" y="450" width="56" height="22" rx="8"/></g>
+      <g fill="#D9531E" opacity=".9"><rect x="52" y="452" width="30" height="6" rx="3"/><rect x="206" y="452" width="36" height="6" rx="3"/><rect x="132" y="456" width="26" height="5" rx="2.5"/><rect x="288" y="456" width="26" height="5" rx="2.5"/></g>
+    </svg>
+  </div>
+  <div class="cifras">
+    <div><b>700<i>°</i></b><span>Temperatura de brasa</span></div>
+    <div><b>45<i>d</i></b><span>De maduración en cámara</span></div>
+    <div><b>100<i>%</i></b><span>Leña de encina, sin gas</span></div>
+  </div>
+</section>
+
+<section class="piezas" id="piezas">
+  <div class="cab"><h2>Por pieza <em>y peso</em></h2><p>Se corta al momento y se pesa delante de ti. El precio es por kilo; tú decides cuánto.</p></div>
+  <div>
+    <div class="corte"><div><b>Chuleta de vaca vieja</b><small>Maduración 45 días · Galicia</small></div><span class="peso">Pieza de 1 kg o más</span><strong>62<small>€/kg</small></strong></div>
+    <div class="corte"><div><b>Solomillo de buey</b><small>Maduración 30 días · País Vasco</small></div><span class="peso">Pieza de 350 g</span><strong>48<small>€/kg</small></strong></div>
+    <div class="corte"><div><b>Rodaballo salvaje</b><small>Del día · Cantábrico</small></div><span class="peso">Pieza de 1,5 kg</span><strong>58<small>€/kg</small></strong></div>
+    <div class="corte"><div><b>Cordero lechal</b><small>Paletilla y costillar</small></div><span class="peso">Ración de 500 g</span><strong>38<small>€/kg</small></strong></div>
+    <div class="corte"><div><b>Verduras a la brasa</b><small>Temporada · huerta local</small></div><span class="peso">Ración</span><strong>12<small>€</small></strong></div>
+  </div>
+  <div class="estrella">
+    <div class="sello">Hoy</div>
+    <div><h3>Chuleta de buey para dos</h3><p>Maduración de 60 días, un kilo y medio al punto, con pimientos y patata asada. Hasta que se acabe.</p></div>
+    <strong>92 €</strong>
+  </div>
+</section>
+
+<section class="fuego" id="fuego">
+  <div>
+    <h2>El fuego manda</h2>
+    <p>Encendemos a las doce y dejamos que la leña se haga brasa. Ni gas ni prisas: la parrilla marca el ritmo y la cocina lo respeta. Lo demás es producto y buen pulso.</p>
+    <div class="horas">
+      <div><span>Comidas · martes a domingo</span><span>13:00 – 16:00</span></div>
+      <div><span>Cenas · jueves a sábado</span><span>20:30 – 23:30</span></div>
+      <div><span>Lunes</span><span>Cerrado</span></div>
+    </div>
+  </div>
+  <div class="mesa" id="mesa">
+    <h2>Mesa para hoy</h2>
+    <address>Camino del Monte, 7<br>20008 Donostia</address>
+    <p>Reservamos por WhatsApp. Si somos pocos, la barra siempre tiene sitio.</p>
+    <a class="boton" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20mesa">Reservar por WhatsApp →</a>
+  </div>
+</section>
+<footer><span>© Asador Txingar · Demo de asador</span><span>Web hecha por <a href="https://la-commande.pages.dev/">La Commande</a></span></footer>
+
+<a class="demo" href="https://la-commande.pages.dev/#disenos">Demo · La Commande</a>
+</body>
+</html>

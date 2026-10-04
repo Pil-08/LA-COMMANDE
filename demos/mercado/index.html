@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Sasoi · Demo de cocina de mercado · La Commande</title>
+<meta name="description" content="Demo de diseño para restaurantes de mercado, brunch y cocina de temporada. Hecho por La Commande.">
+<meta name="theme-color" content="#F6F2E8">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<style>
+:root{--marfil:#F6F2E8;--arena:#EBE3D0;--oliva:#34402A;--oliva2:#252E1D;--salvia:#A9B88F;--tomate:#D2452D;--mantequilla:#EFD98A;--tinta:#22281D;--serif:'Fraunces',Georgia,serif;--sans:'Figtree',system-ui,sans-serif;--pad:clamp(20px,5vw,80px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--marfil);color:var(--tinta);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+svg{display:block;max-width:100%}
+
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px var(--pad)}
+.logo{display:flex;align-items:center;gap:10px;font:300 34px/1 var(--serif);font-style:italic;letter-spacing:-.01em}
+.logo svg{width:26px;height:26px}
+header nav{display:flex;gap:clamp(20px,3.2vw,44px);font-weight:500;font-size:15.5px}
+header nav a{padding:4px 0;border-bottom:1.5px solid transparent;color:rgba(34,40,29,.8)}
+header nav a:hover{color:var(--tinta);border-color:var(--tomate)}
+.pildora{display:inline-flex;align-items:center;gap:9px;background:var(--oliva);color:var(--marfil);font:600 14.5px/1 var(--sans);padding:15px 24px;border-radius:999px;transition:background .2s,transform .2s}
+.pildora:hover{background:var(--oliva2);transform:translateY(-2px)}
+.pildora.tomate{background:var(--tomate)}
+.pildora.tomate:hover{background:#b9371f}
+.pildora.clara{background:transparent;color:var(--tinta);box-shadow:inset 0 0 0 1.5px rgba(34,40,29,.4)}
+.pildora.clara:hover{background:rgba(34,40,29,.06)}
+
+.portada{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(18px,4vw,70px);padding:clamp(10px,2vw,28px) var(--pad) clamp(46px,6vw,90px)}
+.etiqueta{display:inline-flex;align-items:center;gap:10px;background:var(--arena);padding:9px 15px;border-radius:999px;font-weight:600;font-size:13.5px}
+.etiqueta i{width:9px;height:9px;border-radius:50%;background:var(--tomate)}
+h1{font:300 clamp(46px,6.7vw,106px)/.98 var(--serif);letter-spacing:-.03em;margin:24px 0 24px}
+h1 em{font-style:italic;color:var(--tomate);font-weight:300}
+.lead{max-width:44ch;font-size:clamp(16.5px,1.4vw,19.5px);color:rgba(34,40,29,.78)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.temporada{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.temporada span{font-weight:600;font-size:13.5px;padding:8px 14px;border-radius:999px;background:rgba(169,184,143,.38);color:var(--oliva)}
+.temporada b{font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:rgba(34,40,29,.55);align-self:center;margin-right:6px}
+.plato{justify-self:center;width:min(100%,520px);position:relative}
+.plato svg{width:100%;height:auto}
+
+.menu{background:var(--oliva);color:var(--marfil);padding:clamp(60px,8vw,120px) var(--pad)}
+.menu .rej{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,6vw,100px);align-items:start}
+.carta{background:var(--marfil);color:var(--tinta);padding:clamp(30px,4.4vw,60px);border-radius:28px;position:relative}
+.carta .sello{position:absolute;right:clamp(16px,3vw,36px);top:-26px;background:var(--tomate);color:var(--marfil);width:clamp(96px,11vw,128px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;font:300 italic clamp(16px,1.7vw,20px)/1 var(--serif);transform:rotate(9deg)}
+.carta .sello b{display:block;font:400 clamp(30px,3.6vw,44px)/1 var(--serif);font-style:normal;letter-spacing:-.02em}
+.carta h2{font:300 clamp(34px,4.2vw,58px)/1 var(--serif);letter-spacing:-.02em;margin-bottom:6px}
+.carta > p{color:rgba(34,40,29,.7);margin-bottom:20px}
+.curso{padding:17px 0;border-top:1px solid rgba(34,40,29,.18)}
+.curso small{display:block;font:600 11.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--tomate);margin-bottom:7px}
+.curso b{font:400 clamp(20px,2vw,26px)/1.18 var(--serif);letter-spacing:-.01em}
+.curso span{display:block;font-size:14.5px;color:rgba(34,40,29,.66);margin-top:3px}
+.prov h2{font:300 clamp(32px,4vw,56px)/1.02 var(--serif);letter-spacing:-.02em;margin-bottom:14px}
+.prov h2 em{font-style:italic;color:var(--mantequilla)}
+.prov > p{color:rgba(246,242,232,.76);max-width:42ch;margin-bottom:26px}
+.fila{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:17px 0;border-top:1px solid rgba(246,242,232,.22)}
+.fila:last-child{border-bottom:1px solid rgba(246,242,232,.22)}
+.fila i{font:300 italic 28px/1 var(--serif);color:var(--salvia);min-width:1.4em}
+.fila b{font-weight:600;font-size:17px}
+.fila span{display:block;font-size:14px;color:rgba(246,242,232,.62);font-weight:400}
+.fila em{font-style:normal;font-weight:600;font-size:13px;color:var(--mantequilla);white-space:nowrap}
+
+.visita{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,5vw,90px);padding:clamp(60px,8vw,120px) var(--pad)}
+.visita h2{font:300 clamp(36px,4.8vw,70px)/1 var(--serif);letter-spacing:-.025em;margin-bottom:20px}
+.visita h2 em{font-style:italic;color:var(--tomate)}
+.visita address{font-style:normal;font-size:19px;margin-bottom:22px}
+.horas div{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-top:1px solid rgba(34,40,29,.2);font-weight:500}
+.horas div:last-child{border-bottom:1px solid rgba(34,40,29,.2)}
+.horas span:last-child{color:var(--tomate);font-weight:600;font-variant-numeric:tabular-nums}
+.reserva{background:var(--arena);padding:clamp(26px,3.6vw,50px);border-radius:28px;align-self:start}
+.reserva h3{font:300 clamp(28px,3vw,40px)/1.05 var(--serif);letter-spacing:-.02em;margin-bottom:10px}
+.reserva > p{color:rgba(34,40,29,.72);margin-bottom:22px;font-size:15.5px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.campos span{background:var(--marfil);border-radius:14px;padding:13px 16px;font-size:15px;font-weight:500}
+.campos b{display:block;font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:rgba(34,40,29,.5);margin-bottom:6px}
+.reserva .pildora{width:100%;justify-content:center;padding:18px 24px}
+footer{background:var(--oliva2);color:rgba(246,242,232,.62);padding:26px var(--pad);display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:13.5px}
+footer a{color:var(--marfil)}
+
+.demo{position:fixed;right:14px;bottom:14px;z-index:50;background:#111;color:#fff;font:700 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:12px 15px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.demo:hover{background:#FF231D}
+.shot .demo{display:none}
+
+@media (max-width:900px){
+  header nav{display:none}
+  .portada,.menu .rej,.visita{grid-template-columns:1fr}
+  .plato{width:min(80%,380px);order:-1}
+  .carta .sello{top:-34px}
+}
+@media (max-width:560px){
+  .campos{grid-template-columns:1fr}
+  .acciones .pildora{flex:1 1 100%;justify-content:center}
+  header .pildora{padding:12px 16px;font-size:13px}
+  .logo{font-size:29px}
+  .fila{grid-template-columns:auto 1fr}
+  .fila em{grid-column:2}
+}
+</style>
+<script>if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 24C6 21 3 14 5 4c9-1 16 4 16 12 0 4-3 7-8 8z" fill="#34402A"/><path d="M5 22C9 16 13 12 19 8" stroke="#F6F2E8" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>Sasoi</a>
+  <nav><a href="#menu">Menú</a><a href="#huerta">La huerta</a><a href="#visita">Visítanos</a></nav>
+  <a class="pildora" href="#visita">Reservar</a>
+</header>
+
+<section class="portada">
+  <div>
+    <span class="etiqueta"><i></i>Primavera · cocina de mercado</span>
+    <h1>Lo que dé la <em>huerta</em> esta semana</h1>
+    <p class="lead">Un menú corto que cambia con lo que llega cada mañana de las huertas de la comarca. Cocina sencilla, de temporada y hecha sin prisa.</p>
+    <div class="acciones"><a class="pildora tomate" href="#visita">Reservar mesa</a><a class="pildora clara" href="#menu">Ver el menú</a></div>
+    <div class="temporada"><b>Ahora</b><span>Espárragos</span><span>Guisantes</span><span>Habas</span><span>Alcachofas</span><span>Fresas</span></div>
+  </div>
+  <div class="plato">
+    <svg viewBox="0 0 520 520" role="img" aria-label="Plato con tomates, espárragos, limón y albahaca">
+      <path d="M118 86C188 18 330 8 410 68c80 60 120 160 80 250-40 90-150 150-250 140C138 448 38 388 18 288 0 190 48 148 118 86z" fill="#A9B88F"/>
+      <circle cx="262" cy="270" r="198" fill="#F6F2E8"/>
+      <circle cx="262" cy="270" r="198" fill="none" stroke="#34402A" stroke-width="3"/>
+      <circle cx="262" cy="270" r="152" fill="none" stroke="#34402A" stroke-opacity=".18" stroke-width="2"/>
+      <g transform="rotate(-58 190 340)"><rect x="176" y="268" width="15" height="152" rx="7.5" fill="#6E8F3A"/><rect x="200" y="276" width="15" height="144" rx="7.5" fill="#7FA044"/><rect x="224" y="268" width="15" height="152" rx="7.5" fill="#6E8F3A"/><path d="M176 276c0-18 15-22 15-22s15 4 15 22zM224 276c0-18 15-22 15-22s15 4 15 22z" fill="#4A6726"/><path d="M200 284c0-18 15-22 15-22s15 4 15 22z" fill="#4A6726"/></g>
+      <circle cx="206" cy="246" r="62" fill="#D2452D"/>
+      <path d="M170 224c14-18 38-26 58-20" fill="none" stroke="#F6F2E8" stroke-opacity=".4" stroke-width="7" stroke-linecap="round"/>
+      <path d="M206 186l9 14 17-3-10 14 12 12-17-1-5 16-6-15-17 2 11-13-12-12 17 3z" fill="#4F7A37"/>
+      <circle cx="322" cy="318" r="48" fill="#E0573B"/>
+      <path d="M296 302c8-14 24-20 38-16" fill="none" stroke="#F6F2E8" stroke-opacity=".4" stroke-width="6" stroke-linecap="round"/>
+      <path d="M322 270l8 12 15-3-9 12 10 11-15-1-5 14-5-13-15 2 10-12-10-10 15 3z" fill="#4F7A37"/>
+      <circle cx="324" cy="188" r="46" fill="#EFD98A"/><circle cx="324" cy="188" r="38" fill="#F5E7A6"/>
+      <g stroke="#EFD98A" stroke-width="4" stroke-linecap="round"><path d="M324 188v-34M324 188l24-24M324 188h34M324 188l24 24M324 188v34M324 188l-24 24M324 188h-34M324 188l-24-24"/></g>
+      <g fill="#4F7A37"><ellipse cx="392" cy="276" rx="26" ry="14" transform="rotate(-30 392 276)"/><ellipse cx="146" cy="226" rx="22" ry="12" transform="rotate(34 146 226)"/><ellipse cx="258" cy="372" rx="24" ry="13" transform="rotate(-12 258 372)"/></g>
+      <g stroke="#34402A" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"><path d="M376 286l32-20M132 220l28 12M240 376l36-8"/></g>
+      <g fill="#34402A" fill-opacity=".55"><circle cx="248" cy="318" r="2.6"/><circle cx="270" cy="338" r="2.2"/><circle cx="240" cy="344" r="2.4"/><circle cx="388" cy="230" r="2.4"/><circle cx="268" cy="212" r="2.2"/></g>
+    </svg>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="rej">
+    <div class="carta">
+      <div class="sello"><div>desde<b>32€</b></div></div>
+      <h2>Menú del mercado</h2>
+      <p>Cuatro pasos, a mediodía y por la noche. Cambia cada semana.</p>
+      <div class="curso"><small>Para empezar</small><b>Ensalada de guisantes y menta</b><span>Con queso fresco y aceite de oliva virgen</span></div>
+      <div class="curso"><small>Entrante</small><b>Alcachofas confitadas a la brasa</b><span>Yema curada y avellanas</span></div>
+      <div class="curso"><small>Principal</small><b>Merluza de pincho con habas</b><span>Salsa verde y limón en conserva</span></div>
+      <div class="curso"><small>Postre</small><b>Fresas con crema de queso</b><span>Albahaca y galleta de mantequilla</span></div>
+    </div>
+    <div class="prov" id="huerta">
+      <h2>De aquí, <em>y de hoy</em></h2>
+      <p>Compramos a quienes conocemos por su nombre. Si no es de temporada, no está en el menú.</p>
+      <div class="fila"><i>01</i><div><b>Huerta de Zubieta</b><span>Verduras y hojas</span></div><em>12 km</em></div>
+      <div class="fila"><i>02</i><div><b>Lonja de Pasaia</b><span>Pescado de día</span></div><em>8 km</em></div>
+      <div class="fila"><i>03</i><div><b>Queserías Oiartzun</b><span>Quesos y yogures</span></div><em>15 km</em></div>
+      <div class="fila"><i>04</i><div><b>Panadería Lasarte</b><span>Masa madre</span></div><em>6 km</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="visita" id="visita">
+  <div>
+    <h2>Ven a <em>comer</em></h2>
+    <address>Calle del Mercado, 5<br>20004 Donostia</address>
+    <div class="horas">
+      <div><span>Miércoles a domingo</span><span>13:00 – 16:00</span></div>
+      <div><span>Jueves a sábado</span><span>20:30 – 23:30</span></div>
+      <div><span>Lunes y martes</span><span>Cerrado</span></div>
+    </div>
+  </div>
+  <div class="reserva">
+    <h3>Reserva tu mesa</h3>
+    <p>Para ir a lo seguro, reserva con un día de antelación. Para grupos de seis o más, escríbenos.</p>
+    <div class="campos"><span><b>Día</b>Sábado 18</span><span><b>Comensales</b>2 personas</span></div>
+    <a class="pildora tomate" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20mesa">Reservar por WhatsApp</a>
+  </div>
+</section>
+<footer><span>© Sasoi · Demo de cocina de mercado</span><span>Web hecha por <a href="https://la-commande.pages.dev/">La Commande</a></span></footer>
+
+<a class="demo" href="https://la-commande.pages.dev/#disenos">Demo · La Commande</a>
+</body>
+</html>
