@@ -1,7 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Webs para hostelería en Donostia y Gipuzkoa. Boceto en 24 h, online en 5 días, 29,99 € al mes sin permanencia. Carta con QR, alérgenos, reservas y reseñas de Google.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="La Commande">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Una web para tu bar por 29,99 € al mes">
+  <meta property="og:description" content="Monta tu comanda, mira el precio al momento y recibe el boceto en 24 h. Donostia y alrededores.">
+  <meta property="og:image" content="https://la-commande.pages.dev/og-share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="La Commande, webs para hostelería en Donostia, 29,99 € al mes">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#FF231D">
+  <link rel="canonical" href="https://la-commande.pages.dev/">
+  <meta property="og:url" content="https://la-commande.pages.dev/">
   <title>La Commande — Webs para bares y restaurantes en Donostia | 29,99 €/mes</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,13 +70,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         e.target.tagName, String(e.target.src || e.target.href || ''));
       return;
     }
-    var p = document.body || document.documentElement;
-    var d = document.getElementById('__bundler_err') || p.appendChild(document.createElement('div'));
-    d.id = '__bundler_err';
-    d.style.cssText = 'position:fixed;bottom:12px;left:12px;right:12px;font:12px/1.4 ui-monospace,monospace;background:#2a1215;color:#ff8a80;padding:10px 14px;border-radius:8px;border:1px solid #5c2b2e;z-index:99999;white-space:pre-wrap;max-height:40vh;overflow:auto';
-    d.textContent = (d.textContent ? d.textContent + String.fromCharCode(10) : '') +
-      '[bundle] ' + (e.message || e.type) +
-      (e.filename ? ' (' + e.filename.slice(0, 60) + ':' + e.lineno + ')' : '');
+    // PRODUCCION: el visitante nunca ve estos errores. Tambien los generan las extensiones y carteras del navegador
+    // (Brave inyecta window.ethereum y su codigo lanza un TypeError): pintarlos en un cuadro rojo espanta a los clientes.
+    // Quedan en la consola para depurar.
+    console.error('[bundle] ' + (e.message || e.type) + (e.filename ? ' (' + e.filename.slice(0, 60) + ':' + e.lineno + ')' : ''));
   }, true);
 
   try {
