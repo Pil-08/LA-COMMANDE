@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Itzal · Demo de estudio de tatuaje · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de un estudio de tatuaje inventado en Gros, Donostia. Trabajos, estilos, tarifas claras, cita por WhatsApp, horario y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0D0D0D">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [], "2": [[660, 840], [960, 1200]], "3": [[660, 840], [960, 1200]], "4": [[660, 840], [960, 1200]], "5": [[660, 840], [960, 1200]], "6": [[660, 840], [960, 1200]], "0": []}, "mapa": {"q": "43.3226,-1.9789", "titulo": "Mapa de Google: Calle Iparragirre 6, Gros, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TattooParlor", "name": "Itzal", "description": "Estudio de tatuaje en Gros, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Iparragirre 6", "postalCode": "20001", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3226, "longitude": -1.9789}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "11:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "11:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "11:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "11:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "16:00", "closes": "20:00"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Itzal, volver al inicio"><span class="marca__nombre">Itzal</span><span class="marca__lugar">Tattoo · Gros</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#trabajos">Trabajos</a><a href="#estilos">Estilos</a><a href="#carta">Tarifas</a><a href="#horario">Horario</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#cita">Pedir cita</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#cita">Pedir cita</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <div class="portada__texto">
+      <p class="kicker">Estudio de tatuaje · Gros · Donostia</p>
+      <h1 id="titulo"><span class="portada__nombre">Itzal</span> Tinta negra, <em>línea fina</em></h1>
+      <p class="portada__sub">Diseño propio, a medida y sin prisas. Te enseñamos el boceto antes de la cita y lo ajustamos contigo hasta que sea tuyo.</p>
+      <div class="botones"><a class="boton boton--acento" href="#cita">Contar mi idea</a><a class="boton boton--linea" href="#trabajos">Ver trabajos</a></div>
+      <p class="estado" data-estado>Martes a sábado · con cita previa</p>
+    </div>
+    <figure class="lamina">
+      <img src="img/portada.webp" width="1080" height="1350" alt="Manos con guantes tatuando un brazo cubierto de tatuajes" fetchpriority="high">
+      <figcaption>Cita previa · mínimo 60 €</figcaption>
+    </figure>
+  </section>
+  <section class="sec sec--oscuro galeria" id="trabajos" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">Trabajos</p>
+      <h2 class="revela" id="t-galeria">Tinta <em>que se queda</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Brazo con tatuajes de colores y una calavera, en un estudio"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos con guantes negros tatuando una línea fina en la piel"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Tatuador con guantes trabajando un brazo cubierto de tatuajes"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Brazo completo tatuado en negro con motivos tradicionales"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos con guantes negros sujetando la máquina sobre un tatuaje a medio hacer"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro tarjetas" id="estilos" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">Estilos</p>
+      <h2 class="revela" id="t-tarjetas">Lo que <em>mejor hacemos</em></h2>
+      <p class="entrada revela">Dibujamos cada pieza para ti. Si traes una referencia, la hacemos tuya.</p>
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Fine line</span><h3>Línea fina</h3><p>Trazos delicados, florales y piezas pequeñas que envejecen bien.</p><strong class="tarjeta__precio">desde 60&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Blackwork</span><h3>Negro sólido</h3><p>Geometría, ornamento y piezas grandes con mucho contraste.</p><strong class="tarjeta__precio">desde 120&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Lettering</span><h3>Letras</h3><p>Nombres, fechas y frases con tipografía dibujada a mano.</p><strong class="tarjeta__precio">desde 60&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Cover-up</span><h3>Tapar un tatuaje</h3><p>Valoramos el viejo y te decimos con sinceridad qué se puede hacer.</p><strong class="tarjeta__precio">consulta</strong></li></ul>
+      
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Tarifas</p>
+      <h2 class="revela" id="t-carta">Precios <em>claros</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Tatuaje</h3><ul><li class="plato"><b>Mínimo</b><span>Piezas pequeñas, hasta 5 cm</span><strong>60&nbsp;€</strong></li><li class="plato"><b>Por hora</b><span>Piezas medianas</span><strong>90&nbsp;€/h</strong></li><li class="plato"><b>Sesión de día</b><span>Hasta 6 horas</span><strong>450&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Diseño</h3><ul><li class="plato"><b>Boceto a medida</b><span>Se descuenta del precio final</span><strong>señal de 50&nbsp;€</strong></li><li class="plato"><b>Cambios en el boceto</b><span>Hasta que te encante</span><strong>incluidos</strong></li></ul></div><div class="grupo revela"><h3>Cuidados</h3><ul><li class="plato"><b>Crema de cicatrización</b><span>La que usamos en el estudio</span><strong>12&nbsp;€</strong></li><li class="plato"><b>Retoque</b><span>En los dos primeros meses</span><strong>gratis</strong></li></ul></div></div>
+      <p class="carta__nota">Tarifas de ejemplo: en tu web, las tuyas y tu política de señal.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">El estudio</p>
+        <h2 class="revela" id="t-casa">Pequeño, limpio <em>y a tu ritmo</em></h2>
+        <p class="entrada revela">Dos artistas, una sala y todo el tiempo del mundo para que el diseño sea el tuyo. Material desechable, agujas de un solo uso y una ficha de cuidados para llevarte a casa.</p>
+        <ul class="datos revela"><li>Material de un solo uso</li><li>Diseño propio</li><li>Mayores de 18 años</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Láminas de diseños de tatuaje dibujados a mano sobre una mesa de madera"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Máquina de tatuar roja y negra sobre un círculo azul en fondo rosa"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro reservas" id="cita" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Cita</p>
+        <h2 class="revela" id="t-reservas">Cuéntanos <em>tu idea</em></h2>
+        <p class="entrada revela">No hace falta tenerlo todo claro: con la zona, el tamaño y un par de referencias empezamos a dibujar.</p>
+        <ol class="pasos revela"><li><p><b>Mándanos la idea</b><span>Zona del cuerpo, tamaño aproximado y referencias.</span></p></li><li><p><b>Te enviamos boceto y precio</b><span>Con una señal reservas la fecha.</span></p></li><li><p><b>El día de la cita</b><span>Come algo antes y ven con ropa cómoda.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20contaros%20una%20idea%20de%20tatuaje"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Contar mi idea por WhatsApp</a>
+          <a class="boton boton--linea" href="#cita" data-abre="aviso">Reservar online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Manos tatuando un pequeño diseño de flores, en blanco y negro"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--claro visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Martes a sábado · con cita previa</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Itzal</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>Cerrado</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>11:00–14:00 · 16:00–20:00</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>11:00–14:00 · 16:00–20:00</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>11:00–14:00 · 16:00–20:00</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>11:00–14:00 · 16:00–20:00</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>11:00–14:00 · 16:00–20:00</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En Gros, <em>calle Iparragirre</em></h2>
+        <address class="direccion revela">Calle Iparragirre 6<br>20001 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3226%2C-1.9789">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3226,-1.9789&amp;q=Itzal">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3226%2C-1.9789&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Itzal</span><span class="marca__lugar">Tattoo · Gros</span></p>
+      <p>Estudio de tatuaje en Gros</p>
+    </div>
+    <p>Calle Iparragirre 6<br>20001 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20contaros%20una%20idea%20de%20tatuaje">Contar mi idea por WhatsApp</a></p>
+    <p>Lunes: Cerrado<br>Martes: 11:00–14:00 · 16:00–20:00<br>Miércoles: 11:00–14:00 · 16:00–20:00<br>Jueves: 11:00–14:00 · 16:00–20:00<br>Viernes: 11:00–14:00 · 16:00–20:00<br>Sábado: 11:00–14:00 · 16:00–20:00<br>Domingo: Cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría un formulario para enviar la idea con fotos de referencia y elegir fecha.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>

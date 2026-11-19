@@ -1,0 +1,33 @@
+/*    Bodega Mahaia · taberna de la Parte Vieja. Azul, azafrán y bermellón; Young Serif y DM Sans.
+   El vermut dentro de un arco de azafrán y una franja de azulejos que vuelve en el pie. */
+:root{--fondo:#FBF3E4;--texto:#1B2A5B;--suave:#4D5A7E;--acento:#F7B928;--sobre-acento:#1B2A5B;--acento-texto:#B33A17;--oscuro:#1B2A5B;--sobre-oscuro:#FBF3E4;--suave-oscuro:#CFD4E6;
+  --linea:rgba(27,42,91,.18);--linea-oscura:rgba(251,243,228,.22);--f-display:"Young Serif",Georgia,serif;--f-texto:"DM Sans",system-ui,sans-serif;--f-dato:"DM Sans",system-ui,sans-serif;
+  --cab-texto:#FBF3E4;--cab-solida:#14204A;--radio-foto:10px;--resalte:rgba(247,185,40,.28);--pie-fondo:#14204A;
+  --azulejos:radial-gradient(circle at 50% 50%,#E8542B 0 5px,transparent 6px) 0 0/64px 64px,radial-gradient(circle at 50% 0,#F7B928 0 11px,transparent 12px) 0 0/64px 64px,
+    radial-gradient(circle at 50% 100%,#F7B928 0 11px,transparent 12px) 0 0/64px 64px,radial-gradient(circle at 0 50%,#F7B928 0 11px,transparent 12px) 0 0/64px 64px,
+    radial-gradient(circle at 100% 50%,#F7B928 0 11px,transparent 12px) 0 0/64px 64px,linear-gradient(#FBF3E4,#FBF3E4) 0 0/64px 64px}
+.marca{flex-direction:column;align-items:flex-start;justify-content:center}
+.marca__nombre{font:400 1.45rem/1 var(--f-display)}
+.marca__lugar{font:600 .625rem/1 var(--f-texto);letter-spacing:.24em;text-transform:uppercase;color:#F7B928;margin-top:.35rem}
+.portada{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:1fr auto;align-items:center;gap:1.5rem clamp(2rem,5vw,5rem);
+  min-height:100vh;min-height:100svh;padding:6.5rem var(--margen) 0;overflow:hidden;color:#FBF3E4;background:radial-gradient(70% 60% at 80% 30%,#24366F,transparent 70%),#1B2A5B}
+.portada .kicker{color:#F7B928}
+.portada h1{font:400 clamp(3rem,6.4vw,6rem)/.98 var(--f-display);letter-spacing:-.01em;margin:1.1rem 0 1.25rem}
+.portada h1 em{font-style:normal;color:#F7B928}
+.portada__sub{max-width:31rem;font-size:1.125rem;color:#E9E1D2}
+.portada .botones{margin:1.75rem 0 1.25rem}
+.portada__dato{display:flex;flex-wrap:wrap;gap:.35rem 1.5rem;font-size:.9375rem;color:#CFC8BA}
+.portada__dato b{color:#FBF3E4;font-weight:600}
+.arco{position:relative;justify-self:center;width:min(100%,29rem)}
+.arco__marco{aspect-ratio:4/5;border-radius:14rem 14rem 10px 10px;overflow:hidden;border:12px solid #F7B928;box-shadow:0 40px 70px -30px rgba(0,0,0,.6)}
+.arco__marco img{width:100%;height:100%;object-fit:cover}
+.sello{position:absolute;left:-1.6rem;bottom:2.2rem;display:grid;place-items:center;width:7.4rem;height:7.4rem;border-radius:50%;background:#E8542B;color:#FBF3E4;
+  transform:rotate(-12deg);text-align:center;font:400 1.15rem/1.05 var(--f-display);box-shadow:0 14px 26px -10px rgba(0,0,0,.5)}
+.sello small{display:block;font:700 .625rem/1.2 var(--f-texto);letter-spacing:.14em;text-transform:uppercase;margin-top:.25rem}
+.azulejos{grid-column:1/-1;height:64px;margin:0 calc(-1*var(--margen));background:var(--azulejos);border-top:6px solid #E8542B}
+.sec--oscuro .plato strong{color:#F7B928}
+.pie-pagina{position:relative;padding-top:6.5rem}
+.pie-pagina::before{content:"";position:absolute;left:0;right:0;top:0;height:40px;background:var(--azulejos);background-size:40px 40px;border-bottom:4px solid #E8542B}
+.pie-pagina .marca__nombre{font-size:2rem}
+@media (max-width:56rem){.portada{grid-template-columns:1fr;padding-top:6rem}.arco{width:min(80%,20rem);margin:1rem 0 1.5rem}}
+

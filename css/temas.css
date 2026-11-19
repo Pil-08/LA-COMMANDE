@@ -1,0 +1,47 @@
+/* Estética de cada oficio en su página de sector. El color va en estilos.css ([data-tema]); aquí, la cabecera y los
+   detalles de cada oficio. Todo decorativo: no cambia ni un texto ni un enlace. */
+
+@font-face{font-family:"Young Serif";src:url(../fonts/young-serif-400.woff2) format("woff2");font-display:swap}
+
+[data-tema=belleza]{--tema-claro:#A9BCFF}
+[data-tema=otros]{--tema-display:"Young Serif",Georgia,serif;--tema-claro:#9FD8BC;--tema-toldo:#F3EEE2}
+
+[data-tema] .cabeza .silueta{display:none}
+
+/* Sobre fondo negro, el color del oficio no se leería: etiquetas, números y foco en claro */
+[data-tema] .sec--negra .tag,[data-tema] .sec--negra .pide b{color:var(--tema-claro)}
+[data-tema] .sec--negra :focus-visible,[data-tema] .cabeza :focus-visible,[data-tema] .contacto :focus-visible{outline-color:#fff}
+
+/* ── Peluquería y estética: una sola frase grande, con la pregunta en claro, el precio en una línea y los dos botones,
+      sobre azul noche con una luz suave. Sin etiquetas ni maqueta: en el móvil empujaban los botones hacia abajo, y
+      las demos ya salen en «Ejemplos». ── */
+[data-tema=belleza] .cabeza{background:radial-gradient(60% 80% at 96% 0%,rgba(91,120,255,.3),transparent 65%),linear-gradient(165deg,#101C3B,#13213B 55%,#0B142C)}
+[data-tema=belleza] .cabeza__caja{padding:0;border:0}
+[data-tema=belleza] .cabeza .comanda__cab{color:rgba(255,255,255,.55)}
+[data-tema=belleza] .cabeza .comanda__raya{opacity:.3}
+[data-tema=belleza] .cabeza__kicker{color:#A9BCFF;letter-spacing:.16em}
+[data-tema=belleza] .cabeza h1{max-width:none;font-weight:800;font-size:clamp(38px,6.4vw,92px);line-height:1;letter-spacing:-.035em;text-transform:none}
+[data-tema=belleza] .cabeza__remate{display:block;color:#A9BCFF}
+[data-tema=belleza] .cabeza__sub{max-width:none;font-size:clamp(13px,1.2vw,16px);color:rgba(255,255,255,.78)}
+[data-tema=belleza] .cabeza__precio{color:#fff;font-weight:700;white-space:nowrap}
+@media (max-width:600px){[data-tema=belleza] .cabeza h1{font-size:min(38px,9.4vw)}}
+/* En el móvil, botones a todo el ancho y un poco menos de aire arriba, para que la barra fija no tape el segundo */
+@media (max-width:480px){
+  [data-tema=belleza] .cabeza .comanda__raya{margin-bottom:18px}
+  [data-tema=belleza] .cabeza__botones{margin-top:16px}
+  [data-tema=belleza] .cabeza__botones .btn{flex:1 1 100%}
+}
+
+/* ── Otros negocios: la tienda de barrio. Titulares en Young Serif y un toldo a rayas con el borde festoneado. ── */
+[data-tema=otros] .cabeza h1,[data-tema=otros] .titulo{font-family:var(--tema-display);text-transform:none;letter-spacing:-.01em;line-height:1.02;font-weight:400}
+[data-tema=otros] .cabeza h1{font-size:clamp(34px,6.2vw,82px);max-width:20ch}
+[data-tema=otros] .cabeza{padding-top:calc(var(--cab) + 34px + clamp(26px,4vw,48px));background:linear-gradient(180deg,#1F5A45,#184A38)}
+[data-tema=otros] .cabeza::before{content:"";position:absolute;left:0;right:0;top:var(--cab);height:34px;
+  background:repeating-linear-gradient(90deg,var(--tema-toldo) 0 40px,#2E7D5F 40px 80px);
+  -webkit-mask:radial-gradient(20px at 20px 14px,#000 98%,transparent) 0 0/40px 100% repeat-x,linear-gradient(#000,#000) 0 0/100% 14px no-repeat;
+  mask:radial-gradient(20px at 20px 14px,#000 98%,transparent) 0 0/40px 100% repeat-x,linear-gradient(#000,#000) 0 0/100% 14px no-repeat;
+  filter:drop-shadow(0 4px 4px rgba(0,0,0,.25))}
+[data-tema=otros] .cabeza__caja{border-color:rgba(243,238,226,.55);border-radius:6px}
+[data-tema=otros] .cabeza .comanda__cab,[data-tema=otros] .cabeza__kicker{color:var(--tema-toldo)}
+[data-tema=otros] .sec--papel{background:radial-gradient(circle at 20px 0,#2E7D5F 0 15px,transparent 16px) 0 10px/40px 18px repeat-x,
+  repeating-linear-gradient(90deg,#F3EEE2 0 20px,#2E7D5F 20px 40px) top/100% 10px no-repeat,var(--papel)}

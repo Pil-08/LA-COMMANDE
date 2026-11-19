@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lasai · Demo de clínica de fisioterapia · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de una clínica de fisioterapia inventada en Gros, Donostia. Tratamientos con precio, cita por WhatsApp, horario con «abierto ahora» y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4EFE6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [[480, 840], [900, 1260]], "2": [[480, 840], [900, 1260]], "3": [[480, 840], [900, 1260]], "4": [[480, 840], [900, 1260]], "5": [[480, 840], [900, 1260]], "6": [[540, 780]], "0": []}, "mapa": {"q": "43.3236,-1.9772", "titulo": "Mapa de Google: Avenida de la Zurriola 20, Gros, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Physiotherapy", "name": "Lasai", "description": "Clínica de fisioterapia en Gros, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Avenida de la Zurriola 20", "postalCode": "20002", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3236, "longitude": -1.9772}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "15:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "15:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "15:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "15:00", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "13:00"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Lasai, volver al inicio"><span class="marca__nombre">Lasai</span><span class="marca__lugar">Fisioterapia · Gros</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#tratamientos">Tratamientos</a><a href="#casa">Cómo trabajamos</a><a href="#carta">Tarifas</a><a href="#horario">Horario</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#cita">Pedir cita</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#cita">Pedir cita</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <p class="kicker">Fisioterapia · Gros · Donostia</p>
+    <h1 id="titulo">Que vuelva a <em>no doler</em></h1>
+    <div class="portada__fila">
+      <div class="portada__texto">
+        <p class="portada__sub">Te escuchamos, buscamos el porqué y te damos ejercicios para casa. Sesiones de 45 minutos, siempre con la misma persona.</p>
+        <div class="botones"><a class="boton boton--acento" href="#cita">Pedir cita</a><a class="boton boton--linea" href="#tratamientos">¿Dónde te duele?</a></div>
+        <ul class="zonas" aria-label="Zonas que tratamos"><li><a href="#tratamientos">Espalda</a></li><li><a href="#tratamientos">Cuello</a></li><li><a href="#tratamientos">Hombro</a></li><li><a href="#tratamientos">Rodilla</a></li><li><a href="#tratamientos">Suelo pélvico</a></li></ul>
+      </div>
+      <figure class="calma">
+        <img src="img/portada.webp" width="1600" height="1000" alt="Manos trabajando la espalda de una persona tumbada en la camilla" fetchpriority="high">
+        <figcaption><b>Primera visita</b><span>50 min · 50 €</span><span class="estado" data-estado>Lunes a sábado · solo con cita</span></figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="sec sec--claro tarjetas" id="tratamientos" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">¿Dónde te duele?</p>
+      <h2 class="revela" id="t-tarjetas">Empezamos <em>por el porqué</em></h2>
+      <p class="entrada revela">Buscamos de dónde viene el dolor, lo tratamos y te enseñamos qué hacer en casa para que no vuelva.</p>
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Espalda y cuello</span><h3>Contracturas y lumbalgia</h3><p>Terapia manual, ejercicio y pautas para el trabajo de oficina.</p><strong class="tarjeta__precio">45&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Deporte</span><h3>Lesiones y vuelta a entrenar</h3><p>Esguinces, tendones y roturas, con un plan para volver sin miedo.</p><strong class="tarjeta__precio">50&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Suelo pélvico</span><h3>Embarazo, posparto y escapes</h3><p>En una sala privada, con tiempo y sin prisas.</p><strong class="tarjeta__precio">55&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">En grupo</span><h3>Ejercicio terapéutico</h3><p>Grupos de cuatro para fortalecer y moverte mejor.</p><strong class="tarjeta__precio">60&nbsp;€/mes</strong></li></ul>
+      
+    </div>
+  </section>
+
+  <section class="sec sec--papel casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Cómo trabajamos</p>
+        <h2 class="revela" id="t-casa">Te escuchamos <em>antes de tocarte</em></h2>
+        <p class="entrada revela">La primera visita es para entender qué te pasa: preguntas, pruebas y un plan claro con cuántas sesiones calculamos. Siempre te atiende la misma persona, de principio a fin.</p>
+        <ul class="datos revela"><li>Sesiones de 45 minutos</li><li>Siempre la misma persona</li><li>Informe para tu médico</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Fisioterapeuta ayudando a estirar la cadera a una persona sobre una toalla"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Dos manos sosteniendo otra con suavidad"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro reservas" id="cita" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Cita</p>
+        <h2 class="revela" id="t-reservas">Pide cita <em>hoy</em></h2>
+        <p class="entrada revela">Cuéntanos dónde te duele y desde cuándo. Te damos la primera hora libre, a menudo esa misma semana.</p>
+        <ol class="pasos revela"><li><p><b>Dinos qué te pasa</b><span>Dónde te duele y desde cuándo.</span></p></li><li><p><b>Te damos hora</b><span>Mañana o tarde, como mejor te venga.</span></p></li><li><p><b>Ven con ropa cómoda</b><span>Y con los informes, si los tienes.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20de%20fisioterapia"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Pedir cita por WhatsApp</a>
+          <a class="boton boton--linea" href="#cita" data-abre="aviso">Reservar online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Vendaje neuromuscular morado en la espalda y manos de fisioterapeuta encima"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--claro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Tarifas</p>
+      <h2 class="revela" id="t-carta">Precios <em>sin sorpresas</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Sesiones</h3><ul><li class="plato"><b>Primera visita</b><span>Valoración y tratamiento, 50 min</span><strong>50&nbsp;€</strong></li><li class="plato"><b>Sesión de espalda y cuello</b><span>45 minutos</span><strong>45&nbsp;€</strong></li><li class="plato"><b>Sesión de deporte</b><span>45 minutos, con readaptación</span><strong>50&nbsp;€</strong></li><li class="plato"><b>Sesión de suelo pélvico</b><span>45 minutos, en sala privada</span><strong>55&nbsp;€</strong></li><li class="plato"><b>Bono de cinco sesiones</b><span>De espalda y cuello, sin caducidad</span><strong>200&nbsp;€</strong></li><li class="plato"><b>Ejercicio terapéutico en grupo</b><span>Grupos de cuatro, dos días por semana</span><strong>60&nbsp;€/mes</strong></li></ul></div><div class="grupo revela"><h3>Técnicas</h3><ul><li class="plato"><b>Punción seca</b><span>Si la necesitas, dentro de la sesión</span><strong>incluida</strong></li><li class="plato"><b>Vendaje neuromuscular</b><strong>10&nbsp;€</strong></li><li class="plato"><b>Ondas de choque</b><span>Por sesión</span><strong>40&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Seguros</h3><ul><li class="plato"><b>Mutuas y aseguradoras</b><span>Pregúntanos por la tuya</span><strong>consulta</strong></li><li class="plato"><b>Factura para tu seguro</b><span>Si te reembolsan</span><strong>incluida</strong></li></ul></div></div>
+      <p class="carta__nota">Tarifas de ejemplo: en tu web, las tuyas y las aseguradoras con las que trabajas.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--papel galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">La clínica</p>
+      <h2 class="revela" id="t-galeria">Manos que <em>saben</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Fisioterapeuta trabajando el hombro de una paciente sentada"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Ejercicio con mancuernas rosas guiado por un fisioterapeuta"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos dando un masaje en la espalda con aceite"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Pistola de masaje sobre el hombro de una persona"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Fisioterapeuta corrigiendo un ejercicio con una banda elástica verde"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Lunes a sábado · solo con cita</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Lasai</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>8:00–14:00 · 15:00–21:00</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>8:00–14:00 · 15:00–21:00</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>8:00–14:00 · 15:00–21:00</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>8:00–14:00 · 15:00–21:00</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>8:00–14:00 · 15:00–21:00</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>9:00–13:00</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En Gros, <em>frente a la Zurriola</em></h2>
+        <address class="direccion revela">Avenida de la Zurriola 20<br>20002 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3236%2C-1.9772">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3236,-1.9772&amp;q=Lasai">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3236%2C-1.9772&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Lasai</span><span class="marca__lugar">Fisioterapia · Gros</span></p>
+      <p>Fisioterapia en Gros, Donostia</p>
+    </div>
+    <p>Avenida de la Zurriola 20<br>20002 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20de%20fisioterapia">Pedir cita por WhatsApp</a></p>
+    <p>Lunes: 8:00–14:00 · 15:00–21:00<br>Martes: 8:00–14:00 · 15:00–21:00<br>Miércoles: 8:00–14:00 · 15:00–21:00<br>Jueves: 8:00–14:00 · 15:00–21:00<br>Viernes: 8:00–14:00 · 15:00–21:00<br>Sábado: 9:00–13:00<br>Domingo: Cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/otros-negocios/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría tu agenda: el paciente elige día y hora y recibe un recordatorio la víspera.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/otros-negocios/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>

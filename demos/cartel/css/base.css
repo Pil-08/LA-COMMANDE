@@ -1,0 +1,172 @@
+/* Base común de las demos de hostelería renovadas (taberna, café, coctelería, asador, ramen).
+   Solo estructura: cabecera, menú, secciones, carta, reservas, galería, horario, mapa, pie y aviso.
+   La piel de cada demo (css/estilos.css) pone las variables, la portada y su carácter. */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+:root{--margen:clamp(1.25rem,4vw,3rem);--ancho:76rem;--curva:cubic-bezier(.2,.7,.2,1)}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--fondo);color:var(--texto);font:400 1.0625rem/1.6 var(--f-texto);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,svg{display:block;max-width:100%;height:auto}
+a{color:inherit}
+ul,ol{list-style:none}
+:focus-visible{outline:2px solid var(--foco,currentColor);outline-offset:3px}
+.solo-lectores{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.salto{position:fixed;left:1rem;top:1rem;z-index:100;padding:.75rem 1rem;background:#fff;color:#111;transform:translateY(-200%)}
+.salto:focus{transform:none}
+.envoltura{width:min(100% - 2*var(--margen),var(--ancho));margin-inline:auto}
+
+.boton{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:48px;padding:0 1.4rem;border:2px solid currentColor;border-radius:var(--radio-boton,999px);
+  background:none;color:inherit;cursor:pointer;font:var(--boton-fuente,600 .9375rem/1.1 var(--f-texto));letter-spacing:var(--boton-tracking,.02em);text-transform:var(--boton-mayus,none);
+  text-decoration:none;text-align:center;white-space:nowrap;transition:background-color .25s,color .25s,border-color .25s,filter .25s}
+.boton svg{width:18px;height:18px;flex:none}
+.boton--acento{background:var(--acento);border-color:var(--acento);color:var(--sobre-acento)}
+.boton--acento:hover{filter:brightness(1.1)}
+.boton--linea:hover{background:rgba(127,127,127,.14)}
+.botones{display:flex;flex-wrap:wrap;gap:.75rem}
+
+/* Cabecera: transparente sobre la portada, sólida al bajar */
+.cabecera{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.75rem;padding:0 var(--margen);color:var(--cab-texto);transition:background-color .35s,box-shadow .35s}
+.cabecera--solida{background:var(--cab-solida);box-shadow:0 1px 0 rgba(127,127,127,.25)}
+.marca{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.menu{display:flex;align-items:center;gap:1.6rem;font:var(--menu-fuente,600 .875rem/1 var(--f-texto));letter-spacing:var(--menu-tracking,.04em);text-transform:var(--menu-mayus,none)}
+.menu a:not(.boton){min-width:44px;text-align:center;text-decoration:none;padding:1rem 0;border-bottom:2px solid transparent}
+.menu a:not(.boton):hover{border-bottom-color:currentColor}
+.menu__cta{display:none}
+.cabecera__cta{min-height:44px;padding:0 1.1rem}
+.menu-boton{display:none;align-items:center;gap:.6rem;min-height:44px;padding:0 .25rem;background:none;border:0;color:inherit;font:var(--menu-fuente,600 .875rem/1 var(--f-texto));letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.menu-boton span,.menu-boton span::before{display:block;width:22px;height:2px;background:currentColor;transition:transform .3s}
+.menu-boton span{position:relative}
+.menu-boton span::before{content:"";position:absolute;top:6px}
+@media (max-width:61.99rem){
+  .menu-boton{display:inline-flex}
+  .cabecera__cta{display:none}
+  .menu{position:fixed;inset:4.75rem 0 0;flex-direction:column;align-items:stretch;gap:0;padding:1.5rem var(--margen) 3rem;background:var(--cab-solida);font-size:1.125rem;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}
+  .menu a:not(.boton){padding:1rem 0;border-bottom:1px solid rgba(127,127,127,.3)}
+  .menu__cta{display:inline-flex;margin-top:2rem}
+  .cabecera--menu{background:var(--cab-solida)}
+  .cabecera--menu .menu{visibility:visible;opacity:1}
+  .cabecera--menu .menu-boton span{transform:translateY(3px) rotate(45deg)}
+  .cabecera--menu .menu-boton span::before{transform:translateY(-6px) rotate(-90deg)}
+}
+
+/* Secciones */
+.sec{padding:clamp(4.5rem,9vw,7rem) 0}
+.sec--claro{background:var(--fondo);color:var(--texto)}
+.sec--papel{background:var(--papel,var(--fondo));color:var(--texto)}
+.sec--oscuro{background:var(--oscuro);color:var(--sobre-oscuro);--suave:var(--suave-oscuro);--linea:var(--linea-oscura);--foco:var(--sobre-oscuro)}
+.sec--acento{background:var(--fondo-acento,var(--acento));color:var(--sobre-fondo-acento,var(--sobre-acento))}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font:var(--kicker-fuente,700 .75rem/1.2 var(--f-dato));letter-spacing:.18em;text-transform:uppercase;color:var(--kicker,var(--acento-texto,var(--acento)))}
+.kicker::before{content:"";width:1.6rem;height:2px;background:currentColor}
+.sec--oscuro .kicker{color:var(--kicker-oscuro,var(--acento))}
+h2{font:var(--h2-fuente,400 clamp(2.4rem,1.7rem + 3.2vw,4.6rem)/1.02 var(--f-display));text-transform:var(--mayus-display,none);letter-spacing:var(--tracking-display,-.01em);margin:1rem 0 1.25rem;text-wrap:balance}
+h2 em{font-style:var(--em-estilo,italic);color:var(--em-color,var(--acento-texto,var(--acento)))}
+.sec--oscuro h2 em{color:var(--em-oscuro,var(--acento))}
+.entrada{max-width:40rem;font-size:clamp(1.0625rem,1rem + .3vw,1.1875rem);color:var(--suave)}
+.credito{margin-top:1.5rem;font:400 .75rem/1.4 var(--f-dato);color:var(--suave)}
+
+/* La casa */
+.casa .envoltura{display:grid;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+@media (min-width:56rem){.casa .envoltura{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}}
+.casa__fotos{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+.casa__fotos img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radio-foto,0)}
+.casa__fotos img:nth-child(2){margin-top:3rem}
+.datos{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.75rem}
+.datos li{display:inline-flex;align-items:center;min-height:40px;padding:0 1rem;border:1.5px solid var(--linea-fuerte,currentColor);border-radius:var(--radio-boton,999px);font:var(--dato-fuente,600 .875rem/1.2 var(--f-texto))}
+
+/* Carta en texto */
+.carta__grupos{display:grid;gap:2.75rem 3.5rem;margin-top:2.5rem}
+@media (min-width:56rem){.carta__grupos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* con un número impar de grupos, el último ocupa todo el ancho y reparte sus platos en dos columnas: no queda un hueco a la derecha */
+  .carta__grupos>.grupo:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}
+  .carta__grupos>.grupo:last-child:nth-child(odd):not(:first-child) ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:3.5rem}}
+.grupo h3{font:var(--h3-fuente,400 clamp(1.6rem,1.3rem + 1vw,2.1rem)/1.1 var(--f-display));text-transform:var(--mayus-display,none);padding-bottom:.6rem;margin-bottom:.3rem;border-bottom:2px solid currentColor}
+.plato{display:grid;grid-template-columns:1fr auto;gap:.1rem 1rem;align-items:baseline;padding:.7rem 0;border-bottom:1px solid var(--linea)}
+.plato b{font-weight:600}
+.plato span{grid-column:1;font-size:.9375rem;color:var(--suave)}
+.plato strong{grid-row:1;grid-column:2;font:var(--precio-fuente,600 1rem/1.2 var(--f-texto));white-space:nowrap}
+.carta__nota{margin-top:2.25rem;font-size:.9375rem;color:var(--suave)}
+
+/* Reservas o pedidos */
+.reservas .envoltura{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (min-width:56rem){.reservas .envoltura{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}}
+.pasos{display:grid;gap:1rem;margin:2rem 0;counter-reset:paso}
+.pasos li{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem;align-items:start;counter-increment:paso}
+.pasos li::before{content:counter(paso);display:grid;place-items:center;width:2.6rem;height:2.6rem;border-radius:50%;border:2px solid currentColor;font:var(--paso-fuente,600 1.1rem/1 var(--f-display))}
+.pasos b{display:block;font-weight:600}
+.pasos span{color:var(--suave)}
+.reservas figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radio-foto,0)}
+
+/* Tarjetas: ofertas, cursos, tratamientos, rituales, estilos, equipo… (la piel decide su forma) */
+.tarjetas__lista{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1.25rem;margin-top:2.25rem}
+.tarjeta{display:flex;flex-direction:column;gap:.55rem;padding:1.6rem;border:1.5px solid var(--linea-fuerte,var(--linea));border-radius:var(--radio-tarjeta,var(--radio-foto,0));background:var(--tarjeta-fondo,transparent)}
+.tarjeta__etiqueta{font:var(--kicker-fuente,700 .75rem/1.2 var(--f-dato));letter-spacing:.16em;text-transform:uppercase;color:var(--kicker,var(--acento-texto,var(--acento)))}
+.sec--oscuro .tarjeta__etiqueta{color:var(--kicker-oscuro,var(--acento))}
+.tarjeta h3{font:var(--h3-fuente,400 clamp(1.6rem,1.3rem + 1vw,2.1rem)/1.1 var(--f-display));text-transform:var(--mayus-display,none)}
+.tarjeta p{color:var(--suave)}
+.tarjeta__precio{margin-top:auto;padding-top:.8rem;font:var(--precio-fuente,600 1rem/1.2 var(--f-texto))}
+/* Movimiento lento de una foto de fondo, como un plano de vídeo (nada si se pide menos movimiento: regla del final) */
+@keyframes lento{from{transform:scale(1.03) translate3d(0,0,0)}to{transform:scale(1.13) translate3d(-1.6%,-1.2%,0)}}
+.pausa{display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:0 1rem;border:1px solid currentColor;border-radius:999px;background:rgba(0,0,0,.28);color:inherit;
+  font:600 .75rem/1 var(--f-texto);letter-spacing:.06em;cursor:pointer}
+.pausa::before{content:"";flex:none;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor;box-sizing:border-box}
+.quieto .pausa::before{width:0;height:0;border:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid currentColor}
+.quieto .portada__foto,.quieto .portada::after{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.pausa{display:none}}
+
+/* Galería */
+.tira{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(13rem,1fr);gap:1rem;margin-top:2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem}
+.tira li{scroll-snap-align:start}
+.tira img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radio-foto,0)}
+@media (min-width:62rem){.tira{grid-auto-flow:row;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}}
+
+/* Horario y cómo llegar */
+.visita .envoltura{display:grid;gap:4rem}
+@media (min-width:56rem){.visita .envoltura{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+.estado{display:inline-flex;align-items:center;gap:.5rem;font-weight:600}
+.estado::before{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;opacity:.45;flex:none}
+.estado--abierto::before{background:#2BA55B;opacity:1;box-shadow:0 0 0 4px rgba(43,165,91,.22)}
+.horario{width:100%;border-collapse:collapse;margin-top:1.5rem}
+.horario th,.horario td{padding:.8rem .2rem;border-bottom:1px solid var(--linea);text-align:left;font-weight:400}
+.horario td{text-align:right;font-variant-numeric:tabular-nums}
+.horario tr[aria-current]{background:var(--resalte,rgba(127,127,127,.14))}
+.horario tr[aria-current] th,.horario tr[aria-current] td{font-weight:700}
+.direccion{font-style:normal;font-size:1.125rem;margin:1rem 0 1.5rem}
+.mapas{display:flex;flex-wrap:wrap;gap:.75rem}
+.mapa{position:relative;display:grid;place-items:center;min-height:17rem;margin-top:2rem;border:1px solid var(--linea);border-radius:var(--radio-foto,0);overflow:hidden;
+  background:repeating-linear-gradient(0deg,transparent 0 34px,rgba(127,127,127,.12) 34px 35px),repeating-linear-gradient(90deg,transparent 0 34px,rgba(127,127,127,.12) 34px 35px)}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa__aviso{display:grid;justify-items:center;gap:.75rem;padding:1.5rem;text-align:center;font-size:.875rem;color:var(--suave)}
+.cerca{margin-top:1.5rem;font-size:.9375rem;color:var(--suave)}
+
+/* Pie */
+.pie-pagina{padding:4.5rem 0 6rem;background:var(--pie-fondo,var(--oscuro));color:var(--pie-texto,var(--sobre-oscuro));font-size:.9375rem}
+.pie-pagina .envoltura{display:grid;gap:2rem}
+@media (min-width:48rem){.pie-pagina .envoltura{grid-template-columns:1.2fr 1fr 1fr}}
+.pie-pagina a{text-underline-offset:3px}
+.pie-pagina__demo{grid-column:1/-1;padding-top:1.5rem;border-top:1px solid rgba(127,127,127,.35);font-size:.8125rem;opacity:.8}
+
+/* Aviso de demo */
+.aviso{width:calc(100% - 2.5rem);max-width:28rem;margin:auto;padding:2rem;border:0;border-radius:12px;background:#fff;color:#141414;box-shadow:0 30px 60px -20px rgba(0,0,0,.5)}
+.aviso::backdrop{background:rgba(0,0,0,.55)}
+.aviso h2{font-size:2rem;margin:0 0 .75rem}
+.aviso p{color:#555;margin-bottom:1.5rem}
+.aviso .boton--acento{background:#141414;border-color:#141414;color:#fff}
+
+/* Aparición suave: solo con JavaScript, y nada si se pide menos movimiento */
+.js .revela{opacity:0;transform:translateY(18px);transition:opacity .8s var(--curva),transform .8s var(--curva)}
+.js .revela.visible,.todo-visible .revela{opacity:1;transform:none}
+
+/* Distintivo de demo (no sale en las capturas: #shot) */
+.demo{position:fixed;right:14px;bottom:14px;z-index:50;display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;background:#111;color:#fff;
+  font:700 11px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.demo:hover{background:#C4140F}
+.demo{transition:opacity .3s,transform .3s,visibility .3s}
+@media (max-width:36rem){.demo--oculta{opacity:0;visibility:hidden;transform:translateY(10px)}}   /* en el móvil no tapa la portada: aparece al bajar */
+.demo:focus-visible{outline:2px solid #fff;box-shadow:0 0 0 7px #14110e}
+.shot .demo{display:none}
+@media (max-width:36rem){
+  .demo{right:auto;left:14px}
+  .demo__marca{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .botones .boton{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}

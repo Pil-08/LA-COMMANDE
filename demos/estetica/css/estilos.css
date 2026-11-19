@@ -1,0 +1,42 @@
+/*    Nácar · estética avanzada en el Centro. Marfil, champán y café; Cormorant Garamond ligera y Figtree.
+   La portada es una vitrina: mucho aire y la gota dorada en un marco fino que flota despacio. */
+:root{--fondo:#F7F2EA;--papel:#FFFCF7;--texto:#2B2420;--suave:#6B5E55;--acento:#2B2420;--sobre-acento:#F7F2EA;--acento-texto:#7A5C42;--oscuro:#2B2420;--sobre-oscuro:#F7F2EA;--suave-oscuro:#CFC3B6;
+  --linea:rgba(43,36,32,.14);--linea-oscura:rgba(247,242,234,.18);--f-display:"Cormorant Garamond",Georgia,serif;--f-texto:"Figtree",system-ui,sans-serif;--f-dato:"Figtree",system-ui,sans-serif;
+  --h2-fuente:300 clamp(2.8rem,2rem + 3.6vw,5.4rem)/1 var(--f-display);--h3-fuente:400 clamp(1.7rem,1.4rem + 1vw,2.3rem)/1.05 var(--f-display);--tracking-display:-.01em;
+  --cab-texto:#2B2420;--cab-solida:#F7F2EA;--radio-boton:999px;--boton-fuente:600 .8125rem/1.1 var(--f-texto);--boton-tracking:.1em;--boton-mayus:uppercase;
+  --kicker-fuente:600 .6875rem/1.2 var(--f-texto);--kicker-oscuro:#D9BFA0;--em-oscuro:#D9BFA0;--resalte:rgba(217,191,160,.25);--menu-fuente:600 .75rem/1 var(--f-texto);--menu-tracking:.14em;--menu-mayus:uppercase;
+  --precio-fuente:500 1.2rem/1 var(--f-display);--paso-fuente:400 1.4rem/1 var(--f-display);--radio-foto:2px;--pie-fondo:#2B2420}
+.marca{flex-direction:column;align-items:flex-start;justify-content:center}
+.marca__nombre{font:400 2rem/.9 var(--f-display);letter-spacing:.04em}
+.marca__lugar{font:600 .5625rem/1 var(--f-texto);letter-spacing:.32em;text-transform:uppercase;color:#7A5C42;margin-top:.35rem}
+.portada{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(2rem,6vw,7rem);min-height:100vh;min-height:100svh;padding:7rem var(--margen) 4rem;background:radial-gradient(60% 70% at 80% 40%,#FFFCF7,transparent 70%),#F7F2EA}
+.portada h1{font:300 clamp(3.6rem,8vw,8rem)/.92 var(--f-display);letter-spacing:-.02em;margin:1.25rem 0 1.5rem}
+.portada h1 em{font-style:italic;color:#7A5C42}
+.portada__sub{max-width:29rem;font-size:1.0625rem;color:#5E524A}
+.portada .botones{margin:2rem 0 1.25rem}
+.portada .estado{font-size:.875rem;color:#5E524A}
+.joya{position:relative;justify-self:center;width:min(100%,26rem);margin:1.5rem}
+.joya img{width:100%;aspect-ratio:3/4;object-fit:cover;outline:1px solid #C9AE8C;outline-offset:14px}
+.joya figcaption{position:absolute;right:-2.2rem;bottom:2.5rem;padding:1rem 1.3rem;background:#FFFCF7;box-shadow:0 20px 40px -24px rgba(43,36,32,.45);font:italic 400 1.4rem/1.1 var(--f-display)}
+.joya figcaption span{display:block;margin-top:.35rem;font:600 .6875rem/1.2 var(--f-texto);font-style:normal;letter-spacing:.18em;text-transform:uppercase;color:#7A5C42}
+/* La casa: la foto grande y la vela encima, con marco de marfil */
+.casa__fotos{position:relative;display:block;padding:0 0 4rem 3rem}
+.casa__fotos img:first-child{width:100%}
+.casa__fotos img:nth-child(2){position:absolute;left:0;bottom:0;width:42%;margin:0;border:10px solid var(--fondo)}
+/* Rituales: una carta de spa, filete a filete */
+.tarjetas__lista{grid-template-columns:1fr;gap:0;max-width:60rem;border-top:1px solid var(--linea)}
+.tarjeta{display:grid;grid-template-columns:7.5rem minmax(0,1fr) auto;column-gap:2rem;row-gap:.35rem;align-items:baseline;padding:1.8rem 0;border:0;border-bottom:1px solid var(--linea);border-radius:0}
+.tarjeta__etiqueta{grid-column:1;grid-row:1}
+.tarjeta h3{grid-column:2;grid-row:1;font-size:clamp(2rem,1.6rem + 1.2vw,2.8rem)}
+.tarjeta p{grid-column:2;grid-row:2;max-width:34rem}
+.tarjeta__precio{grid-column:3;grid-row:1;margin:0;padding:0;font:italic 400 1.35rem/1 var(--f-display);white-space:nowrap}
+.sec--oscuro .plato strong{color:#D9BFA0}
+.sec--oscuro .boton--acento{background:#D9BFA0;border-color:#D9BFA0;color:#2B2420}
+.reservas figure img{outline:1px solid #C9AE8C;outline-offset:12px}
+.pie-pagina .marca__lugar{color:#D9BFA0}
+/* Galería: una tira que se desliza, como un catálogo */
+.galeria .tira{grid-auto-columns:minmax(16rem,22rem);overflow-x:auto;padding-bottom:1rem}
+@media (min-width:62rem){.galeria .tira{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:calc((100% - 3rem) / 3.35);overflow-x:auto}}   /* tres enteras y un buen trozo de la cuarta: se ve que sigue */
+@media (max-width:56rem){.portada{grid-template-columns:1fr;padding-top:6.5rem}.joya{width:min(78%,19rem)}.joya figcaption{right:-1.4rem}}
+@media (max-width:40rem){.tarjeta{grid-template-columns:1fr}.tarjeta>*{grid-column:1!important;grid-row:auto!important}.casa__fotos{padding-left:1.5rem}}
+

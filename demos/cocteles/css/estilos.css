@@ -1,0 +1,31 @@
+/*    Coral · coctelería de barrio en el Centro. Rosa, azul profundo y coral; Bodoni Moda e Inter Tight.
+   El cóctel dentro de un arco azul; los arcos vuelven en las fotos de la casa. */
+:root{--fondo:#F4DCD0;--papel:#FFF8F3;--texto:#1D2B44;--suave:#4A5670;--acento:#123E73;--sobre-acento:#FFF8F3;--acento-texto:#B23A24;--oscuro:#123E73;--sobre-oscuro:#FFF8F3;--suave-oscuro:#C9D6EA;
+  --linea:rgba(18,62,115,.2);--linea-oscura:rgba(255,248,243,.25);--f-display:"Bodoni Moda",Georgia,serif;--f-texto:"Inter Tight",system-ui,sans-serif;--f-dato:"Inter Tight",system-ui,sans-serif;
+  --cab-texto:#123E73;--cab-solida:#F4DCD0;--radio-foto:0;--em-oscuro:#F4A48F;--kicker-oscuro:#F4A48F;--resalte:rgba(228,87,61,.18);--pie-fondo:#0E2F57}
+.marca{font:italic 500 1.75rem/1 var(--f-display)}
+.portada{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);grid-template-rows:1fr auto;align-items:center;gap:1.5rem clamp(2rem,6vw,6rem);
+  min-height:100vh;min-height:100svh;padding:6.25rem var(--margen) 0;background:#F4DCD0}
+.arco{justify-self:center;width:min(100%,26rem);aspect-ratio:3/4;border-radius:16rem 16rem 0 0;padding:14px 14px 0;background:#123E73;box-shadow:0 40px 60px -35px rgba(18,62,115,.65)}
+.arco img{width:100%;height:100%;object-fit:cover;border-radius:15rem 15rem 0 0}
+.portada h1{font:400 clamp(3.2rem,6.6vw,6.4rem)/.98 var(--f-display);letter-spacing:-.015em;color:#123E73;margin:1rem 0 1.25rem}
+.portada h1 em{color:#B23A24}
+.portada__sub{max-width:31rem;font-size:1.125rem;color:#33415C}
+.hora{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.4rem;padding:.55rem .95rem;border-radius:999px;background:#FFF8F3;font-weight:600;font-size:.875rem;color:#123E73}
+.hora i{width:8px;height:8px;border-radius:50%;background:#E4573D}
+.portada .botones{margin-top:1.4rem}
+.portada__pie{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:.5rem 3rem;margin:0 calc(-1*var(--margen));padding:1rem var(--margen);border-top:6px solid #123E73;background:#FFF8F3;font-size:.875rem;font-weight:600;color:#123E73}
+.casa__fotos img{border-radius:12rem 12rem 0 0}
+.tira img{border-radius:9rem 9rem 0 0}
+.reservas figure img{border-radius:14rem 14rem 0 0}
+.sec--oscuro .plato strong{color:#F4A48F}
+.sec--oscuro .boton--acento{background:#F4A48F;border-color:#F4A48F;color:#123E73}
+/* La casa: un arco grande y la segunda foto en un círculo, como un posavasos */
+.casa__fotos{position:relative;display:block;padding-bottom:2.5rem}
+.casa__fotos img:first-child{width:78%;margin-left:auto}
+.casa__fotos img:nth-child(2){position:absolute;left:0;bottom:0;width:44%;margin:0;aspect-ratio:1;border-radius:50%;border:10px solid var(--papel)}
+/* La carta, centrada en una columna, como una carta de cócteles; la galería, arcos grandes en dos filas */
+.carta .envoltura{text-align:center}.carta__grupos{grid-template-columns:1fr!important;max-width:44rem;margin-inline:auto;text-align:left}.carta .grupo h3{text-align:center}
+@media (min-width:62rem){.galeria .tira{display:flex;flex-wrap:wrap;justify-content:center;gap:1.75rem}.galeria .tira li{width:calc(33.333% - 1.2rem)}}
+@media (max-width:56rem){.portada{grid-template-columns:1fr;padding-top:6rem}.arco{width:min(72%,18rem);order:2;margin:.5rem 0 1rem}.portada__pie{order:3}}
+

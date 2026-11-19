@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Amu · Demo de pescadería · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de una pescadería inventada en El Antiguo, Donostia. Género del día con precio por kilo, encargos por WhatsApp, horario y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0E1A22">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/puerto.webp" as="image" type="image/webp">
+<link rel="preload" href="fonts/league-gothic-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={horario:{0:[],1:[],2:[[480,840],[1020,1200]],3:[[480,840],[1020,1200]],4:[[480,840],[1020,1200]],5:[[480,840],[1020,1200]],6:[[480,840]]},mapa:{q:'43.3118,-2.0028',titulo:'Mapa de Google: Calle Matia 14, El Antiguo, Donostia (ejemplo)'}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Amu","description":"Pescadería en El Antiguo, Donostia (demo de La Commande)","address":{"@type":"PostalAddress","streetAddress":"Calle Matia 14","postalCode":"20008","addressLocality":"Donostia / San Sebastián","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":43.3118,"longitude":-2.0028},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"17:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Amu, pescadería: volver al inicio"><b>AMU</b><span>Pescadería</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#genero">Género de hoy</a>
+    <a href="#preparar">Te lo preparamos</a>
+    <a href="#encargos">Encargos</a>
+    <a href="#horario">Horario</a>
+    <a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--blanco menu__encargo" href="#encargos">Encargar</a>
+  </nav>
+  <a class="boton boton--blanco cabecera__encargo" href="#encargos">Encargar</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <img class="portada__foto" src="img/puerto.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    <div class="bloque">
+      <h1 class="nombre" id="titulo"><span aria-hidden="true">AMU</span><span class="solo-lectores">Amu, pescadería en El Antiguo, Donostia</span></h1>
+      <div>
+        <p class="lema">Del puerto a tu cocina, el mismo día.</p>
+        <p class="chip"><i aria-hidden="true"></i>Desembarcado hoy · 05:40</p>
+        <p class="texto">Pescado de anzuelo y de bajura del Cantábrico. Te lo limpiamos, lo fileteamos y te decimos cómo hacerlo.</p>
+        <div class="botones">
+          <a class="boton boton--blanco" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20encargo">Encargar por WhatsApp</a>
+          <a class="boton boton--linea" href="#genero">Género de hoy</a>
+        </div>
+      </div>
+    </div>
+    <div class="portada__pie"><span>Calle Matia 14 · El Antiguo</span><span class="estado" data-estado>Mar a vie, 8:00–14:00 y 17:00–20:00 · Sáb, 8:00–14:00</span><button class="pausa" type="button" data-pausa aria-pressed="false"><span>Pausar el movimiento</span></button></div>
+  </section>
+
+  <section class="genero" id="genero" aria-labelledby="t-genero">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Género de hoy</p>
+        <h2 class="revela" id="t-genero">Lo que ha entrado hoy</h2>
+        <p class="entrada revela">Lo que hay en el mostrador, con su precio por kilo. Cambia cada día según lo que llega a la lonja.</p>
+        <ul class="lista-genero revela">
+          <li><b>Merluza de anzuelo</b><span>Cantábrico · palangre</span><strong>24,90&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Besugo</b><span>Cantábrico · anzuelo</span><strong>32,00&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Txitxarro</b><span>Cantábrico · cerco</span><strong>7,90&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Rape</b><span>Cantábrico · enmalle</span><strong>22,90&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Chipirón de anzuelo</b><span>Cantábrico · potera</span><strong>26,00&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Lubina salvaje</b><span>Cantábrico · caña</span><strong>28,50&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Almeja fina</b><span>Galicia · marisqueo a pie</span><strong>29,90&nbsp;€<small>/kg</small></strong></li>
+          <li><b>Kokotxas de merluza</b><span>Cantábrico · palangre</span><strong>45,00&nbsp;€<small>/kg</small></strong></li>
+        </ul>
+        <p class="nota">Género y precios de ejemplo: en tu web, los tuyos, al día.</p>
+      </div>
+      <div class="revela" style="display:grid">
+        <article class="etiqueta" aria-label="Etiqueta de la pieza del día">
+          <div class="etiqueta__cab"><span>Amu · trazabilidad</span><span>Nº 0412</span></div>
+          <dl>
+            <dt>Especie</dt><dd>Merluza</dd>
+            <dt>Nombre científico</dt><dd><i>Merluccius merluccius</i></dd>
+            <dt>Zona</dt><dd>FAO 27 · VIII c · Cantábrico</dd>
+            <dt>Arte</dt><dd>Anzuelo · palangre</dd>
+            <dt>Desembarque</dt><dd>Hoy, 05:40</dd>
+            <dt>Precio</dt><dd class="precio">24,90&nbsp;€/kg</dd>
+          </dl>
+          <div class="etiqueta__pie"><span class="barras" aria-hidden="true"></span><span>Fresco · de 0 a 4&nbsp;°C</span></div>
+          <p class="sello" aria-hidden="true"><span>Del<br>día<small>LONJA 05:40</small></span></p>
+        </article>
+        <p class="etiqueta__leyenda">Cada pieza lleva su etiqueta: de dónde viene, cómo se pescó y a qué hora llegó.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="preparar oscuro" id="preparar" aria-labelledby="t-preparar">
+    <div class="envoltura">
+      <figure class="revela"><img src="img/preparar.webp" width="960" height="1200" loading="lazy" decoding="async" alt="Tres caballas enteras y brillantes sobre una superficie gris"></figure>
+      <div>
+        <p class="kicker revela">En el mostrador</p>
+        <h2 class="revela" id="t-preparar">Te lo dejamos listo para cocinar</h2>
+        <p class="entrada revela">Dinos cómo lo vas a hacer y lo preparamos al momento.</p>
+        <ul class="cortes revela">
+          <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 24c8-9 22-11 32-3l6-5v16l-6-5c-10 8-24 6-32-3Z"/><circle cx="13" cy="22" r="1.5"/><path d="M20 19c2 3 2 7 0 10M26 18c2 4 2 8 0 12M32 19c2 3 2 7 0 10"/></svg><p><b>Limpio y sin escamas</b><span>Entero, listo para la parrilla o el horno.</span></p></li>
+          <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 24c8-9 22-11 32-3l6-5v16l-6-5c-10 8-24 6-32-3Z"/><path d="M10 24h28" stroke-dasharray="3 3"/></svg><p><b>En lomos o filetes</b><span>Sin espinas, para la plancha o en salsa.</span></p></li>
+          <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 24c8-9 22-11 32-3l6-5v16l-6-5c-10 8-24 6-32-3Z"/><path d="M17 16v16M24 15v18M31 16v16" stroke-dasharray="3 3"/></svg><p><b>En rodajas</b><span>Del grosor que nos digas, para la cazuela.</span></p></li>
+          <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 8c-8 4-14 10-16 16 2 6 8 12 16 16 8-4 14-10 16-16-2-6-8-12-16-16Z"/><path d="M24 8v32"/></svg><p><b>Abierto a la espalda</b><span>Como el besugo o la lubina a la donostiarra.</span></p></li>
+          <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="20" width="36" height="16" rx="4"/><path d="M12 28c5-5 13-6 19-2l4-3v9l-4-3c-6 4-14 3-19-1Z"/><path d="M16 14c0-2 2-2 2-4M24 14c0-2 2-2 2-4M32 14c0-2 2-2 2-4"/></svg><p><b>Para el horno</b><span>Limpio, con sus cortes y la sal justa.</span></p></li>
+          <li><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 24h30M38 24l5-5M38 24l5 5"/><path d="M14 18v12M20 17v14M26 17v14M32 18v12"/><circle cx="9" cy="24" r="2"/></svg><p><b>Sin espinas ni piel</b><span>Para los pequeños de casa.</span></p></li>
+        </ul>
+        <p class="credito">Fotos de Unsplash</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="encargos" id="encargos" aria-labelledby="t-encargos">
+    <div class="envoltura">
+      <p class="kicker revela">Encargos</p>
+      <h2 class="revela" id="t-encargos">Encárgalo y recógelo sin esperar</h2>
+      <p class="entrada revela">Si vas con prisa o quieres asegurarte una pieza, déjalo encargado. Te lo tenemos preparado y pesado.</p>
+      <ol class="pasos revela">
+        <li><b>Escríbenos</b><span>Por WhatsApp: qué quieres, cuánto y cómo te lo preparamos.</span></li>
+        <li><b>Te confirmamos</b><span>El precio aproximado y la hora a la que lo tienes listo.</span></li>
+        <li><b>Pasa a por ello</b><span>Lo pagas al recogerlo, sin colas.</span></li>
+      </ol>
+      <div class="botones revela">
+        <a class="boton boton--tinta" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20encargo">Encargar por WhatsApp</a>
+        <a class="boton boton--claro" href="#encargos" data-abre="aviso">Encargo online</a>
+      </div>
+      <p class="aviso-fiestas revela">En Navidad, encarga el besugo, las kokotxas y el marisco con una semana de antelación.</p>
+    </div>
+  </section>
+
+  <section class="banda" aria-labelledby="t-barco">
+    <img src="img/barco.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Pesqueros amarrados en un puerto, con el monte entre nubes al fondo">
+    <div class="envoltura">
+      <p class="kicker revela">Del barco al mostrador</p>
+      <h2 class="revela" id="t-barco">Pescado de bajura, del día</h2>
+      <p class="entrada revela">Compramos cada mañana en las lonjas de la costa: lo que llega de madrugada, a primera hora está en el mostrador.</p>
+      <div class="horas revela">
+        <div><b>05:40</b><span>Desembarque en lonja</span></div>
+        <div><b>07:00</b><span>Subasta y compra</span></div>
+        <div><b>08:00</b><span>En el mostrador</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">Galería</p>
+      <h2 class="revela" id="t-galeria">Del hielo a tu mesa</h2>
+      <ul class="tira">
+        <li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Pescados, gambas, cangrejo y conchas sobre hielo picado, vistos desde arriba"></li>
+        <li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Montón de pescado azul pequeño, plateado y brillante"></li>
+        <li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Besugos enteros sobre hielo, con el ojo y la piel brillantes"></li>
+        <li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Cabeza de un pescado de cerca, con el ojo grande y limpio"></li>
+        <li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Pescados enteros y vieiras amontonados en el mostrador"></li>
+        <li><img src="img/g6.webp" width="640" height="800" loading="lazy" decoding="async" alt="Pescado entero, mejillones y perejil sobre papel blanco"></li>
+      </ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo venir</h2>
+        <p class="estado-linea estado" data-estado>Mar a vie, 8:00–14:00 y 17:00–20:00 · Sáb, 8:00–14:00</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Amu</caption>
+          <tbody>
+            <tr data-dia="1"><th scope="row">Lunes</th><td>Cerrado</td></tr>
+            <tr data-dia="2"><th scope="row">Martes</th><td>8:00–14:00 · 17:00–20:00</td></tr>
+            <tr data-dia="3"><th scope="row">Miércoles</th><td>8:00–14:00 · 17:00–20:00</td></tr>
+            <tr data-dia="4"><th scope="row">Jueves</th><td>8:00–14:00 · 17:00–20:00</td></tr>
+            <tr data-dia="5"><th scope="row">Viernes</th><td>8:00–14:00 · 17:00–20:00</td></tr>
+            <tr data-dia="6"><th scope="row">Sábado</th><td>8:00–14:00</td></tr>
+            <tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En El Antiguo, cerca de Ondarreta</h2>
+        <address class="direccion revela">Calle Matia 14<br>20008 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--tinta" href="https://www.google.com/maps/search/?api=1&amp;query=43.3118%2C-2.0028">Google Maps</a>
+          <a class="boton boton--claro" href="https://maps.apple.com/?ll=43.3118,-2.0028&amp;q=Amu">Apple Maps</a>
+          <a class="boton boton--claro" href="https://waze.com/ul?ll=43.3118%2C-2.0028&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--claro" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, dónde aparcar para cargar el encargo y qué autobuses paran cerca.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <a class="marca" href="#inicio"><b>AMU</b><span>Pescadería</span></a>
+      <p>Pescado de anzuelo y de bajura en El Antiguo</p>
+    </div>
+    <p>Calle Matia 14<br>20008 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20encargo">Encargos por WhatsApp</a></p>
+    <p>Mar a vie, de 8:00 a 14:00 y de 17:00 a 20:00<br>Sáb, de 8:00 a 14:00<br>Dom y lun, cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, género, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/otros-negocios/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría un formulario de encargo: qué quieres, cuánto y para cuándo, y te llegaría al móvil.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--tinta" href="https://la-commande.pages.dev/otros-negocios/">Quiero una web así</a>
+    <button class="boton boton--claro">Cerrar</button>
+  </form>
+</dialog>
+<script>
+/* El puerto se mueve como un vídeo; quien lo prefiera lo puede parar (WCAG 2.2.2) */
+document.querySelectorAll('[data-pausa]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var q = document.documentElement.classList.toggle('quieto');
+    b.setAttribute('aria-pressed', q ? 'true' : 'false');
+  });
+});
+</script>
+</body>
+</html>

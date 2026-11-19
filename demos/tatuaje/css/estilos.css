@@ -1,0 +1,37 @@
+/*    Itzal · estudio de tatuaje en Gros. Negro tinta, hueso y rojo; Bodoni Moda cursiva enorme, Inter Tight y Space Mono.
+   La portada es una lámina: el nombre a toda altura y la foto como un boceto con marco de puntos. */
+:root{--fondo:#EDE8E0;--texto:#0D0D0D;--suave:#4A4540;--acento:#0D0D0D;--sobre-acento:#EDE8E0;--acento-texto:#B3202F;--oscuro:#0D0D0D;--sobre-oscuro:#EDE8E0;--suave-oscuro:#B5ADA2;
+  --linea:rgba(13,13,13,.18);--linea-oscura:rgba(237,232,224,.18);--f-display:"Bodoni Moda",Georgia,serif;--f-texto:"Inter Tight",system-ui,sans-serif;--f-dato:"Space Mono",ui-monospace,monospace;
+  --h2-fuente:italic 500 clamp(2.8rem,2rem + 3.8vw,5.6rem)/.95 var(--f-display);--h3-fuente:italic 600 clamp(1.7rem,1.4rem + 1vw,2.3rem)/1.05 var(--f-display);
+  --cab-texto:#EDE8E0;--cab-solida:#0D0D0D;--radio-boton:0;--boton-fuente:700 .8125rem/1.1 var(--f-dato);--boton-mayus:uppercase;--boton-tracking:.08em;
+  --kicker-fuente:700 .75rem/1.2 var(--f-dato);--kicker-oscuro:#F06A6A;--em-oscuro:#F06A6A;--resalte:rgba(240,106,106,.18);--menu-fuente:700 .8125rem/1 var(--f-dato);--menu-mayus:uppercase;--menu-tracking:.06em;
+  --precio-fuente:700 .9375rem/1.2 var(--f-dato);--paso-fuente:700 1rem/1 var(--f-dato);--pie-fondo:#0D0D0D}
+.marca{flex-direction:column;align-items:flex-start;justify-content:center}
+.marca__nombre{font:italic 700 2rem/.9 var(--f-display)}
+.marca__lugar{font:700 .5625rem/1 var(--f-dato);letter-spacing:.2em;text-transform:uppercase;color:#F06A6A;margin-top:.35rem}
+.portada{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:clamp(2rem,5vw,5rem);min-height:100vh;min-height:100svh;padding:7rem var(--margen) 4rem;background:#0D0D0D;color:#EDE8E0}
+.portada .kicker{color:#F06A6A}
+.portada h1{font:italic 500 clamp(2rem,3.4vw,3.2rem)/1.05 var(--f-display);margin:1rem 0 1.25rem}
+.portada__nombre{display:block;font:italic 900 clamp(6rem,17vw,16rem)/.8 var(--f-display);letter-spacing:-.03em;margin-bottom:.12em}
+.portada h1 em{color:#F06A6A}
+.portada__sub{max-width:30rem;font-size:1.0625rem;color:#CFC8BE}
+.portada .botones{margin:1.75rem 0 1.25rem}
+.portada .estado{font:400 .875rem/1.4 var(--f-dato);color:#CFC8BE}
+.lamina{position:relative;justify-self:center;width:min(100%,25rem);padding:1rem;border:2px dashed rgba(237,232,224,.45)}
+.lamina::after{content:"";position:absolute;right:-.9rem;top:-.9rem;width:1.8rem;height:1.8rem;border-radius:50%;background:#B3202F}
+.lamina img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.lamina figcaption{margin-top:.8rem;font:700 .75rem/1.2 var(--f-dato);letter-spacing:.14em;text-transform:uppercase;color:#CFC8BE;text-align:center}
+.sec--oscuro .boton--acento,.portada .boton--acento,.cabecera .boton--acento{background:#EDE8E0;border-color:#EDE8E0;color:#0D0D0D}
+.sec--oscuro .plato strong{color:#F06A6A}
+/* Trabajos: una hoja de contactos, una grande arriba */
+.galeria .tira li{position:relative;counter-increment:foto}
+.galeria .tira{counter-reset:foto}
+.galeria .tira li::after{content:"0" counter(foto);position:absolute;left:.6rem;top:.6rem;padding:.2rem .45rem;background:#0D0D0D;color:#EDE8E0;font:700 .75rem/1 var(--f-dato)}
+.galeria .tira img{border:1px dashed rgba(237,232,224,.4);padding:.4rem;background:#0D0D0D}
+@media (min-width:62rem){.galeria .tira{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:19rem 15rem}.galeria .tira li:first-child{grid-column:span 2}.galeria .tira img{height:100%;aspect-ratio:auto}}
+/* Estilos: fichas con borde de puntos */
+.tarjeta{border:2px dashed rgba(13,13,13,.35)}
+.tarjeta h3{font-size:clamp(2rem,1.6rem + 1.2vw,2.7rem)}
+.casa__fotos img{border:2px dashed rgba(13,13,13,.3);padding:.4rem}
+@media (max-width:56rem){.portada{grid-template-columns:1fr;padding-top:6rem}.lamina{width:min(82%,19rem)}}
+

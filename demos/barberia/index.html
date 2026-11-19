@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zorrotz · Demo de barbería · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de barbería inventada en el Centro de Donostia. Precios en texto, elegir barbero, cita por WhatsApp, horario con «abierto ahora» y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#141210">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [], "2": [[600, 840], [960, 1200]], "3": [[600, 840], [960, 1200]], "4": [[600, 840], [960, 1200]], "5": [[600, 840], [960, 1200]], "6": [[540, 840]], "0": []}, "mapa": {"q": "43.3177,-1.9848", "titulo": "Mapa de Google: Calle San Martín 28, Centro, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "name": "Zorrotz", "description": "Barbería en Centro, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle San Martín 28", "postalCode": "20005", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3177, "longitude": -1.9848}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Zorrotz, volver al inicio"><span class="marca__nombre">Zorrotz</span><span class="marca__lugar">Barbería · Centro</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#carta">Precios</a><a href="#equipo">Barberos</a><a href="#casa">La casa</a><a href="#horario">Horario</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#cita">Pedir cita</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#cita">Pedir cita</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <img class="portada__foto" src="img/portada.webp" width="1920" height="1080" alt="Un barbero con los brazos tatuados pasa la máquina por la nuca de un cliente" fetchpriority="high">
+    <div class="portada__texto">
+      <p class="kicker">Barbería · Centro · Donostia</p>
+      <h1 id="titulo">Corte limpio, <em>sin prisa</em></h1>
+      <p class="portada__sub">Degradados, navaja y barba con toalla caliente. Te vas como querías, a la primera.</p>
+      <div class="botones"><a class="boton boton--acento" href="#cita">Pedir cita</a><a class="boton boton--linea" href="#carta">Ver precios</a></div>
+      <p class="estado" data-estado>Martes a sábado · mejor con cita</p>
+      <button class="pausa" type="button" data-pausa aria-pressed="false"><span>Pausar el movimiento</span></button>
+    </div>
+    <ul class="tablilla" aria-label="Precios más pedidos"><li><span>Corte</span><b>18&nbsp;€</b></li><li><span>Barba</span><b>12&nbsp;€</b></li><li><span>Corte y barba</span><b>26&nbsp;€</b></li></ul>
+    <p class="portada__nombre" aria-hidden="true">Zorrotz</p>
+  </section>
+  <section class="sec sec--claro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Precios</p>
+      <h2 class="revela" id="t-carta">Lo que pides, <em>lo que pagas</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Corte</h3><ul><li class="plato"><b>Corte</b><span>Tijera o máquina, lavado y peinado</span><strong>18&nbsp;€</strong></li><li class="plato"><b>Degradado</b><span>Skin fade o low fade, con navaja en la nuca</span><strong>20&nbsp;€</strong></li><li class="plato"><b>Rapado</b><span>A una sola altura</span><strong>12&nbsp;€</strong></li><li class="plato"><b>Corte infantil</b><span>Hasta 12 años</span><strong>12&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Barba</h3><ul><li class="plato"><b>Arreglo de barba</b><span>Perfilado con navaja</span><strong>12&nbsp;€</strong></li><li class="plato"><b>Afeitado clásico</b><span>Toalla caliente, espuma y navaja</span><strong>18&nbsp;€</strong></li><li class="plato"><b>Corte y barba</b><span>El combinado de siempre</span><strong>26&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Extras</h3><ul><li class="plato"><b>Cejas</b><span>Con navaja o pinza</span><strong>5&nbsp;€</strong></li><li class="plato"><b>Lavado y masaje</b><span>Diez minutos que se agradecen</span><strong>6&nbsp;€</strong></li><li class="plato"><b>Tinte de barba</b><span>Natural, para tapar canas</span><strong>10&nbsp;€</strong></li><li class="plato"><b>Diseño con máquina</b><span>Líneas y dibujos</span><strong>desde 5&nbsp;€</strong></li></ul></div></div>
+      <p class="carta__nota">Precios de ejemplo: en tu web, los tuyos, con lo que dura cada servicio.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro tarjetas" id="equipo" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">Barberos</p>
+      <h2 class="revela" id="t-tarjetas">Elige <em>quién te corta</em></h2>
+      <p class="entrada revela">Cada uno tiene su mano. Si ya tienes barbero, pídelo; si no, te damos el primer hueco libre.</p>
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Degradados</span><h3>Iker</h3><p>Fades limpios y diseños con máquina. Trae foto y lo clava.</p><strong class="tarjeta__precio">Martes a sábado</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Navaja y barba</span><h3>Unai</h3><p>Afeitado clásico con toalla caliente y perfilado a mano alzada.</p><strong class="tarjeta__precio">Martes a viernes</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Clásicos y niños</span><h3>Ane</h3><p>Tijera, raya al lado y paciencia infinita con los peques.</p><strong class="tarjeta__precio">Miércoles a sábado</strong></li></ul>
+      
+    </div>
+  </section>
+
+  <section class="sec sec--claro casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">La casa</p>
+        <h2 class="revela" id="t-casa">Navaja, tijera <em>y conversación</em></h2>
+        <p class="entrada revela">Tres sillones, buena música y nada de prisas. Te preguntamos qué quieres antes de coger la máquina, y si dudas, te enseñamos cómo quedaría. Aquí vienes a salir como querías, no a hacer cola.</p>
+        <ul class="datos revela"><li>Sin cita: martes y miércoles por la mañana</li><li>Toalla caliente incluida</li><li>Pago con tarjeta o Bizum</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sillón de barbero clásico de cuero negro y cromo en un local en penumbra"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Primer plano de una máquina de cortar el pelo repasando una nuca"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro reservas" id="cita" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Cita</p>
+        <h2 class="revela" id="t-reservas">Elige hora <em>y listo</em></h2>
+        <p class="entrada revela">Dinos qué te quieres hacer y con quién, y te damos hora. Sin llamadas ni esperas al teléfono.</p>
+        <ol class="pasos revela"><li><p><b>Elige servicio y barbero</b><span>O deja que te asignemos el primer hueco.</span></p></li><li><p><b>Dinos día y hora</b><span>Por WhatsApp; te contestamos enseguida.</span></p></li><li><p><b>Ven a tu hora</b><span>Si se te complica, avisa y la cambiamos.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20en%20la%20barbería"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Pedir cita por WhatsApp</a>
+          <a class="boton boton--linea" href="#cita" data-abre="aviso">Reservar online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Manos con peine y tijeras de entresacar cortando el pelo de un cliente de barba"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--claro galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">El oficio</p>
+      <h2 class="revela" id="t-galeria">Mano firme, <em>pulso fino</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Peine y tijeras de entresacar sobre la nuca de un cliente, con manos tatuadas"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Barbería con paredes de ladrillo, lámparas colgantes y tres sillones negros"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos tatuadas con una navaja perfilando la nuca de un cliente"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Sillón de barbero negro sobre un suelo de baldosas blancas y negras"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Sillón de barbero antiguo junto a una ventana con luz de tarde"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Martes a sábado · mejor con cita</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Zorrotz</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>Cerrado</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>10:00–14:00 · 16:00–20:00</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>10:00–14:00 · 16:00–20:00</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>10:00–14:00 · 16:00–20:00</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>10:00–14:00 · 16:00–20:00</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>9:00–14:00</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En el Centro, <em>calle San Martín</em></h2>
+        <address class="direccion revela">Calle San Martín 28<br>20005 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3177%2C-1.9848">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3177,-1.9848&amp;q=Zorrotz">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3177%2C-1.9848&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Zorrotz</span><span class="marca__lugar">Barbería · Centro</span></p>
+      <p>Barbería en el Centro de Donostia</p>
+    </div>
+    <p>Calle San Martín 28<br>20005 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20en%20la%20barbería">Pedir cita por WhatsApp</a></p>
+    <p>Lunes: Cerrado<br>Martes: 10:00–14:00 · 16:00–20:00<br>Miércoles: 10:00–14:00 · 16:00–20:00<br>Jueves: 10:00–14:00 · 16:00–20:00<br>Viernes: 10:00–14:00 · 16:00–20:00<br>Sábado: 9:00–14:00<br>Domingo: Cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría tu agenda de citas: el cliente elige servicio, barbero y hueco libre, y le llega la confirmación.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>

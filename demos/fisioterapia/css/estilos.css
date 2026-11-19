@@ -1,0 +1,37 @@
+/*    Lasai · fisioterapia en Gros. Arena, verde agua y coral suave; Instrument Serif y Figtree.
+   La portada respira: el titular en serif, las zonas del cuerpo como botones y la foto en una píldora con la primera visita. */
+:root{--fondo:#F4EFE6;--papel:#E9F0EC;--texto:#1D3533;--suave:#4D605D;--acento:#2A6F6B;--sobre-acento:#fff;--acento-texto:#2A6F6B;--oscuro:#1D3533;--sobre-oscuro:#F4EFE6;--suave-oscuro:#BCCBC7;
+  --linea:rgba(29,53,51,.15);--linea-oscura:rgba(244,239,230,.2);--f-display:"Instrument Serif",Georgia,serif;--f-texto:"Figtree",system-ui,sans-serif;--f-dato:"Figtree",system-ui,sans-serif;
+  --h2-fuente:400 clamp(2.8rem,2rem + 3.8vw,5.6rem)/.98 var(--f-display);--h3-fuente:400 clamp(1.7rem,1.4rem + 1vw,2.3rem)/1.05 var(--f-display);--tracking-display:-.01em;
+  --cab-texto:#1D3533;--cab-solida:#F4EFE6;--radio-boton:999px;--boton-fuente:600 .9375rem/1.1 var(--f-texto);
+  --kicker-oscuro:#F2A58E;--em-oscuro:#F2A58E;--resalte:rgba(42,111,107,.14);--radio-foto:24px;--radio-tarjeta:24px;--precio-fuente:400 1.6rem/1 var(--f-display);--paso-fuente:400 1.5rem/1 var(--f-display)}
+.marca{flex-direction:column;align-items:flex-start;justify-content:center}
+.marca__nombre{font:400 2.1rem/.9 var(--f-display)}
+.marca__lugar{font:600 .5625rem/1 var(--f-texto);letter-spacing:.22em;text-transform:uppercase;color:#2A6F6B;margin-top:.35rem}
+/* Portada en dos pisos: el titular a todo el ancho y, debajo, el texto y la foto apaisada en una cápsula */
+.portada{display:flex;flex-direction:column;justify-content:center;min-height:100vh;min-height:100svh;padding:7rem var(--margen) 4rem;background:radial-gradient(50% 60% at 85% 30%,#E9F0EC,transparent 70%),#F4EFE6}
+.portada h1{font:400 clamp(3.4rem,8.6vw,9rem)/.9 var(--f-display);letter-spacing:-.025em;margin:.75rem 0 clamp(1.5rem,3vw,2.5rem);text-wrap:balance}
+.portada__fila{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(2rem,5vw,5rem);align-items:center}
+.portada h1 em{font-style:italic;color:#2A6F6B}
+.portada__sub{max-width:30rem;font-size:1.125rem;color:#4D605D}
+.portada .botones{margin:1.75rem 0 1.5rem}
+.zonas{display:flex;flex-wrap:wrap;gap:.5rem}
+.zonas a{display:inline-flex;align-items:center;min-height:44px;padding:0 1.1rem;border-radius:999px;background:#fff;border:1px solid rgba(29,53,51,.15);text-decoration:none;font-weight:600;font-size:.875rem;transition:border-color .2s,color .2s}
+.zonas a:hover{border-color:#2A6F6B;color:#2A6F6B}
+.calma{position:relative;isolation:isolate;margin:0 1.5rem 1.75rem 0}
+.calma::before{content:"";position:absolute;right:-1.5rem;top:-1.5rem;z-index:-1;width:8.5rem;height:8.5rem;border-radius:50%;background:#E07A5F;opacity:.85}
+.calma img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:999px}
+.calma figcaption{position:absolute;left:2rem;bottom:-1.5rem;display:grid;gap:.15rem;padding:1rem 1.25rem;background:#fff;border-radius:18px;box-shadow:0 20px 40px -24px rgba(29,53,51,.5);font-size:.875rem}
+.calma figcaption b{font:400 1.6rem/1 var(--f-display)}
+.calma .estado{font-size:.75rem;font-weight:600;color:#4D605D}
+.pie-pagina .marca__lugar{color:#F2A58E}
+/* Tratamientos: tarjetas blandas con un punto coral */
+.tarjeta{background:#fff;border:0;box-shadow:0 18px 40px -30px rgba(29,53,51,.5);padding-top:2.4rem;position:relative}
+.tarjeta::before{content:"";position:absolute;left:1.6rem;top:1.3rem;width:.6rem;height:.6rem;border-radius:50%;background:#E07A5F}
+/* La casa: dos píldoras */
+.casa__fotos img{border-radius:999px}
+.sec--oscuro .boton--acento{background:#F2A58E;border-color:#F2A58E;color:#1D3533}
+.sec--oscuro .plato strong{color:#F2A58E}
+/* Galería: tres arriba y dos anchas abajo */
+@media (min-width:62rem){.galeria .tira{grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:15rem 17rem}.galeria .tira li{grid-column:span 2}.galeria .tira li:nth-child(n+4){grid-column:span 3}.galeria .tira img{height:100%;aspect-ratio:auto}}
+@media (max-width:56rem){.portada{padding-top:6.5rem}.portada__fila{grid-template-columns:1fr}.calma{margin:1rem .5rem 2rem 0}.calma img{border-radius:120px}}

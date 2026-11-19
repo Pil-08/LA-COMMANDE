@@ -2,167 +2,151 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Alba Café · Demo de cafetería · La Commande</title>
-<meta name="description" content="Demo de diseño para cafeterías de especialidad, brunch y panaderías. Hecho por La Commande.">
+<meta name="description" content="Demo de La Commande: web de cafetería inventada en Gros, Donostia. Carta con precios, pedidos por WhatsApp, horario con «abierto ahora» y cómo llegar.">
+<meta name="robots" content="noindex">
 <meta name="theme-color" content="#FFD21F">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFD21F'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%230E0E0C'/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
 <link rel="stylesheet" href="../fonts/fuentes.css">
-<style>
-:root{--amarillo:#FFD21F;--negro:#0E0E0C;--crema:#FFF6D6;--display:'League Gothic',Impact,'Arial Narrow',sans-serif;--mono:'Space Mono',ui-monospace,Menlo,monospace;--pad:clamp(18px,4vw,56px)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{background:var(--amarillo);color:var(--negro);font:400 15px/1.6 var(--mono);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-svg{display:block;max-width:100%}
-
-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--pad);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
-.marca{font:400 30px/1 var(--display);letter-spacing:.04em}
-header nav{display:flex;gap:clamp(16px,3vw,36px)}
-header nav a{border-bottom:2px solid transparent;padding-bottom:2px}
-header nav a:hover{border-color:var(--negro)}
-.abierto{display:inline-flex;align-items:center;gap:9px;border:2px solid var(--negro);border-radius:999px;padding:8px 14px;font-weight:700}
-.abierto::before{content:"";width:9px;height:9px;border-radius:50%;background:#1E9E4A;box-shadow:0 0 0 4px rgba(30,158,74,.25)}
-
-.portada{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(10px,3vw,48px);align-items:center;padding:clamp(18px,3vw,40px) var(--pad) clamp(30px,4vw,56px)}
-h1{font:400 clamp(66px,11.2vw,182px)/.86 var(--display);text-transform:uppercase;letter-spacing:-.005em}
-h1 span{display:block}
-.disco{position:relative;justify-self:center;width:min(100%,430px);aspect-ratio:1;border-radius:50%;background:var(--negro);display:grid;place-items:center}
-.disco svg{width:84%;height:auto}
-.etiqueta{position:absolute;right:-3%;top:6%;background:var(--crema);color:var(--negro);border:2px solid var(--negro);border-radius:999px;padding:11px 16px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;transform:rotate(7deg);box-shadow:4px 4px 0 var(--negro)}
-.datos{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--negro);margin-top:clamp(6px,2vw,22px)}
-.datos div{padding:18px 0 4px;font-size:13.5px}
-.datos div+div{padding-left:clamp(14px,3vw,40px);border-left:2px solid var(--negro)}
-.datos b{display:block;font:400 clamp(26px,3vw,40px)/1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
-
-.tira{background:var(--negro);color:var(--amarillo);overflow:hidden;white-space:nowrap;padding:clamp(12px,1.6vw,22px) 0}
-.tira p{display:inline-block;font:400 clamp(34px,5.4vw,78px)/1 var(--display);text-transform:uppercase;letter-spacing:.02em;animation:marcha 40s linear infinite}
-.tira i{font-style:normal;display:inline-block;margin:0 .45em;color:var(--crema);transform:translateY(-.06em)}
-@keyframes marcha{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.tira p{animation:none}}
-
-.carta{background:var(--negro);color:var(--crema);padding:clamp(54px,8vw,120px) var(--pad)}
-.carta h2{font:400 clamp(56px,10vw,150px)/.86 var(--display);text-transform:uppercase;color:var(--amarillo);margin-bottom:clamp(26px,4vw,56px)}
-.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,4vw,64px)}
-.cols h3{font:700 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--amarillo);padding-bottom:14px;border-bottom:2px solid var(--amarillo);margin-bottom:6px}
-.it{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px dashed rgba(255,246,214,.28)}
-.it b{font:400 clamp(24px,2.3vw,30px)/1.05 var(--display);text-transform:uppercase;letter-spacing:.03em}
-.it small{display:block;font-size:12.5px;color:rgba(255,246,214,.62);margin-top:2px}
-.it strong{font-weight:700;font-size:15px;white-space:nowrap}
-
-.visita{display:grid;grid-template-columns:1fr 1fr}
-.visita > div{padding:clamp(40px,6vw,84px) var(--pad)}
-.visita h2{font:400 clamp(48px,7vw,104px)/.88 var(--display);text-transform:uppercase;margin-bottom:22px}
-.visita address{font-style:normal;font-size:15.5px;margin-bottom:26px}
-.horas div{display:flex;justify-content:space-between;gap:20px;padding:11px 0;border-bottom:2px solid var(--negro);font-weight:700;font-size:14px;text-transform:uppercase}
-.horas div:first-child{border-top:2px solid var(--negro)}
-.caja{background:var(--crema);border-left:2px solid var(--negro);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
-.caja p{max-width:36ch}
-.boton{display:inline-flex;align-items:center;gap:12px;background:var(--negro);color:var(--amarillo);font:700 13px/1 var(--mono);text-transform:uppercase;letter-spacing:.08em;padding:18px 24px;border-radius:999px;transition:transform .15s}
-.boton:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--amarillo)}
-footer{background:var(--negro);color:rgba(255,246,214,.62);padding:24px var(--pad);display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:space-between;font-size:12.5px}
-footer a{color:var(--amarillo)}
-
-.demo{position:fixed;right:14px;bottom:14px;z-index:50;background:#111;color:#fff;font:700 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:12px 15px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
-.demo:hover{background:#FF231D}
-.shot .demo{display:none}
-
-@media (max-width:900px){
-  header nav{display:none}
-  .portada{grid-template-columns:1fr}
-  .disco{width:min(66%,300px);justify-self:start;margin-top:10px}
-  .etiqueta{right:-18%}
-  .cols{grid-template-columns:1fr}
-  .visita{grid-template-columns:1fr}
-  .caja{border-left:0;border-top:2px solid var(--negro)}
-}
-@media (max-width:520px){
-  .datos{grid-template-columns:1fr}
-  .datos div+div{padding-left:0;border-left:0;border-top:2px solid var(--negro);margin-top:14px}
-  .abierto{padding:7px 11px;font-size:11.5px}
-  .disco{width:min(74%,260px)}
-}
-</style>
-<script>if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"0": [[540, 780]], "1": [[450, 1140]], "2": [[450, 1140]], "3": [[450, 1140]], "4": [[450, 1140]], "5": [[450, 1140]], "6": [[510, 840]]}, "mapa": {"q": "43.3253,-1.9795", "titulo": "Mapa de Google: Calle Zabaleta 18, Gros, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "CafeOrCoffeeShop", "name": "Alba Café", "description": "Cafetería en Gros, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Zabaleta 18", "postalCode": "20002", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3253, "longitude": -1.9795}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "13:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "07:30", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "07:30", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "07:30", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "07:30", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "07:30", "closes": "19:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:30", "closes": "14:00"}]}</script>
 </head>
 <body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
 
-<header>
-  <a class="marca" href="#">Alba Café</a>
-  <nav><a href="#carta">Carta</a><a href="#visita">Visítanos</a></nav>
-  <span class="abierto">Abierto hasta las 20:00</span>
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Alba Café, volver al inicio">ALBA CAFÉ</a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#carta">Carta</a><a href="#casa">Obrador</a><a href="#pedidos">Para llevar</a><a href="#horario">Horario</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#pedidos">Pedir</a>
+  </nav>
+  <span class="estado" data-estado>Lun a vie, 7:30–19:00</span>
+  <a class="boton boton--acento cabecera__cta" href="#pedidos">Pedir</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
 </header>
 
-<section class="portada">
-  <h1><span>Café de</span><span>especialidad</span><span>y horno propio</span></h1>
-  <div class="disco">
-    <svg viewBox="0 0 400 400" role="img" aria-label="Taza de café con arte latte y vapor">
-      <g fill="none" stroke="#FFF6D6" stroke-width="9" stroke-linecap="round"><path d="M160 108c-22-22 22-36 0-60"/><path d="M200 112c-22-24 22-40 0-68"/><path d="M240 108c-22-22 22-36 0-60"/></g>
-      <ellipse cx="200" cy="318" rx="150" ry="24" fill="#FFD21F"/>
-      <path d="M86 186h228l-20 112a58 58 0 0 1-57 48h-74a58 58 0 0 1-57-48z" fill="#FFF6D6"/>
-      <path d="M311 206h24a38 38 0 0 1 0 76h-42" fill="none" stroke="#FFF6D6" stroke-width="22" stroke-linecap="round"/>
-      <ellipse cx="200" cy="186" rx="114" ry="26" fill="#FFD21F"/>
-      <ellipse cx="200" cy="186" rx="104" ry="20" fill="#5A2E14"/>
-      <path d="M200 196c-30-12-44-24-44-34 0-8 7-14 15-14 12 0 22 8 29 18 7-10 17-18 29-18 8 0 15 6 15 14 0 10-14 22-44 34z" fill="#FFF6D6" transform="translate(0 -4) scale(1 .62)" transform-origin="200 186"/>
-      <path d="M120 250h160" stroke="#0E0E0C" stroke-width="6" stroke-linecap="round" opacity=".18"/>
-    </svg>
-    <span class="etiqueta">Tostado<br>cada semana</span>
-  </div>
-  <div class="datos">
-    <div><b>Espresso desde 1,80 €</b>Doble, con leche o solo</div>
-    <div><b>Horno propio</b>Bollería a las 8:00 y a las 12:00</div>
-    <div><b>Calle Mayor, 12</b>Donostia · 7:30–20:00</div>
-  </div>
-</section>
-
-<div class="tira" aria-hidden="true"><p>Espresso<i>●</i>Filtro<i>●</i>Flat white<i>●</i>Matcha<i>●</i>Cold brew<i>●</i>Bollería<i>●</i>Espresso<i>●</i>Filtro<i>●</i>Flat white<i>●</i>Matcha<i>●</i>Cold brew<i>●</i>Bollería<i>●</i></p></div>
-
-<section class="carta" id="carta">
-  <h2>La carta</h2>
-  <div class="cols">
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
     <div>
-      <h3>Café</h3>
-      <div class="it"><div><b>Espresso</b><small>Single origin de temporada</small></div><strong>1,80</strong></div>
-      <div class="it"><div><b>Flat white</b><small>Doble ristretto, leche texturizada</small></div><strong>3,40</strong></div>
-      <div class="it"><div><b>Filtro V60</b><small>Pregunta por el origen del día</small></div><strong>3,80</strong></div>
-      <div class="it"><div><b>Cold brew</b><small>Infusión en frío 18 horas</small></div><strong>3,60</strong></div>
+      <h1 id="titulo">Café de especialidad y horno propio</h1>
+      <div class="botones"><a class="boton boton--acento" href="#carta">Ver la carta</a><a class="boton boton--linea" href="#pedidos">Pedir para llevar</a></div>
     </div>
-    <div>
-      <h3>Sin café</h3>
-      <div class="it"><div><b>Matcha latte</b><small>Ceremonial, leche a elegir</small></div><strong>4,20</strong></div>
-      <div class="it"><div><b>Chocolate espeso</b><small>Hecho con cacao 70 %</small></div><strong>3,60</strong></div>
-      <div class="it"><div><b>Chai especiado</b><small>Receta de la casa</small></div><strong>3,80</strong></div>
-      <div class="it"><div><b>Zumo de naranja</b><small>Exprimido al momento</small></div><strong>3,50</strong></div>
+    <div class="taza">
+      <img src="img/portada.webp" width="900" height="900" alt="Café con leche con una hoja dibujada en la espuma, visto desde arriba sobre una tabla de madera" fetchpriority="high">
+      <p class="pegatina" aria-hidden="true"><span><b>8:00</b>Bollería<br>recién hecha</span></p>
     </div>
-    <div>
-      <h3>Para comer</h3>
-      <div class="it"><div><b>Croissant de mantequilla</b><small>Laminado en casa</small></div><strong>2,60</strong></div>
-      <div class="it"><div><b>Tostada de aguacate</b><small>Masa madre, huevo poché</small></div><strong>7,50</strong></div>
-      <div class="it"><div><b>Bocadillo de tortilla</b><small>La de siempre</small></div><strong>4,50</strong></div>
-      <div class="it"><div><b>Tarta de queso</b><small>Cremosa, estilo Donostia</small></div><strong>5,20</strong></div>
+    <div class="celdas">
+      <div><b>Espresso desde 1,80&nbsp;€</b>Grano tostado cada semana</div>
+      <div><b>Horno propio</b>Croissant y pan desde las 8:00</div>
+      <div><b>Calle Zabaleta 18</b><span class="estado" data-estado>Lun a vie, 7:30–19:00</span></div>
     </div>
-  </div>
-</section>
+    <p class="cinta" aria-hidden="true"><span>Espresso · Filtro · Flat white · Matcha · Cold brew · Croissant · Espresso · Filtro · Flat white · Matcha</span></p>
+  </section>
+  <section class="sec sec--claro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">La carta</p>
+      <h2 class="revela" id="t-carta">Café, <em>horno</em> y algo más</h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Café</h3><ul><li class="plato"><b>Espresso</b><strong>1,80&nbsp;€</strong></li><li class="plato"><b>Cortado</b><strong>1,90&nbsp;€</strong></li><li class="plato"><b>Café con leche</b><strong>2,20&nbsp;€</strong></li><li class="plato"><b>Flat white</b><strong>3,00&nbsp;€</strong></li><li class="plato"><b>Filtro V60</b><span>Origen de temporada</span><strong>3,20&nbsp;€</strong></li><li class="plato"><b>Cold brew</b><strong>3,50&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Sin café</h3><ul><li class="plato"><b>Matcha latte</b><strong>3,80&nbsp;€</strong></li><li class="plato"><b>Chocolate a la taza</b><strong>2,80&nbsp;€</strong></li><li class="plato"><b>Té e infusiones</b><strong>2,40&nbsp;€</strong></li><li class="plato"><b>Zumo de naranja</b><span>Recién exprimido</span><strong>3,20&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Del horno</h3><ul><li class="plato"><b>Croissant de mantequilla</b><strong>1,90&nbsp;€</strong></li><li class="plato"><b>Pain au chocolat</b><strong>2,20&nbsp;€</strong></li><li class="plato"><b>Rollo de canela</b><strong>2,80&nbsp;€</strong></li><li class="plato"><b>Bizcocho del día</b><strong>2,90&nbsp;€</strong></li><li class="plato"><b>Tostada de masa madre</b><span>Con tomate y aceite</span><strong>3,20&nbsp;€</strong></li><li class="plato"><b>Pan de masa madre</b><span>La barra</span><strong>3,40&nbsp;€</strong></li></ul></div></div>
+      <p class="carta__nota">Carta de ejemplo: en tu web, la tuya, con tus precios.</p>
+    </div>
+  </section>
 
-<section class="visita" id="visita">
-  <div>
-    <h2>Pásate<br>por aquí</h2>
-    <address>Calle Mayor, 12<br>20003 Donostia</address>
-    <div class="horas">
-      <div><span>Lunes – viernes</span><span>7:30 – 20:00</span></div>
-      <div><span>Sábado</span><span>8:30 – 20:00</span></div>
-      <div><span>Domingo</span><span>9:00 – 15:00</span></div>
+  <section class="sec sec--acento casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">El obrador</p>
+        <h2 class="revela" id="t-casa">Horno propio, <em>desde las seis</em></h2>
+        <p class="entrada revela">A las seis se enciende el horno y a las ocho sale la primera hornada: croissant de mantequilla, pan de masa madre y un bizcocho distinto cada día. El café lo tostamos en pequeño y lo cambiamos según la temporada.</p>
+        <ul class="datos revela"><li>Espresso · 1,80&nbsp;€</li><li>Croissant · 1,90&nbsp;€</li><li>Pan de masa madre · 3,40&nbsp;€</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Estanterías de pan y una panadera de espaldas tras la vitrina del obrador"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Espresso cayendo del portafiltros de una cafetera"></div>
     </div>
-  </div>
-  <div class="caja">
-    <h2>¿Pedido<br>para llevar?</h2>
-    <p>Escríbenos y lo tienes listo cuando llegues. Sin colas y con el café a su punto.</p>
-    <a class="boton" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20pedido">Pedir por WhatsApp →</a>
-  </div>
-</section>
-<footer><span>© Alba Café · Demo de cafetería</span><span>Web hecha por <a href="https://la-commande.pages.dev/">La Commande</a></span></footer>
+  </section>
 
-<a class="demo" href="https://la-commande.pages.dev/#disenos">Demo · La Commande</a>
+  <section class="sec sec--oscuro galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">Galería</p>
+      <h2 class="revela" id="t-galeria">Recién <em>hecho</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Croissants dorados sobre papel de horno"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Vitrina de bollería con croissants y caracolas"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Panes de varias formas en un cesto, con espigas"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Café con hielo en un vaso pequeño, al sol"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Taza de café con leche con una hoja dibujada en la espuma"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro reservas" id="pedidos" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Para llevar</p>
+        <h2 class="revela" id="t-reservas">Pídelo y <em>recógelo caliente</em></h2>
+        <p class="entrada revela">Escríbenos lo que quieres y a qué hora pasas. Te lo tenemos listo en la barra, sin cola.</p>
+        <ol class="pasos revela"><li><p><b>Escríbenos</b><span>Qué quieres y a qué hora pasas.</span></p></li><li><p><b>Te lo preparamos</b><span>Y te avisamos si algo se ha acabado.</span></p></li><li><p><b>Recógelo</b><span>En la barra, sin esperar.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20pedido%20para%20llevar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Pedir por WhatsApp</a>
+          <a class="boton boton--linea" href="#pedidos" data-abre="aviso">Pedido online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Manos sirviendo leche en un café para llevar"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--acento visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Lun a vie, 7:30–19:00</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Alba Café</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>7:30–19:00</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>7:30–19:00</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>7:30–19:00</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>7:30–19:00</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>7:30–19:00</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>8:30–14:00</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>9:00–13:00</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En Gros, <em>a un paso del Kursaal</em></h2>
+        <address class="direccion revela">Calle Zabaleta 18<br>20002 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3253%2C-1.9795">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3253,-1.9795&amp;q=Alba%20Café">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3253%2C-1.9795&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca">ALBA CAFÉ</p>
+      <p>Café de especialidad y horno propio en Gros</p>
+    </div>
+    <p>Calle Zabaleta 18<br>20002 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20pedido%20para%20llevar">Pedir por WhatsApp</a></p>
+    <p>Lunes: 7:30–19:00<br>Martes: 7:30–19:00<br>Miércoles: 7:30–19:00<br>Jueves: 7:30–19:00<br>Viernes: 7:30–19:00<br>Sábado: 8:30–14:00<br>Domingo: 9:00–13:00</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, carta, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/hosteleria/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría un pedido online: eliges lo que quieres y te llega al móvil.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/hosteleria/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
 </body>
 </html>

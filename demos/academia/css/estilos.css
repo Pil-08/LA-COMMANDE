@@ -1,0 +1,34 @@
+/*    Akademia Ortzi · refuerzo e idiomas en el Centro. Papel cuadriculado, índigo y amarillo subrayador; Bricolage Grotesque e Inter Tight.
+   La portada es un cuaderno: el titular subrayado con rotulador y la foto como una polaroid con celo. */
+:root{--fondo:#F6F4EE;--texto:#1F1B4D;--suave:#4D4A6E;--acento:#3B2C85;--sobre-acento:#fff;--acento-texto:#3B2C85;--oscuro:#1F1B4D;--sobre-oscuro:#F6F4EE;--suave-oscuro:#C7C3E6;
+  --linea:rgba(31,27,77,.16);--linea-oscura:rgba(246,244,238,.2);--f-display:"Bricolage Grotesque",system-ui,sans-serif;--f-texto:"Inter Tight",system-ui,sans-serif;--f-dato:"Inter Tight",system-ui,sans-serif;
+  --h2-fuente:800 clamp(2.4rem,1.7rem + 3.2vw,4.6rem)/.98 var(--f-display);--h3-fuente:700 clamp(1.35rem,1.15rem + .8vw,1.8rem)/1.1 var(--f-display);--tracking-display:-.035em;--em-estilo:normal;
+  --cab-texto:#1F1B4D;--cab-solida:#F6F4EE;--radio-boton:12px;--boton-fuente:700 .9375rem/1.1 var(--f-texto);
+  --kicker-oscuro:#F7E733;--em-oscuro:#F7E733;--fondo-acento:#F7E733;--sobre-fondo-acento:#1F1B4D;--resalte:rgba(247,231,51,.45);--radio-foto:12px;--radio-tarjeta:16px;--precio-fuente:800 1.25rem/1 var(--f-display);--paso-fuente:800 1.1rem/1 var(--f-display)}
+.marca{flex-direction:column;align-items:flex-start;justify-content:center}
+.marca__nombre{font:800 1.45rem/.95 var(--f-display);letter-spacing:-.03em}
+.marca__lugar{font:700 .5625rem/1 var(--f-texto);letter-spacing:.2em;text-transform:uppercase;color:#3B2C85;margin-top:.35rem}
+.portada{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(2rem,5vw,5rem);min-height:100vh;min-height:100svh;padding:7rem var(--margen) 4rem;
+  background:linear-gradient(rgba(59,44,133,.09) 1px,transparent 1px) 0 0/28px 28px,linear-gradient(90deg,rgba(59,44,133,.09) 1px,transparent 1px) 0 0/28px 28px,#F6F4EE}
+.portada h1{font:800 clamp(3.4rem,8vw,7.6rem)/.92 var(--f-display);letter-spacing:-.05em;margin:1rem 0 1.25rem}
+.portada h1 mark{color:inherit;background:linear-gradient(transparent 58%,#F7E733 58% 94%,transparent 94%);padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.portada__sub{max-width:31rem;font-size:1.125rem;color:#4D4A6E}
+.portada .botones{margin:1.75rem 0 1.25rem}
+.polaroid{position:relative;justify-self:center;width:min(100%,23rem);margin:1.5rem 0;padding:1rem 1rem 3.4rem;background:#fff;box-shadow:0 30px 50px -30px rgba(31,27,77,.5);transform:rotate(3deg)}
+.polaroid img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.polaroid figcaption{position:absolute;left:1rem;right:1rem;bottom:1.05rem;font:700 .9375rem/1.2 var(--f-display);color:#3B2C85;text-align:center}
+.polaroid::before{content:"";position:absolute;left:50%;top:-14px;width:110px;height:30px;margin-left:-55px;background:rgba(247,231,51,.8);transform:rotate(-4deg)}
+.pie-pagina .marca__lugar{color:#F7E733}
+/* Cursos: fichas con la etiqueta del nivel y el precio al pie */
+.tarjeta{background:#fff;border:2px solid #1F1B4D;box-shadow:6px 6px 0 #1F1B4D}
+.tarjeta__etiqueta{align-self:flex-start;padding:.3rem .6rem;border-radius:6px;background:#F7E733;color:#1F1B4D;letter-spacing:.12em}
+.tarjeta__precio{font:800 1.5rem/1 var(--f-display);color:#3B2C85}
+.sec--oscuro .boton--acento{background:#F7E733;border-color:#F7E733;color:#1F1B4D}
+.sec--oscuro .plato strong{color:#F7E733}
+.sec--acento .boton--acento{background:#1F1B4D;border-color:#1F1B4D;color:#F7E733}
+.sec--acento .kicker{color:#1F1B4D}
+.reservas figure img{border:10px solid #fff;box-shadow:0 20px 40px -25px rgba(31,27,77,.6);transform:rotate(-2deg)}
+/* Galería: una, dos y una arriba; dos y dos abajo */
+@media (min-width:62rem){.galeria .tira{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,15rem)}.galeria .tira li:nth-child(2),.galeria .tira li:nth-child(4),.galeria .tira li:nth-child(5){grid-column:span 2}.galeria .tira img{height:100%;aspect-ratio:auto}}
+@media (max-width:56rem){.portada{grid-template-columns:1fr;padding-top:6.5rem}.polaroid{width:min(78%,18rem)}}
+

@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaigan · Demo de barra nikkei · La Commande</title>
+<meta name="description" content="Demo de diseño para barras nikkei y restaurantes con buenas fotos. Hecho por La Commande.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#14110e">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fotos/portada-peru.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+</head>
+<body>
+
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-telefono" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></symbol>
+  <symbol id="i-pausa" viewBox="0 0 24 24"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 3 20 12 6 21Z"/></symbol>
+  <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+</svg>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="cabecera__tel" href="#llegar" aria-label="Cómo llegar: Parte Vieja">
+    <svg class="icono" aria-hidden="true"><use href="#i-pin"/></svg>
+    <span>Parte Vieja</span>
+  </a>
+  <a class="marca" href="#inicio" aria-label="Kaigan, inicio">
+    <span class="marca__lima">Kaigan</span><span class="marca__bar">Nikkei</span>
+  </a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <ul>
+      <li><a href="#casa">La casa</a></li>
+      <li><a href="#carta">Carta</a></li>
+      <li><a href="#reservas">Horario</a></li>
+      <li><a href="#llegar">Cómo llegar</a></li>
+      <li><a class="menu__reservar" href="#reservas">Reservar</a></li>
+    </ul>
+  </nav>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">
+    <span class="menu-boton__texto">Menú</span>
+    <span class="menu-boton__rayas" aria-hidden="true"></span>
+  </button>
+</header>
+
+<main id="contenido">
+
+<!-- PORTADA: tres pases de 7 s con fundido; cada uno lleva una frase del lema -->
+<section class="portada" id="inicio" aria-label="Presentación">
+  <h1 class="solo-lectores">Kaigan, barra nikkei en Donostia. Perú en las raíces. Japón en el filo. Donostia en el corazón.</h1>
+
+  <div class="portada__fondos" aria-hidden="true">
+    <div class="diapo diapo--1"><img src="fotos/portada-peru.webp" width="1920" height="1080" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="diapo diapo--2"><span class="anillo"></span><span class="filo"></span></div>
+    <div class="diapo diapo--3"><img src="fotos/portada-donostia.webp" width="1920" height="1080" alt="" loading="lazy" decoding="async"></div>
+  </div>
+  <div class="portada__velo" aria-hidden="true"></div>
+
+  <div class="portada__frases" aria-hidden="true">
+    <p class="frase frase--1">Perú en las <em>raíces</em>.</p>
+    <p class="frase frase--2">Japón en el <em>filo</em>.</p>
+    <p class="frase frase--3">Donostia en el <em>corazón</em>.</p>
+  </div>
+
+  <div class="portada__pie">
+    <p class="portada__direccion">
+      <svg class="icono" aria-hidden="true"><use href="#i-pin"/></svg>
+      Calle Mayor 12 · Donostia
+    </p>
+    <div class="portada__botones">
+      <a class="boton boton--claro" href="#reservas">Reservar mesa</a>
+      <a class="boton boton--linea" href="#carta">Ver la carta</a>
+    </div>
+    <div class="puntos" aria-hidden="true"><span class="punto punto--1"></span><span class="punto punto--2"></span><span class="punto punto--3"></span></div>
+    <button class="portada__pausa" type="button" aria-label="Pausar las animaciones de la página">
+      <svg class="icono" aria-hidden="true"><use href="#i-pausa"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- LA CASA -->
+<section class="casa" id="casa">
+  <div class="casa__texto">
+    <p class="etiqueta revela">La casa</p>
+    <h2 class="titulo revela" style="--i:1">Dos costas, <em>una barra</em></h2>
+    <blockquote class="casa__cita revela" style="--i:2">
+      <p>Kaigan quiere decir costa. La nuestra junta dos: la del Pacífico, donde nació el ceviche, y la del Cantábrico, donde tenemos la barra.</p>
+      <footer>Kaigan, barra nikkei</footer>
+    </blockquote>
+    <p class="revela" style="--i:3">En la carta manda el pescado fresco y los sabores de la cocina nikkei, la que nació del encuentro entre Perú y Japón: cítricos, picante y salsas con mucho sabor. Ceviche, tartar de atún, hand rolls y pulpo anticuchero. Y para acompañar, pisco y cócteles.</p>
+    <p class="casa__datos revela" style="--i:4"><strong>Calle Mayor 12</strong>, en la Parte Vieja de Donostia.</p>
+  </div>
+
+  <div class="dipt revela" style="--i:2">
+    <figure class="dipt__marco dipt__marco--d">
+      <img src="fotos/dipt-donostia-1.webp" width="960" height="1200" alt="Playa al atardecer, con un monte oscuro al fondo y el agua sobre la arena" loading="lazy" decoding="async">
+      <img src="fotos/dipt-donostia-2.webp" width="960" height="1200" alt="Puente con farolas sobre el agua, bajo las nubes rosas del atardecer" loading="lazy" decoding="async">
+      <img src="fotos/dipt-donostia-3.webp" width="960" height="1200" alt="Una persona surfea una ola al atardecer, con el cielo naranja" loading="lazy" decoding="async">
+    </figure>
+    <figure class="dipt__marco dipt__marco--l">
+      <img src="fotos/dipt-peru-1.webp" width="960" height="1200" alt="La costa del Pacífico en Lima, con acantilados sobre la carretera" loading="lazy" decoding="async">
+      <img src="fotos/dipt-peru-2.webp" width="960" height="1200" alt="Edificios de Lima al atardecer, con los cerros al fondo bajo un cielo rosado" loading="lazy" decoding="async">
+    </figure>
+    <p class="dipt__credito">Fotos de Unsplash</p>
+  </div>
+</section>
+
+<!-- LA CARTA: solo texto -->
+<section class="carta oscuro" id="carta">
+  <header class="carta__cabecera">
+    <p class="etiqueta revela">La carta</p>
+    <h2 class="titulo revela" style="--i:1">Pescado fresco, <em>cítricos y picante</em></h2>
+    <p class="carta__nota revela" style="--i:2">Carta de ejemplo: platos y precios de muestra.</p>
+  </header>
+
+  <div class="carta__listas">
+
+    <article class="grupo">
+      <h3 class="grupo__titulo revela">Para picar</h3>
+      <div class="plato revela"><div class="plato__cabeza"><h4 class="plato__nombre">Edamame con sal de Maras</h4><span class="plato__guias"></span><span class="plato__precio">5 €</span></div></div>
+      <div class="plato revela"><div class="plato__cabeza"><h4 class="plato__nombre">Chips de camote con ají</h4><span class="plato__guias"></span><span class="plato__precio">5 €</span></div></div>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Bao de panceta</h4><span class="plato__guias"></span><span class="plato__precio">7 €</span></div>
+        <p class="plato__desc">Panceta glaseada, cacahuete, cilantro</p>
+      </div>
+    </article>
+
+    <article class="grupo">
+      <h3 class="grupo__titulo revela">Fríos</h3>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Ceviche Kaigan</h4><span class="plato__guias"></span><span class="plato__precio">19 €</span></div>
+        <p class="plato__desc">Corvina, leche de tigre, camote, cebolla morada, maíz</p>
+      </div>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Tartar de atún</h4><span class="plato__guias"></span><span class="plato__precio">21 €</span></div>
+        <p class="plato__desc">Atún rojo, pepino, mango, cebolla morada</p>
+      </div>
+    </article>
+
+    <article class="grupo">
+      <h3 class="grupo__titulo revela">Hand rolls</h3>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Salmón spicy</h4><span class="plato__guias"></span><span class="plato__precio">6 €</span></div>
+        <p class="plato__desc">Aguacate, sésamo</p>
+      </div>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Langostino tempura</h4><span class="plato__guias"></span><span class="plato__precio">7 €</span></div>
+        <p class="plato__desc">Salsa acevichada, aguacate</p>
+      </div>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Atún</h4><span class="plato__guias"></span><span class="plato__precio">7 €</span></div>
+        <p class="plato__desc">Cebolleta, shiso</p>
+      </div>
+    </article>
+
+    <article class="grupo">
+      <h3 class="grupo__titulo revela">Calientes</h3>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Pulpo anticuchero</h4><span class="plato__guias"></span><span class="plato__precio">24 €</span></div>
+        <p class="plato__desc">Pulpo a la brasa, papas doradas, mayonesa de ají amarillo</p>
+      </div>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Arroz chaufa</h4><span class="plato__guias"></span><span class="plato__precio">15 €</span></div>
+        <p class="plato__desc">Arroz salteado al wok, cerdo, tortilla, cebolleta</p>
+      </div>
+    </article>
+
+    <article class="grupo">
+      <h3 class="grupo__titulo revela">Postre</h3>
+      <div class="plato revela">
+        <div class="plato__cabeza"><h4 class="plato__nombre">Chocolate y frambuesa</h4><span class="plato__guias"></span><span class="plato__precio">7 €</span></div>
+        <p class="plato__desc">Mousse de chocolate, nata, frambuesas</p>
+      </div>
+    </article>
+
+    <p class="carta__cierre revela">Y para acompañar, pisco y cócteles.</p>
+  </div>
+</section>
+
+<!-- CINTA DE FOTOS -->
+<section class="cinta" aria-label="Platos y copas">
+  <div class="cinta__pista">
+    <ul class="cinta__tira">
+      <li><img src="fotos/cinta-1.webp" width="640" height="800" alt="Tartar de atún con pepino, mango, cebolla morada y brotes, con un gajo de lima" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-2.webp" width="640" height="800" alt="Cóctel sour con espuma blanca y una rodaja de naranja seca, sobre una barra de madera" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-3.webp" width="640" height="800" alt="Pulpo a la brasa con patatas en un plato azul, con una copa de vino tinto detrás" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-4.webp" width="640" height="800" alt="Dos hand rolls de salmón y atún con jengibre encurtido, en un plato blanco" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-5.webp" width="640" height="800" alt="Cóctel rojo con espuma blanca y frambuesas, en copa sobre una mesa de madera en penumbra" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-6.webp" width="640" height="800" alt="Ceviche en un cuenco oscuro, con cebolla morada, brotes, flores y huevas" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-7.webp" width="640" height="800" alt="Bao relleno de panceta glaseada, con cilantro y cacahuete picado por encima" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-8.webp" width="640" height="800" alt="Mousse de chocolate en tarros blancos, con nata y frambuesas" loading="lazy" decoding="async"></li>
+    </ul>
+    <ul class="cinta__tira" aria-hidden="true">
+      <li><img src="fotos/cinta-1.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-2.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-3.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-4.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-5.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-6.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-7.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+      <li><img src="fotos/cinta-8.webp" width="640" height="800" alt="" loading="lazy" decoding="async"></li>
+    </ul>
+  </div>
+  <p class="cinta__credito">Fotos de Unsplash</p>
+</section>
+
+<!-- BANDA: LA BARRA -->
+<section class="banda oscuro" aria-labelledby="banda-titulo">
+  <div class="banda__foto">
+    <img src="fotos/barra.webp" width="1280" height="950" alt="Manos tatuadas que vierten con un medidor en un vaso alto con hielo" loading="lazy" decoding="async">
+  </div>
+  <div class="banda__texto">
+    <p class="etiqueta revela">La barra</p>
+    <h2 class="titulo revela" id="banda-titulo" style="--i:1">Para acompañar, <em>pisco y cócteles</em></h2>
+    <p class="revela" style="--i:2">Los viernes y los sábados la barra está abierta hasta la una de la madrugada.</p>
+  </div>
+</section>
+
+<!-- HORARIO Y RESERVAS -->
+<section class="reservas" id="reservas">
+  <div class="reservas__horario">
+    <p class="etiqueta revela">Horario</p>
+    <h2 class="titulo revela" style="--i:1">Cuándo <em>vernos</em></h2>
+    <p class="estado revela" id="estado" style="--i:2" role="status"></p>
+    <table class="horario revela" style="--i:3">
+      <caption class="solo-lectores">Horario de apertura</caption>
+      <tbody>
+        <tr data-dia="1"><th scope="row">Lunes</th><td>Cerrado</td></tr>
+        <tr data-dia="2"><th scope="row">Martes</th><td>13:00 – 23:30</td></tr>
+        <tr data-dia="3"><th scope="row">Miércoles</th><td>13:00 – 23:30</td></tr>
+        <tr data-dia="4"><th scope="row">Jueves</th><td>13:00 – 23:30</td></tr>
+        <tr data-dia="5"><th scope="row">Viernes</th><td>13:00 – 01:00</td></tr>
+        <tr data-dia="6"><th scope="row">Sábado</th><td>13:00 – 01:00</td></tr>
+        <tr data-dia="0"><th scope="row">Domingo</th><td>13:00 – 17:00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reservas__reserva">
+    <p class="etiqueta revela">Reservas</p>
+    <h2 class="titulo revela" style="--i:1">Una mesa, <em>en un mensaje</em></h2>
+    <p class="reservas__tel revela" style="--i:2"><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20mesa">Por WhatsApp</a></p>
+    <div class="reservas__botones revela" style="--i:3">
+      <a class="boton boton--tinta" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20mesa"><svg class="icono" aria-hidden="true"><use href="#i-telefono"/></svg>Reservar por WhatsApp</a>
+      <button class="boton boton--linea-oscura" type="button" data-abre="aviso-reserva">Reservar online</button>
+    </div>
+    <noscript><p class="reservas__nota">En tu web, aquí va tu sistema de reservas online.</p></noscript>
+  </div>
+</section>
+
+<!-- CÓMO LLEGAR -->
+<section class="llegar" id="llegar">
+  <div class="llegar__texto">
+    <p class="etiqueta revela">Cómo llegar</p>
+    <h2 class="titulo revela" style="--i:1">En la Parte Vieja, <em>en Calle Mayor</em></h2>
+    <address class="llegar__direccion revela" style="--i:2">
+      <strong>Kaigan</strong><br>
+      Calle Mayor, 12<br>
+      20003 Donostia / San Sebastián
+    </address>
+    <ul class="llegar__enlaces revela" style="--i:3">
+      <li><a class="boton boton--tinta" href="https://www.google.com/maps/search/?api=1&amp;query=43.3238%2C-1.9861"><svg class="icono" aria-hidden="true"><use href="#i-pin"/></svg>Google Maps</a></li>
+      <li><a class="boton boton--linea-oscura" href="https://maps.apple.com/?ll=43.3238%2C-1.9861">Apple Maps</a></li>
+      <li><a class="boton boton--linea-oscura" href="https://waze.com/ul?ll=43.3238%2C-1.9861&amp;navigate=yes">Waze</a></li>
+    </ul>
+  </div>
+  <div class="mapa revela" style="--i:2" id="mapa">
+    <div class="mapa__aviso">
+      <svg class="icono icono--grande" aria-hidden="true"><use href="#i-pin"/></svg>
+      <p>Calle Mayor, 12</p>
+      <button class="boton boton--linea-oscura" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+      <small>Al cargar el mapa, tu navegador se conecta con Google.</small>
+    </div>
+  </div>
+
+  <div class="cerca revela">
+    <h3 class="cerca__titulo">Cerca de la barra</h3>
+    <p class="cerca__nota">Texto de ejemplo: en tu web, con las rutas a pie y las líneas de tu zona.</p>
+    <ul class="cerca__lista">
+      <li>
+        <h4>A pie</h4>
+        <p>Basílica de Santa María, 1 minuto. El puerto, unos 3. Playa de La Concha, unos 6.</p>
+      </li>
+      <li>
+        <h4>En autobús</h4>
+        <p>Paradas del Boulevard, a unos 4 minutos andando.</p>
+      </li>
+      <li>
+        <h4>En tren y autobús de largo recorrido</h4>
+        <p>Estación de tren, unos 20 minutos andando.</p>
+      </li>
+      <li>
+        <h4>En coche</h4>
+        <p>El parking más cercano, a unos 4 minutos andando.</p>
+      </li>
+      <li>
+        <h4>En bici</h4>
+        <p>Estación de bicis más cercana, a unos 3 minutos.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- REDES -->
+<section class="redes oscuro" aria-label="Redes">
+  <p class="redes__insta">
+    <svg class="icono icono--grande" aria-hidden="true"><use href="#i-instagram"/></svg>
+    <span class="redes__nombre">@kaigan</span>
+    <span class="redes__texto">Aquí iría tu Instagram</span>
+  </p>
+</section>
+
+</main>
+
+<footer class="pie oscuro">
+  <div class="pie__marca">
+    <p class="pie__nombre"><span class="marca__lima">Kaigan</span><span class="marca__bar">Nikkei</span></p>
+    <p>Barra nikkei</p>
+  </div>
+  <address class="pie__direccion">
+    Calle Mayor, 12<br>
+    20003 Donostia / San Sebastián<br>
+    <a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20mesa">Reservas por WhatsApp</a>
+  </address>
+  <p class="pie__horario">Mar a jue, de 13:00 a 23:30<br>Vie y sáb, de 13:00 a 01:00 · Dom, de 13:00 a 17:00<br>Lun, cerrado</p>
+  <p class="pie__fotos">Demo de La Commande: nombre, datos, carta e imágenes de ejemplo.</p>
+</footer>
+
+<dialog class="aviso" id="aviso-reserva" aria-labelledby="aviso-titulo">
+  <form method="dialog">
+    <button class="aviso__cerrar" aria-label="Cerrar este aviso"><svg class="icono" aria-hidden="true"><use href="#i-cerrar"/></svg></button>
+  </form>
+  <p class="etiqueta">Reserva online</p>
+  <h2 class="aviso__titulo" id="aviso-titulo">Esto es una demo</h2>
+  <p>En tu web, este botón abre tu sistema de reservas: el que ya uses o uno nuevo.</p>
+  <p><a class="boton boton--oro" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20una%20web%20como%20la%20demo%20Kaigan">Quiero una web así</a></p>
+</dialog>
+
+<a class="demo" href="https://la-commande.pages.dev/ejemplos/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<script src="js/rastro.js" defer></script>
+<script src="js/barra.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+/*    Txingar · asador de brasa de encina en Amara. Carbón, brasa y marfil; Newsreader ligera y Barlow.
+   La brasa a pantalla completa, el precio por kilo bien claro y tres cifras que cuentan el oficio. */
+:root{--fondo:#FAF8F3;--texto:#151513;--suave:#55524B;--acento:#C2410C;--sobre-acento:#fff;--acento-texto:#B23F0E;--oscuro:#151513;--sobre-oscuro:#FAF8F3;--suave-oscuro:#C9C3B8;
+  --linea:rgba(21,21,19,.16);--linea-oscura:rgba(250,248,243,.2);--f-display:"Newsreader",Georgia,serif;--f-texto:"Barlow",system-ui,sans-serif;--f-dato:"Barlow",system-ui,sans-serif;
+  --h2-fuente:300 clamp(2.6rem,1.8rem + 3.6vw,5rem)/1 var(--f-display);--h3-fuente:400 clamp(1.6rem,1.3rem + 1vw,2.1rem)/1.1 var(--f-display);
+  --cab-texto:#FAF8F3;--cab-solida:#151513;--radio-boton:0;--boton-fuente:600 .875rem/1.1 var(--f-texto);--boton-mayus:uppercase;--boton-tracking:.14em;
+  --kicker-oscuro:#F08A4B;--em-oscuro:#F08A4B;--resalte:rgba(217,83,30,.16);--menu-fuente:600 .8125rem/1 var(--f-texto);--menu-mayus:uppercase;--menu-tracking:.14em}
+.marca{flex-direction:column;align-items:flex-start;justify-content:center}
+.marca__nombre{font:500 1.5rem/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase}
+.marca__lugar{font:600 .625rem/1 var(--f-texto);letter-spacing:.3em;text-transform:uppercase;color:#F08A4B;margin-top:.35rem}
+.portada{position:relative;display:grid;grid-template-rows:1fr auto;min-height:100vh;min-height:100svh;padding:6rem var(--margen) 0;overflow:hidden;isolation:isolate;color:#FAF8F3;background:#151513}
+.portada>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.portada::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(21,21,19,.92) 0%,rgba(21,21,19,.72) 42%,rgba(21,21,19,.15) 75%),linear-gradient(0deg,rgba(21,21,19,.9),transparent 35%)}
+.portada__texto{align-self:center;max-width:36rem}
+.portada .kicker{color:#F08A4B}
+.portada h1{font:300 clamp(4rem,9vw,8.6rem)/.92 var(--f-display);letter-spacing:-.02em;margin:1rem 0 1.25rem}
+.portada h1 em{font-style:italic;color:#F08A4B}
+.portada__sub{max-width:30rem;font-size:1.125rem;color:#E6E1D8}
+.portada .botones{margin-top:1.75rem}
+.portada .estado{margin-top:1.25rem;font-size:.9375rem;color:#E6E1D8}
+.cifras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:2.5rem calc(-1*var(--margen)) 0;border-top:1px solid rgba(250,248,243,.22)}
+.cifras>div{padding:1.1rem var(--margen)}
+.cifras>div+div{border-left:1px solid rgba(250,248,243,.22)}
+.cifras b{display:block;font:300 clamp(2.2rem,3.6vw,3.2rem)/1 var(--f-display)}
+.cifras span{font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#BFB8AC}
+.plato strong{font:400 1.25rem/1 var(--f-display)}
+.sec--oscuro .plato strong{color:#F08A4B}
+@media (min-width:62rem){.galeria .tira{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,15rem)}.galeria .tira li:last-child{grid-column:3/span 2;grid-row:1/span 2}.galeria .tira img{height:100%;aspect-ratio:auto}}
+/* Reservas: la foto a la izquierda y los pasos en fila, con cifras grandes como las de la portada */
+@media (min-width:56rem){.reservas .envoltura{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.reservas figure{order:-1}}
+@media (min-width:48rem){.pasos{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}}
+.pasos li{grid-template-columns:1fr;align-content:start;gap:.6rem;padding-top:1rem;border-top:1px solid var(--linea)}
+.pasos li::before{width:auto;height:auto;border:0;border-radius:0;place-items:start;font:300 2.8rem/1 var(--f-display);color:var(--em-oscuro)}
+@media (max-width:36rem){.cifras{grid-template-columns:1fr}.cifras>div+div{border-left:0;border-top:1px solid rgba(250,248,243,.22)}.cifras>div{padding:.8rem var(--margen)}.portada .cifras{padding-bottom:3.5rem}}
+

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Azkoin · Demo de taller mecánico · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de un taller mecánico inventado en Igara, Donostia. Precios orientativos, presupuesto por WhatsApp, horario con «abierto ahora» y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#16181A">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [[480, 780], [870, 1110]], "2": [[480, 780], [870, 1110]], "3": [[480, 780], [870, 1110]], "4": [[480, 780], [870, 1110]], "5": [[480, 780], [870, 1110]], "6": [], "0": []}, "mapa": {"q": "43.3012,-2.0004", "titulo": "Mapa de Google: Calle Portuetxe 23, Igara, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutoRepair", "name": "Azkoin", "description": "Taller mecánico en Igara, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Portuetxe 23", "postalCode": "20018", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3012, "longitude": -2.0004}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:00", "closes": "13:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "14:30", "closes": "18:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:00", "closes": "13:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "14:30", "closes": "18:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:00", "closes": "13:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "14:30", "closes": "18:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "13:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "14:30", "closes": "18:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:00", "closes": "13:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "14:30", "closes": "18:30"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Azkoin, volver al inicio"><span class="marca__nombre">Azkoin</span><span class="marca__lugar">Taller mecánico</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#garantias">Por qué Azkoin</a><a href="#carta">Precios</a><a href="#casa">El taller</a><a href="#horario">Horario</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#cita">Pedir cita</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#cita">Pedir cita</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <img class="portada__foto" src="img/portada.webp" width="1920" height="1080" alt="Manos con una llave inglesa trabajando dentro del motor de un coche" fetchpriority="high">
+    <div class="portada__texto">
+      <p class="kicker">Taller mecánico · Igara · Donostia</p>
+      <h1 id="titulo">Tu coche, <em>a punto</em> y sin sustos</h1>
+      <p class="portada__sub">Mecánica, frenos, neumáticos y revisiones de todas las marcas. Presupuesto por escrito antes de tocar nada.</p>
+      <div class="botones"><a class="boton boton--acento" href="#cita">Pedir cita o presupuesto</a><a class="boton boton--linea" href="#carta">Ver precios</a></div>
+    </div>
+    <div class="orden" aria-label="Lo más pedido">
+      <p class="orden__titulo">Lo más pedido</p>
+      <ul><li><span>Revisión oficial</span><b>desde 149&nbsp;€</b></li><li><span>Aceite y filtro</span><b>desde 69&nbsp;€</b></li><li><span>Pre-ITV</span><b>gratis</b></li></ul>
+      <p class="estado" data-estado>Lunes a viernes · 8:00–18:30</p>
+    </div>
+    <div class="cinta-obra" aria-hidden="true"></div>
+  </section>
+  <section class="sec sec--claro tarjetas" id="garantias" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">Por qué Azkoin</p>
+      <h2 class="revela" id="t-tarjetas">Sin letra <em>pequeña</em></h2>
+      
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Presupuesto</span><h3>Por escrito, antes de tocar nada</h3><p>Si al abrir aparece algo más, te llamamos y decides tú.</p></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Garantía</span><h3>En cada reparación</h3><p>Te la damos por escrito, con piezas y mano de obra.</p></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Todas las marcas</span><h3>Sin perder la garantía</h3><p>Hacemos la revisión oficial y la sellamos en el libro.</p></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Coche de sustitución</span><h3>Si tarda más de un día</h3><p>Para que tu semana siga igual.</p></li></ul>
+      
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Precios orientativos</p>
+      <h2 class="revela" id="t-carta">Sabes lo que pagas <em>antes de venir</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Mantenimiento</h3><ul><li class="plato"><b>Cambio de aceite y filtro</b><span>Con aceite homologado para tu coche</span><strong>desde 69&nbsp;€</strong></li><li class="plato"><b>Revisión oficial</b><span>Sellada en el libro de mantenimiento</span><strong>desde 149&nbsp;€</strong></li><li class="plato"><b>Pre-ITV</b><span>Repasamos lo que miran en la ITV</span><strong>gratis</strong></li></ul></div><div class="grupo revela"><h3>Frenos y ruedas</h3><ul><li class="plato"><b>Pastillas de freno</b><span>Eje delantero, mano de obra incluida</span><strong>desde 89&nbsp;€</strong></li><li class="plato"><b>Discos y pastillas</b><span>Eje delantero</span><strong>desde 189&nbsp;€</strong></li><li class="plato"><b>Equilibrado y alineación</b><span>Las cuatro ruedas</span><strong>45&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Diagnosis</h3><ul><li class="plato"><b>Diagnosis electrónica</b><span>Leemos los avisos del cuadro</span><strong>35&nbsp;€</strong></li><li class="plato"><b>Aire acondicionado</b><span>Carga y prueba de fugas</span><strong>65&nbsp;€</strong></li><li class="plato"><b>Batería</b><span>Prueba gratis; cambio con montaje</span><strong>desde 95&nbsp;€</strong></li></ul></div></div>
+      <p class="carta__nota">Precios de ejemplo, IVA incluido. En tu web, los tuyos por modelo, actualizados cuando quieras.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">El taller</p>
+        <h2 class="revela" id="t-casa">Mecánicos de barrio, <em>herramientas de ahora</em></h2>
+        <p class="entrada revela">Cuatro elevadores, diagnosis para todas las marcas y un mostrador donde te explicamos lo que le pasa a tu coche sin palabras raras. Te enseñamos la pieza vieja si quieres verla.</p>
+        <ul class="datos revela"><li>Cuatro elevadores</li><li>Todas las marcas</li><li>Te enseñamos la pieza cambiada</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Taller mecánico con elevadores rojos y un coche en reparación al fondo"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Disco de freno perforado y pinza en un coche subido al elevador"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--acento reservas" id="cita" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Cita y presupuesto</p>
+        <h2 class="revela" id="t-reservas">Pide hora <em>sin llamar</em></h2>
+        <p class="entrada revela">Escríbenos con el modelo y lo que le notas. Te damos hora y precio cerrado por WhatsApp, normalmente el mismo día.</p>
+        <ol class="pasos revela"><li><p><b>Cuéntanos qué le pasa</b><span>Modelo, kilómetros y una foto si hay un aviso en el cuadro.</span></p></li><li><p><b>Te damos hora y precio</b><span>Por WhatsApp, por escrito.</span></p></li><li><p><b>Déjalo y olvídate</b><span>Te avisamos cuando esté listo.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20o%20presupuesto%20para%20mi%20coche"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Pedir presupuesto por WhatsApp</a>
+          <a class="boton boton--linea" href="#cita" data-abre="aviso">Pedir cita online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Manos con guante colocando un neumático en la máquina desmontadora"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">En el taller</p>
+      <h2 class="revela" id="t-galeria">Grasa, precisión <em>y prisa la justa</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Correas y poleas del motor de un coche, de cerca"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Disco de freno perforado en la rueda de una moto, en penumbra"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Mano apretando un tornillo con una llave de vaso en el motor de un coche azul"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos revisando la caja de fusibles en el motor de un coche"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Colectores cromados de un motor clásico, de cerca"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Lunes a viernes · 8:00–18:30</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Azkoin</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>8:00–13:00 · 14:30–18:30</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>8:00–13:00 · 14:30–18:30</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>8:00–13:00 · 14:30–18:30</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>8:00–13:00 · 14:30–18:30</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>8:00–13:00 · 14:30–18:30</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>Cerrado</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En Igara, <em>calle Portuetxe</em></h2>
+        <address class="direccion revela">Calle Portuetxe 23<br>20018 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3012%2C-2.0004">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3012,-2.0004&amp;q=Azkoin">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3012%2C-2.0004&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Azkoin</span><span class="marca__lugar">Taller mecánico</span></p>
+      <p>Taller mecánico en Igara, Donostia</p>
+    </div>
+    <p>Calle Portuetxe 23<br>20018 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20o%20presupuesto%20para%20mi%20coche">Pedir presupuesto por WhatsApp</a></p>
+    <p>Lunes: 8:00–13:00 · 14:30–18:30<br>Martes: 8:00–13:00 · 14:30–18:30<br>Miércoles: 8:00–13:00 · 14:30–18:30<br>Jueves: 8:00–13:00 · 14:30–18:30<br>Viernes: 8:00–13:00 · 14:30–18:30<br>Sábado: Cerrado<br>Domingo: Cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/otros-negocios/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría tu agenda del taller: el cliente elige el servicio y el día, y tú confirmas el hueco.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/otros-negocios/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>

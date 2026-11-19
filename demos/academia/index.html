@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ortzi · Demo de academia · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de una academia inventada en el Centro de Donostia. Cursos con precio, horarios, clase de prueba por WhatsApp y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F4EE">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [[930, 1260]], "2": [[930, 1260]], "3": [[930, 1260]], "4": [[930, 1260]], "5": [[930, 1260]], "6": [[600, 780]], "0": []}, "mapa": {"q": "43.3146,-1.9829", "titulo": "Mapa de Google: Calle Easo 40, Centro, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "EducationalOrganization", "name": "Ortzi", "description": "Academia en Centro, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Easo 40", "postalCode": "20006", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3146, "longitude": -1.9829}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:30", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "15:30", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "15:30", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "15:30", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "15:30", "closes": "21:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "13:00"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Ortzi, volver al inicio"><span class="marca__nombre">Akademia Ortzi</span><span class="marca__lugar">Refuerzo · Idiomas</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#cursos">Cursos</a><a href="#casa">Cómo trabajamos</a><a href="#carta">Horarios</a><a href="#matricula">Matrícula</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#matricula">Clase de prueba</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#matricula">Clase de prueba</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <div class="portada__texto">
+      <p class="kicker">Academia · Centro · Donostia</p>
+      <h1 id="titulo">Aprueba <mark>con calma</mark></h1>
+      <p class="portada__sub">Refuerzo de Primaria a Bachillerato, inglés y euskera, y selectividad. Grupos de seis como máximo y un informe cada mes para las familias.</p>
+      <div class="botones"><a class="boton boton--acento" href="#matricula">Pedir una clase de prueba</a><a class="boton boton--linea" href="#cursos">Ver cursos</a></div>
+      <p class="estado" data-estado>Tardes de lunes a viernes · sábados por la mañana</p>
+    </div>
+    <figure class="polaroid">
+      <img src="img/portada.webp" width="1000" height="1250" alt="Mano escribiendo con un lápiz rojo en un cuaderno abierto" fetchpriority="high">
+      <figcaption>Grupos de 6 · primera clase gratis</figcaption>
+    </figure>
+  </section>
+  <section class="sec sec--claro tarjetas" id="cursos" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">Cursos</p>
+      <h2 class="revela" id="t-tarjetas">Para cada curso, <em>su ritmo</em></h2>
+      
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Primaria</span><h3>Refuerzo y deberes</h3><p>Hábito de estudio, lectura y matemáticas, una hora al día.</p><strong class="tarjeta__precio">75&nbsp;€/mes</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">ESO</span><h3>Matemáticas, lengua y física</h3><p>Dos o tres días por semana, con el temario de tu cole.</p><strong class="tarjeta__precio">desde 90&nbsp;€/mes</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Bachillerato</span><h3>Selectividad</h3><p>Simulacros cada mes y técnica de examen.</p><strong class="tarjeta__precio">desde 120&nbsp;€/mes</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Idiomas</span><h3>Inglés y euskera</h3><p>Niños, jóvenes y adultos; exámenes oficiales de B1 a C1.</p><strong class="tarjeta__precio">desde 70&nbsp;€/mes</strong></li></ul>
+      <p class="carta__nota">Cursos y precios de ejemplo: en tu web, los tuyos, con plazas libres.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Cómo trabajamos</p>
+        <h2 class="revela" id="t-casa">Pocos alumnos, <em>mucha atención</em></h2>
+        <p class="entrada revela">Grupos de seis como máximo, el mismo profesor todo el curso y un informe cada mes para las familias: qué va bien, qué cuesta y qué vamos a hacer.</p>
+        <ul class="datos revela"><li>Grupos de 6</li><li>Informe mensual</li><li>Clase de prueba gratis</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Aula con pupitres de madera y grandes ventanas con luz de tarde"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Biblioteca con estanterías curvas llenas de libros"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--claro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Horarios</p>
+      <h2 class="revela" id="t-carta">Encuentra <em>tu hueco</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Refuerzo</h3><ul><li class="plato"><b>Primaria</b><span>Lunes a jueves · 16:00–17:00</span><strong>75&nbsp;€/mes</strong></li><li class="plato"><b>ESO</b><span>Lunes y miércoles o martes y jueves · 17:00–18:30</span><strong>90&nbsp;€/mes</strong></li><li class="plato"><b>ESO intensivo</b><span>Tres días · 17:00–18:30</span><strong>120&nbsp;€/mes</strong></li></ul></div><div class="grupo revela"><h3>Bachillerato</h3><ul><li class="plato"><b>Matemáticas</b><span>Martes y jueves · 18:30–20:00</span><strong>120&nbsp;€/mes</strong></li><li class="plato"><b>Física y química</b><span>Lunes y miércoles · 18:30–20:00</span><strong>120&nbsp;€/mes</strong></li><li class="plato"><b>Simulacro de selectividad</b><span>Un sábado al mes · 10:00–13:00</span><strong>incluido</strong></li></ul></div><div class="grupo revela"><h3>Idiomas</h3><ul><li class="plato"><b>Inglés niños</b><span>Martes y jueves · 17:00–18:00</span><strong>70&nbsp;€/mes</strong></li><li class="plato"><b>Inglés B2 y C1</b><span>Lunes y miércoles · 19:30–21:00</span><strong>95&nbsp;€/mes</strong></li><li class="plato"><b>Euskera B1 a C1</b><span>Martes y jueves · 19:30–21:00</span><strong>95&nbsp;€/mes</strong></li></ul></div></div>
+      <p class="carta__nota">Horarios de ejemplo: en tu web, los tuyos, con las plazas que quedan en cada grupo.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--acento reservas" id="matricula" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Matrícula</p>
+        <h2 class="revela" id="t-reservas">Empieza <em>con una clase gratis</em></h2>
+        <p class="entrada revela">Prueba una clase sin compromiso. Si encaja, te reservamos plaza; si no, te decimos qué te iría mejor.</p>
+        <ol class="pasos revela"><li><p><b>Pide la clase de prueba</b><span>Dinos curso y asignatura.</span></p></li><li><p><b>Prueba sin compromiso</b><span>Si encaja, te guardamos plaza.</span></p></li><li><p><b>Empieza cuando quieras</b><span>Nos ponemos al día con el temario de tu cole.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20una%20clase%20de%20prueba%20en%20la%20academia"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Pedir clase de prueba por WhatsApp</a>
+          <a class="boton boton--linea" href="#matricula" data-abre="aviso">Matricularme online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Mano escribiendo con bolígrafo en un cuaderno junto a una ventana"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--claro galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">En clase</p>
+      <h2 class="revela" id="t-galeria">Así se <em>estudia aquí</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Cuaderno de espiral en blanco y un bolígrafo sobre una mesa de madera"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Libros abiertos amontonados unos sobre otros"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Persona escribiendo notas en una libreta apoyada en las rodillas"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manzana roja sobre una pila de libros, con cubos de letras y lápices de colores"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Libros abiertos colgando del techo junto a bombillas encendidas"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Tardes de lunes a viernes · sábados por la mañana</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Ortzi</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>15:30–21:00</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>15:30–21:00</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>15:30–21:00</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>15:30–21:00</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>15:30–21:00</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>10:00–13:00</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En el Centro, <em>calle Easo</em></h2>
+        <address class="direccion revela">Calle Easo 40<br>20006 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3146%2C-1.9829">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3146,-1.9829&amp;q=Ortzi">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3146%2C-1.9829&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Akademia Ortzi</span><span class="marca__lugar">Refuerzo · Idiomas</span></p>
+      <p>Academia de refuerzo e idiomas en el Centro</p>
+    </div>
+    <p>Calle Easo 40<br>20006 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20una%20clase%20de%20prueba%20en%20la%20academia">Pedir clase de prueba por WhatsApp</a></p>
+    <p>Lunes: 15:30–21:00<br>Martes: 15:30–21:00<br>Miércoles: 15:30–21:00<br>Jueves: 15:30–21:00<br>Viernes: 15:30–21:00<br>Sábado: 10:00–13:00<br>Domingo: Cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/otros-negocios/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría la matrícula online: curso, grupo con plazas libres y pago de la primera cuota.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/otros-negocios/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/*    Alba Café · café de especialidad y obrador en Gros. Amarillo plano y negro; League Gothic gigante y letra de máquina.
+   La taza en un círculo negro, la pegatina del horno y la cinta de cafés. */
+:root{--fondo:#FFF6D6;--texto:#0E0E0C;--suave:#4A473D;--acento:#0E0E0C;--sobre-acento:#FFD21F;--oscuro:#0E0E0C;--sobre-oscuro:#FFF6D6;--suave-oscuro:#D9D3BD;
+  --linea:rgba(14,14,12,.22);--linea-oscura:rgba(255,246,214,.22);--f-display:"League Gothic",Impact,sans-serif;--f-texto:"Space Mono",ui-monospace,monospace;--f-dato:"Space Mono",ui-monospace,monospace;
+  --mayus-display:uppercase;--tracking-display:.005em;--h2-fuente:400 clamp(3rem,2rem + 4.4vw,6rem)/.9 var(--f-display);--h3-fuente:400 clamp(1.9rem,1.5rem + 1.2vw,2.6rem)/1 var(--f-display);
+  --cab-texto:#0E0E0C;--cab-solida:#FFD21F;--radio-boton:0;--radio-foto:0;--boton-fuente:700 .875rem/1.1 var(--f-texto);--boton-mayus:uppercase;--boton-tracking:.04em;
+  --fondo-acento:#FFD21F;--sobre-fondo-acento:#0E0E0C;--kicker:#0E0E0C;--kicker-oscuro:#FFD21F;--resalte:rgba(255,210,31,.6);--pie-fondo:#0E0E0C;
+  --menu-fuente:700 .8125rem/1 var(--f-texto);--menu-mayus:uppercase;--paso-fuente:400 1.6rem/1 var(--f-display)}
+body{font-size:1rem}
+/* Rotulador: cubre de la altura de las mayúsculas a la línea base, no el pie de la línea de arriba (League Gothic: 1,195 em de caja, 0,744 de mayúscula) */
+h2 em{--marca:#FFD21F;font-style:normal;color:#0E0E0C;padding:0 .12em;background:linear-gradient(transparent 12%,var(--marca) 12% 89%,transparent 89%);
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sec--acento h2 em{--marca:#0E0E0C;color:#FFD21F}
+.sec--oscuro h2 em{--marca:#FFD21F;color:#0E0E0C}
+.sec--acento{--suave:#2E2B22;--linea:rgba(14,14,12,.3)}
+.marca{font:400 1.9rem/1 var(--f-display);letter-spacing:.02em}
+.cabecera .estado{font-size:.75rem;letter-spacing:.04em;min-height:40px;padding:0 .9rem;border:2px solid currentColor;border-radius:999px}
+.portada{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-rows:1fr auto auto;align-items:center;gap:1.5rem clamp(2rem,4vw,4rem);
+  min-height:100vh;min-height:100svh;padding:5.75rem var(--margen) 0;overflow:hidden;background:#FFD21F;color:#0E0E0C}
+.portada h1{font:400 clamp(4.4rem,10.4vw,10.5rem)/.86 var(--f-display);text-transform:uppercase;letter-spacing:.005em}
+.portada .botones{margin-top:1.4rem}
+.taza{position:relative;justify-self:center;width:min(100%,27rem);aspect-ratio:1;border-radius:50%;background:#0E0E0C;padding:18px;box-shadow:0 30px 50px -25px rgba(0,0,0,.45)}
+.taza img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.pegatina{position:absolute;right:-.8rem;top:.6rem;display:grid;place-items:center;width:7.6rem;height:7.6rem;border-radius:50%;background:#FFF6D6;border:2px solid #0E0E0C;
+  transform:rotate(12deg);text-align:center;font:700 .75rem/1.25 var(--f-texto);text-transform:uppercase}
+.pegatina b{display:block;font:400 2rem/1 var(--f-display)}
+.celdas{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:3px solid #0E0E0C}
+.celdas>div{padding:.9rem 1rem .9rem 0;font-size:.8125rem;line-height:1.4}
+.celdas>div+div{padding-left:1rem;border-left:2px solid #0E0E0C}
+.celdas b{display:block;font:400 1.6rem/1 var(--f-display);text-transform:uppercase;margin-bottom:.2rem}
+.cinta{grid-column:1/-1;margin:0 calc(-1*var(--margen));padding:.75rem 0;background:#0E0E0C;color:#FFD21F;white-space:nowrap;overflow:hidden;font:400 2.1rem/1 var(--f-display);letter-spacing:.04em;text-transform:uppercase}
+.cinta span{display:inline-block;padding-left:var(--margen)}
+.grupo h3{border-bottom-width:3px}
+/* Galería en mosaico: la primera foto grande */
+@media (min-width:62rem){.galeria .tira{grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,15rem)}.galeria .tira li:first-child{grid-column:span 2;grid-row:span 2}.galeria .tira img{height:100%;aspect-ratio:auto}}
+.sec--oscuro .boton--acento{background:#FFD21F;border-color:#FFD21F;color:#0E0E0C}
+.plato strong{font-weight:700}
+/* La casa al revés que las demás: fotos a la izquierda y la segunda pegada encima, como una pegatina */
+.casa__fotos{position:relative;display:block;padding-bottom:3.5rem}
+.casa__fotos img:first-child{width:80%}
+.casa__fotos img:nth-child(2){position:absolute;right:0;bottom:0;width:48%;margin:0;border:8px solid #0E0E0C;transform:rotate(4deg)}
+@media (min-width:56rem){.casa .envoltura{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}.casa__fotos{order:-1}}
+/* Pedidos: la foto en un círculo negro, como la taza de la portada */
+.reservas figure{justify-self:center;width:min(100%,24rem)}
+.reservas figure img{aspect-ratio:1;border-radius:50%;border:14px solid #0E0E0C}
+@media (max-width:56rem){.portada{grid-template-columns:1fr;padding-top:5.25rem}.taza{width:min(78%,19rem)}.celdas{grid-template-columns:1fr}.celdas>div+div{padding-left:0;border-left:0;border-top:2px solid #0E0E0C}}
+@media (max-width:36rem){.cabecera .estado{display:none}}
+

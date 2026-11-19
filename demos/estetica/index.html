@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nácar · Demo de centro de estética · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de un centro de estética de lujo inventado en el Centro de Donostia. Rituales con duración y precio, reserva por WhatsApp, horario y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [[600, 1200]], "2": [[600, 1200]], "3": [[600, 1200]], "4": [[600, 1200]], "5": [[600, 1200]], "6": [[600, 840]], "0": []}, "mapa": {"q": "43.3207,-1.9838", "titulo": "Mapa de Google: Calle Garibai 10, Centro, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BeautySalon", "name": "Nácar", "description": "Centro de estética en Centro, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Garibai 10", "postalCode": "20004", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3207, "longitude": -1.9838}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "10:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Nácar, volver al inicio"><span class="marca__nombre">Nácar</span><span class="marca__lugar">Estética avanzada</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#rituales">Rituales</a><a href="#casa">La casa</a><a href="#carta">Carta</a><a href="#horario">Horario</a><a href="#llegar">Cómo llegar</a>
+    <a class="boton boton--acento menu__cta" href="#reserva">Reservar</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#reserva">Reservar</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <div class="portada__texto">
+      <p class="kicker">Estética avanzada · Centro · Donostia</p>
+      <h1 id="titulo">La piel, <em>en calma</em></h1>
+      <p class="portada__sub">Rituales faciales y corporales sin prisas, en una cabina solo para ti. En la primera visita miramos tu piel y te decimos qué necesita, y qué no.</p>
+      <div class="botones"><a class="boton boton--acento" href="#reserva">Reservar consulta</a><a class="boton boton--linea" href="#rituales">Ver rituales</a></div>
+      <p class="estado" data-estado>Lunes a sábado · solo con cita</p>
+    </div>
+    <figure class="joya">
+      <img src="img/portada.webp" width="900" height="1200" alt="Pipeta de cristal con una gota de sérum dorado" fetchpriority="high">
+      <figcaption>Ritual Nácar <span>90 min · 145 €</span></figcaption>
+    </figure>
+  </section>
+  <section class="sec sec--claro casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">La casa</p>
+        <h2 class="revela" id="t-casa">Una cabina, <em>una persona</em></h2>
+        <p class="entrada revela">Recibimos a una persona cada vez. Antes de empezar miramos tu piel con calma y te contamos qué vamos a hacer y por qué. Luego, silencio, manos expertas y el tiempo que haga falta.</p>
+        <ul class="datos revela"><li>Diagnóstico de piel en la primera visita</li><li>Cabina individual</li><li>Cosmética sin perfume</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Sala de descanso con ventanales a un jardín con piscina y cojines en el suelo"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Vela encendida en un vaso de cristal sobre un banco de madera junto a la camilla"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--papel tarjetas" id="rituales" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">Rituales firma</p>
+      <h2 class="revela" id="t-tarjetas">Tiempo <em>para ti</em></h2>
+      <p class="entrada revela">Los cuatro que más se repiten en nuestra agenda. Cada uno, con su duración y su precio cerrados.</p>
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Rostro</span><h3>Ritual Nácar</h3><p>Limpieza profunda, exfoliación enzimática, masaje kobido y mascarilla de oro.</p><strong class="tarjeta__precio">90 min · 145&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Rostro</span><h3>Luz y oxígeno</h3><p>Para la piel apagada: vitamina C, oxigenación y un masaje que despierta.</p><strong class="tarjeta__precio">60 min · 95&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Cuerpo</span><h3>Piedras calientes</h3><p>Basalto templado y aceite tibio para soltar la espalda y dormir mejor.</p><strong class="tarjeta__precio">75 min · 110&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Cuerpo</span><h3>Drenaje suave</h3><p>Piernas ligeras con presión justa, sin aparatos, con las manos.</p><strong class="tarjeta__precio">60 min · 85&nbsp;€</strong></li></ul>
+      
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Carta</p>
+      <h2 class="revela" id="t-carta">Todo lo que <em>hacemos</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Rostro</h3><ul><li class="plato"><b>Higiene facial</b><span>Con extracción y mascarilla</span><strong>70&nbsp;€</strong></li><li class="plato"><b>Peeling suave</b><span>Ácidos a baja concentración</span><strong>80&nbsp;€</strong></li><li class="plato"><b>Microagujas</b><span>Con sérum de hialurónico</span><strong>160&nbsp;€</strong></li><li class="plato"><b>Masaje kobido</b><span>Lifting japonés con las manos</span><strong>75&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Cuerpo</h3><ul><li class="plato"><b>Masaje relajante</b><span>60 minutos</span><strong>75&nbsp;€</strong></li><li class="plato"><b>Exfoliación con sales</b><span>Y crema de karité</span><strong>65&nbsp;€</strong></li><li class="plato"><b>Envoltura de algas</b><span>Con masaje de cuero cabelludo</span><strong>90&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Manos y mirada</h3><ul><li class="plato"><b>Manicura spa</b><span>Con parafina</span><strong>40&nbsp;€</strong></li><li class="plato"><b>Lifting de pestañas</b><span>Con tinte</span><strong>55&nbsp;€</strong></li><li class="plato"><b>Diseño de cejas</b><span>Con hilo o pinza</span><strong>25&nbsp;€</strong></li></ul></div></div>
+      <p class="carta__nota">Carta de ejemplo: en tu web, tus tratamientos, con duración y precio.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--claro galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">Detalles</p>
+      <h2 class="revela" id="t-galeria">Lo que <em>se nota</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos dando un masaje en la espalda a una clienta tumbada en la camilla"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Piedras de basalto negras y pulidas sobre fondo oscuro"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Bañera exenta de piedra clara en un baño sereno con una palmera"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Manos dejando caer una gota de aceite desde un frasco de cristal ámbar"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Piedras calientes colocadas a lo largo de una espalda, entre flores blancas"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--papel reservas" id="reserva" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Reserva</p>
+        <h2 class="revela" id="t-reservas">Reserva <em>tu momento</em></h2>
+        <p class="entrada revela">Cuéntanos qué buscas y te proponemos el ritual que mejor te va, con duración y precio cerrados antes de venir.</p>
+        <ol class="pasos revela"><li><p><b>Cuéntanos qué buscas</b><span>Una frase basta: relajarte, piel apagada, un evento…</span></p></li><li><p><b>Te proponemos un ritual</b><span>Con día, hora y precio cerrados.</span></p></li><li><p><b>Ven diez minutos antes</b><span>Té, bata y ni una prisa.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20en%20Nácar"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Reservar por WhatsApp</a>
+          <a class="boton boton--linea" href="#reserva" data-abre="aviso">Reservar online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Manos masajeando con suavidad el antebrazo y la muñeca de una clienta"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--claro visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Lunes a sábado · solo con cita</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Nácar</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>10:00–20:00</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>10:00–20:00</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>10:00–20:00</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>10:00–20:00</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>10:00–20:00</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>10:00–14:00</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>Cerrado</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En el Centro, <em>calle Garibai</em></h2>
+        <address class="direccion revela">Calle Garibai 10<br>20004 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3207%2C-1.9838">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3207,-1.9838&amp;q=Nácar">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3207%2C-1.9838&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Nácar</span><span class="marca__lugar">Estética avanzada</span></p>
+      <p>Estética avanzada en el Centro de Donostia</p>
+    </div>
+    <p>Calle Garibai 10<br>20004 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20reservar%20en%20Nácar">Reservar por WhatsApp</a></p>
+    <p>Lunes: 10:00–20:00<br>Martes: 10:00–20:00<br>Miércoles: 10:00–20:00<br>Jueves: 10:00–20:00<br>Viernes: 10:00–20:00<br>Sábado: 10:00–14:00<br>Domingo: Cerrado</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría tu agenda: el cliente elige ritual, día y hora, y recibe la confirmación por correo.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>

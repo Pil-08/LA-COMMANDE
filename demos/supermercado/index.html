@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saskia · Demo de supermercado de barrio · La Commande</title>
+<meta name="description" content="Demo de La Commande: web de un supermercado familiar inventado en Egia, Donostia. Ofertas de la semana, pedido por WhatsApp con reparto, horario y cómo llegar.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF8EC">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="stylesheet" href="../fonts/fuentes.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>window.LOCAL={"horario": {"1": [[510, 840], [1020, 1230]], "2": [[510, 840], [1020, 1230]], "3": [[510, 840], [1020, 1230]], "4": [[510, 840], [1020, 1230]], "5": [[510, 840], [1020, 1230]], "6": [[540, 870]], "0": [[570, 810]]}, "mapa": {"q": "43.3176,-1.9745", "titulo": "Mapa de Google: Calle Egia 15, Egia, Donostia (ejemplo)"}}</script>
+<script src="js/local.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "GroceryStore", "name": "Saskia", "description": "Supermercado de barrio en Egia, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Egia 15", "postalCode": "20012", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3176, "longitude": -1.9745}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "08:30", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "17:00", "closes": "20:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "08:30", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "17:00", "closes": "20:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "08:30", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "17:00", "closes": "20:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "08:30", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "17:00", "closes": "20:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "08:30", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "17:00", "closes": "20:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:30"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:30", "closes": "13:30"}]}</script>
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="Saskia, volver al inicio"><span class="marca__nombre">Saskia</span><span class="marca__lugar">Supermercado · Egia</span></a>
+  <nav class="menu" id="menu" aria-label="Principal">
+    <a href="#ofertas">Ofertas</a><a href="#casa">La tienda</a><a href="#carta">Secciones</a><a href="#pedidos">Pedidos</a><a href="#horario">Horario</a>
+    <a class="boton boton--acento menu__cta" href="#pedidos">Hacer pedido</a>
+  </nav>
+  
+  <a class="boton boton--acento cabecera__cta" href="#pedidos">Hacer pedido</a>
+  <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu">Menú <span aria-hidden="true"></span></button>
+</header>
+
+<main id="contenido">
+  <section class="portada" id="inicio" aria-labelledby="titulo">
+    <div class="portada__texto">
+      <p class="kicker">Supermercado de barrio · Egia</p>
+      <h1 id="titulo">Lo de siempre, <em>fresco</em> cada mañana</h1>
+      <p class="portada__sub">Fruta de temporada, carnicería, pan del día y todo lo de casa, a dos minutos. Haz la lista por WhatsApp y te la subimos.</p>
+      <div class="botones"><a class="boton boton--acento" href="#pedidos">Hacer el pedido por WhatsApp</a><a class="boton boton--linea" href="#ofertas">Ofertas de la semana</a></div>
+      <p class="estado" data-estado>Todos los días · el domingo por la mañana</p>
+    </div>
+    <figure class="cesta">
+      <img src="img/portada.webp" width="1200" height="900" alt="Puesto de fruta con cajas de fresas, manzanas, ciruelas y mangos" fetchpriority="high">
+      <p class="etiqueta-precio" aria-hidden="true"><span>Fresas</span><b>2,95&nbsp;€</b><small>la bandeja</small></p>
+      <p class="sello-reparto" aria-hidden="true">Te lo llevamos<b>gratis</b><small>desde 40 €</small></p>
+    </figure>
+  </section>
+  <section class="sec sec--claro tarjetas" id="ofertas" aria-labelledby="t-tarjetas">
+    <div class="envoltura">
+      <p class="kicker revela">Esta semana</p>
+      <h2 class="revela" id="t-tarjetas">Ofertas que <em>sí apetecen</em></h2>
+      
+      <ul class="tarjetas__lista"><li class="tarjeta revela"><span class="tarjeta__etiqueta">Frutería</span><h3>Naranja de zumo</h3><p>Malla de 3 kg, dulce y con mucho zumo.</p><strong class="tarjeta__precio">2,95&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Carnicería</span><h3>Pollo de caserío</h3><p>Entero; te lo limpiamos y troceamos si quieres.</p><strong class="tarjeta__precio">5,90&nbsp;€/kg</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Panadería</span><h3>Pan de masa madre</h3><p>Sale del horno a las ocho de la mañana.</p><strong class="tarjeta__precio">2,40&nbsp;€</strong></li><li class="tarjeta revela"><span class="tarjeta__etiqueta">Charcutería</span><h3>Queso Idiazabal</h3><p>Cuña de 250 g, curado y ahumado.</p><strong class="tarjeta__precio">6,50&nbsp;€</strong></li></ul>
+      <p class="carta__nota">Ofertas de ejemplo: en tu web, las de esta semana, cambiadas en un minuto desde el móvil.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--papel casa" id="casa" aria-labelledby="t-casa">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">La tienda</p>
+        <h2 class="revela" id="t-casa">La tienda de <em>toda la vida</em>, con lo de ahora</h2>
+        <p class="entrada revela">Fruta elegida cada mañana, carnicería con trato de tú y pan que llega caliente. Y lo de ahora: haces la lista por WhatsApp desde el sofá y te la subimos a casa.</p>
+        <ul class="datos revela"><li>Reparto gratis desde 40&nbsp;€</li><li>Pago con tarjeta o Bizum</li><li>Encargos de carnicería</li></ul>
+      </div>
+      <div class="casa__fotos revela"><img src="img/casa1.webp" width="720" height="900" loading="lazy" decoding="async" alt="Estanterías de madera con cajas de frutas y verduras de temporada"><img src="img/casa2.webp" width="720" height="900" loading="lazy" decoding="async" alt="Cajas llenas de verduras frescas en una tienda de barrio"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--claro carta" id="carta" aria-labelledby="t-carta">
+    <div class="envoltura">
+      <p class="kicker revela">Secciones</p>
+      <h2 class="revela" id="t-carta">Todo lo de casa, <em>a dos minutos</em></h2>
+      <div class="carta__grupos"><div class="grupo revela"><h3>Frutería</h3><ul><li class="plato"><b>Tomate de temporada</b><strong>2,80&nbsp;€/kg</strong></li><li class="plato"><b>Manzana reineta</b><strong>2,20&nbsp;€/kg</strong></li><li class="plato"><b>Lechuga</b><span>La unidad</span><strong>0,90&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Carnicería y charcutería</h3><ul><li class="plato"><b>Filetes de ternera</b><span>De primera</span><strong>16,90&nbsp;€/kg</strong></li><li class="plato"><b>Chistorra</b><strong>9,80&nbsp;€/kg</strong></li><li class="plato"><b>Jamón cocido</b><span>Al corte</span><strong>14,50&nbsp;€/kg</strong></li></ul></div><div class="grupo revela"><h3>Panadería y desayuno</h3><ul><li class="plato"><b>Barra de pan</b><strong>1,10&nbsp;€</strong></li><li class="plato"><b>Croissant</b><span>De mantequilla</span><strong>1,30&nbsp;€</strong></li><li class="plato"><b>Leche del día</b><span>El litro</span><strong>1,25&nbsp;€</strong></li></ul></div><div class="grupo revela"><h3>Casa</h3><ul><li class="plato"><b>Detergente</b><span>Botella de 2 L</span><strong>4,95&nbsp;€</strong></li><li class="plato"><b>Papel de cocina</b><span>Pack de 2</span><strong>2,30&nbsp;€</strong></li><li class="plato"><b>Bolsas de basura</b><span>Rollo de 15</span><strong>1,60&nbsp;€</strong></li></ul></div></div>
+      <p class="carta__nota">Precios de ejemplo: en tu web, tu catálogo con lo que cambia cada semana.</p>
+    </div>
+  </section>
+
+  <section class="sec sec--oscuro reservas" id="pedidos" aria-labelledby="t-reservas">
+    <div class="envoltura">
+      <div>
+        <p class="kicker revela">Pedidos</p>
+        <h2 class="revela" id="t-reservas">Tu compra, <em>en casa</em></h2>
+        <p class="entrada revela">Mándanos la lista como se la mandarías a alguien de casa. La preparamos con mimo y te la llevamos el mismo día.</p>
+        <ol class="pasos revela"><li><p><b>Mándanos la lista</b><span>Por WhatsApp, foto de papel incluida.</span></p></li><li><p><b>Te la preparamos</b><span>La fruta, como si fuera para nosotros.</span></p></li><li><p><b>Te la llevamos</b><span>En Egia y Gros, gratis desde 40 €.</span></p></li></ol>
+        <div class="botones revela">
+          <a class="boton boton--acento" href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20pedido"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 13.6c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.8 1 .9 1.8 1.2 2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.4Z"/></svg>Hacer el pedido por WhatsApp</a>
+          <a class="boton boton--linea" href="#pedidos" data-abre="aviso">Pedir online</a>
+        </div>
+      </div>
+      <figure class="revela"><img src="img/reserva.webp" width="720" height="900" loading="lazy" decoding="async" alt="Caja de madera con calabacín, uvas, pimientos y calabaza sobre la hierba"></figure>
+    </div>
+  </section>
+
+  <section class="sec sec--claro galeria" id="galeria" aria-labelledby="t-galeria">
+    <div class="envoltura">
+      <p class="kicker revela">Hoy en la tienda</p>
+      <h2 class="revela" id="t-galeria">Recién <em>llegado</em></h2>
+      <ul class="tira"><li><img src="img/g1.webp" width="640" height="800" loading="lazy" decoding="async" alt="Hogazas de pan rústico enharinadas sobre tela de saco"></li><li><img src="img/g2.webp" width="640" height="800" loading="lazy" decoding="async" alt="Verduras de temporada amontonadas: calabacines, zanahorias, patatas, rábanos y un pimiento amarillo"></li><li><img src="img/g3.webp" width="640" height="800" loading="lazy" decoding="async" alt="Tarrinas de tomates cherry de colores en el mostrador"></li><li><img src="img/g4.webp" width="640" height="800" loading="lazy" decoding="async" alt="Pimientos amarillos, naranjas y rojos en filas"></li><li><img src="img/g5.webp" width="640" height="800" loading="lazy" decoding="async" alt="Panes de semillas con espigas de trigo sobre una mesa oscura"></li></ul>
+      <p class="credito">Fotos de Unsplash</p>
+    </div>
+  </section>
+
+  <section class="sec sec--papel visita" id="horario" aria-labelledby="t-horario">
+    <div class="envoltura">
+      <div class="visita__horario">
+        <p class="kicker revela">Horario</p>
+        <h2 class="revela" id="t-horario">Cuándo <em>venir</em></h2>
+        <p class="estado" data-estado>Todos los días · el domingo por la mañana</p>
+        <table class="horario revela">
+          <caption class="solo-lectores">Horario de Saskia</caption>
+          <tbody><tr data-dia="1"><th scope="row">Lunes</th><td>8:30–14:00 · 17:00–20:30</td></tr><tr data-dia="2"><th scope="row">Martes</th><td>8:30–14:00 · 17:00–20:30</td></tr><tr data-dia="3"><th scope="row">Miércoles</th><td>8:30–14:00 · 17:00–20:30</td></tr><tr data-dia="4"><th scope="row">Jueves</th><td>8:30–14:00 · 17:00–20:30</td></tr><tr data-dia="5"><th scope="row">Viernes</th><td>8:30–14:00 · 17:00–20:30</td></tr><tr data-dia="6"><th scope="row">Sábado</th><td>9:00–14:30</td></tr><tr data-dia="0"><th scope="row">Domingo</th><td>9:30–13:30</td></tr></tbody>
+        </table>
+      </div>
+      <div class="visita__llegar" id="llegar">
+        <p class="kicker revela">Cómo llegar</p>
+        <h2 class="revela">En Egia, <em>a dos minutos</em></h2>
+        <address class="direccion revela">Calle Egia 15<br>20012 Donostia / San Sebastián</address>
+        <div class="mapas revela">
+          <a class="boton boton--acento" href="https://www.google.com/maps/search/?api=1&amp;query=43.3176%2C-1.9745">Google Maps</a>
+          <a class="boton boton--linea" href="https://maps.apple.com/?ll=43.3176,-1.9745&amp;q=Saskia">Apple Maps</a>
+          <a class="boton boton--linea" href="https://waze.com/ul?ll=43.3176%2C-1.9745&amp;navigate=yes">Waze</a>
+        </div>
+        <div class="mapa" id="mapa">
+          <div class="mapa__aviso">
+            <button class="boton boton--linea" type="button" id="mapa-cargar">Ver el mapa aquí</button>
+            <p>Al cargar el mapa, tu navegador se conecta con Google.</p>
+          </div>
+        </div>
+        <p class="cerca">Texto de ejemplo: en tu web, cómo llegar a pie, en autobús o en coche desde tu barrio.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="pie-pagina">
+  <div class="envoltura">
+    <div>
+      <p class="marca"><span class="marca__nombre">Saskia</span><span class="marca__lugar">Supermercado · Egia</span></p>
+      <p>Supermercado de barrio en Egia</p>
+    </div>
+    <p>Calle Egia 15<br>20012 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20pedido">Hacer el pedido por WhatsApp</a></p>
+    <p>Lunes: 8:30–14:00 · 17:00–20:30<br>Martes: 8:30–14:00 · 17:00–20:30<br>Miércoles: 8:30–14:00 · 17:00–20:30<br>Jueves: 8:30–14:00 · 17:00–20:30<br>Viernes: 8:30–14:00 · 17:00–20:30<br>Sábado: 9:00–14:30<br>Domingo: 9:30–13:30</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+  </div>
+</footer>
+
+<a class="demo" href="https://la-commande.pages.dev/otros-negocios/">Demo<span class="demo__marca"> · La Commande</span></a>
+
+<dialog class="aviso" id="aviso" aria-labelledby="t-aviso">
+  <h2 id="t-aviso">Esto es una demo</h2>
+  <p>En tu web, este botón abriría tu tienda online o un formulario de pedido con reparto por barrios.</p>
+  <form method="dialog" class="botones">
+    <a class="boton boton--acento" href="https://la-commande.pages.dev/otros-negocios/">Quiero una web así</a>
+    <button class="boton boton--linea">Cerrar</button>
+  </form>
+</dialog>
+</body>
+</html>
