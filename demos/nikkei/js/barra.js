@@ -149,8 +149,8 @@
   if (cargarMapa && mapa) {
     cargarMapa.addEventListener('click', function () {
       var marco = document.createElement('iframe');
-      marco.src = 'https://maps.google.com/maps?q=43.3238,-1.9861&z=17&hl=es&output=embed';
-      marco.title = 'Mapa de Google: Calle Mayor 12, Donostia (ejemplo)';
+      marco.src = 'https://maps.google.com/maps?q=43.3236,-1.9849&z=17&hl=es&output=embed';
+      marco.title = 'Mapa de Google: Calle Itsasaro 12, Donostia (ejemplo)';
       marco.loading = 'lazy';
       marco.referrerPolicy = 'no-referrer-when-downgrade';
       mapa.appendChild(marco);
