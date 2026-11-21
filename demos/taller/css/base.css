@@ -42,7 +42,7 @@ ul,ol{list-style:none}
 @media (max-width:61.99rem){
   .menu-boton{display:inline-flex}
   .cabecera__cta{display:none}
-  .menu{position:fixed;inset:4.75rem 0 0;flex-direction:column;align-items:stretch;gap:0;padding:1.5rem var(--margen) 3rem;background:var(--cab-solida);font-size:1.125rem;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}
+  .menu{position:fixed;inset:4.75rem 0 0;overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;gap:0;padding:1.5rem var(--margen) 3rem;background:var(--cab-solida);font-size:1.125rem;visibility:hidden;opacity:0;transition:opacity .3s,visibility .3s}
   .menu a:not(.boton){padding:1rem 0;border-bottom:1px solid rgba(127,127,127,.3)}
   .menu__cta{display:inline-flex;margin-top:2rem}
   .cabecera--menu{background:var(--cab-solida)}

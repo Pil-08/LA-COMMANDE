@@ -106,7 +106,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .menu-boton__rayas::after{bottom:0}
   .cabecera--menu .menu-boton__rayas::before{transform:translateY(4px) rotate(45deg)}
   .cabecera--menu .menu-boton__rayas::after{transform:translateY(-4px) rotate(-45deg)}
-  .menu{position:fixed;inset:0;z-index:-1;display:grid;place-items:center;justify-self:stretch;padding:5rem var(--margen) 2rem;background:var(--tinta);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+  .menu{position:fixed;inset:0;z-index:-1;display:grid;place-items:center;place-items:safe center;justify-self:stretch;overflow-y:auto;overscroll-behavior:contain;padding:0 var(--margen) 2rem;border-top:5rem solid var(--tinta);background:var(--tinta);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
   .cabecera--menu .menu{opacity:1;visibility:visible;transition:opacity .45s ease}
   .menu ul{flex-direction:column;gap:.25rem;text-align:center}
   .menu a{min-height:56px;padding:0 1rem;font:300 2.25rem/1.2 var(--serif);letter-spacing:.01em;text-transform:none}

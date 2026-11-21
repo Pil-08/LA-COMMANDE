@@ -39,7 +39,7 @@ button{font:inherit;color:inherit}
 .flecha{display:inline-block;width:1.15em;height:.7em;margin-left:.45em;vertical-align:-.02em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}
 
 /* ---------- Cabecera ---------- */
-.cab{position:fixed;inset:0 0 auto 0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:var(--cab);padding:10px var(--pagina);background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(17,17,17,.12)}
+.cab{position:fixed;inset:0 0 auto 0;z-index:96;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:var(--cab);padding:10px var(--pagina);background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid rgba(17,17,17,.12)}
 .marca{display:flex;align-items:center;gap:11px;min-height:44px;color:var(--negro);font-weight:900;font-size:14px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
 .marca:hover{color:var(--negro)}
 .marca img{height:30px;width:auto}
@@ -57,7 +57,9 @@ button{font:inherit;color:inherit}
 .menu summary::-webkit-details-marker{display:none}
 .menu summary::before{content:"";width:14px;height:8px;border-top:2px solid currentColor;border-bottom:2px solid currentColor}
 .menu[open] summary{background:var(--negro);color:var(--blanco);border-color:var(--negro)}
-.menu__lista{position:absolute;left:0;right:0;top:100%;background:var(--blanco);border-bottom:1px solid rgba(17,17,17,.12);padding:6px var(--pagina) 14px;box-shadow:0 0 0 100vmax rgba(17,17,17,.42);clip-path:inset(0 0 -100vmax 0)}
+.menu__lista{position:absolute;left:0;right:0;top:100%;background:var(--blanco);border-bottom:1px solid rgba(17,17,17,.12);padding:6px var(--pagina) 14px;box-shadow:0 0 0 100vmax rgba(17,17,17,.42);clip-path:inset(0 0 -100vmax 0);
+  max-height:calc(100vh - var(--cab) + 1px);overflow-y:auto;overscroll-behavior:contain}  /* móvil en horizontal: el menú se desplaza */
+@supports (height:1dvh){.menu__lista{max-height:calc(100dvh - var(--cab) + 1px)}}
 .menu__lista a{display:flex;align-items:center;justify-content:space-between;min-height:48px;border-bottom:1px dotted rgba(17,17,17,.28);color:var(--negro);font:700 12px var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .menu__lista a[aria-current="page"]{color:var(--rojo-hondo)}
 /* en pantallas estrechas los idiomas no caben arriba: van dentro del menú */
@@ -193,9 +195,9 @@ html:not(.js) .sectores,html:not(.js) [data-atajos],html:not(.js) .carta__chips,
 .pasos li{display:flex;align-items:baseline;gap:12px;padding:15px 16px;background:var(--blanco);border:1px solid rgba(17,17,17,.12)}
 .pasos b{font:700 12px var(--mono);letter-spacing:.1em;color:var(--rojo-hondo)}
 .pasos span{font-weight:600;font-size:14.5px;line-height:1.35;letter-spacing:-.01em}
-.carta{display:grid;grid-template-columns:1fr;gap:clamp(24px,3.5vw,52px);margin-top:clamp(32px,5vw,56px);align-items:start}
+.carta{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(24px,3.5vw,52px);margin-top:clamp(32px,5vw,56px);align-items:start}
 .carta__rotulo{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:22px 0 8px}
-.carta__rotulo:first-child{margin-top:0}
+.carta > div > .carta__rotulo:first-child{margin-top:0}  /* solo el primero de la columna: «O por tipo de local» conserva su aire */
 .carta__rotulo b{font:700 11px var(--mono);letter-spacing:.16em;text-transform:uppercase}
 .carta__rotulo span{font:400 11.5px var(--mono);color:var(--gris-2)}
 .carta__chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:7px}
@@ -239,8 +241,8 @@ html.js .sin-js{display:none}
 .hoja__nota[hidden]{display:none}
 .hoja__total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:22px;padding-top:18px;border-top:2px solid var(--negro)}
 .hoja__total b{font-weight:900;font-size:17px;text-transform:uppercase}
-.hoja__precio{display:flex;align-items:baseline;gap:7px}
-.hoja__precio span:first-child{font:700 30px var(--mono)}
+.hoja__precio{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:baseline;gap:0 7px}  /* si no cabe, «al mes» baja bajo el precio */
+.hoja__precio span:first-child{font:700 30px var(--mono);white-space:nowrap}
 .hoja__precio span:last-child{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gris-2)}
 .hoja label{display:block;margin-top:26px}
 .hoja label span{display:block;font:700 10.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gris-2)}
@@ -257,7 +259,7 @@ html.js .sin-js{display:none}
 .letra li{display:grid;grid-template-columns:16px 1fr;gap:8px;align-items:baseline}
 .letra svg{width:11px;height:11px;margin-top:2px;stroke:var(--rojo-hondo);stroke-width:2.4;fill:none}
 @media (min-width:900px){
-  .carta{grid-template-columns:1fr .8fr}
+  .carta{grid-template-columns:minmax(0,1fr) minmax(0,.8fr)}
   .hoja{position:sticky;top:calc(var(--cab) + 17px)}
 }
 @media (max-width:600px){
@@ -362,10 +364,12 @@ html.js .sin-js{display:none}
 .barra a:last-child b{font-size:16px;letter-spacing:.02em}
 .barra a:last-child span{font-size:9.5px;letter-spacing:.14em}
 .barra__pegado{white-space:nowrap}
-body{padding-bottom:calc(57px + env(safe-area-inset-bottom))}
+/* La barra mide 61 px, o 74 cuando su texto baja a dos líneas: el pie reserva ese hueco con su propio fondo */
+.pie{padding-bottom:calc(26px + 76px + env(safe-area-inset-bottom))}
+body:has(.menu[open]) .barra{display:none}
 @media (min-width:900px){
   .barra{display:none}
-  body{padding-bottom:0}
+  .pie{padding-bottom:26px}
 }
 
 @media (prefers-reduced-motion:reduce){
