@@ -1,5 +1,5 @@
 /* Amu · pescadería (demo de La Commande)
-   Idea: del puerto al mostrador el mismo día. La portada es el pesquero al amanecer; dentro, el género con su etiqueta
+   Idea: del puerto al mostrador el mismo día. La portada es un pesquero entre gaviotas, en vídeo; dentro, el género con su etiqueta
    (especie, zona, arte, hora de lonja), como en la caja de pescado. Tinta de mar, hielo y la luz naranja del amanecer.
    League Gothic para el nombre, Barlow Condensed para rotular, Barlow para leer y Space Mono para los datos. */
 
@@ -13,11 +13,19 @@
 @font-face{font-family:"Space Mono";src:url(../fonts/space-mono-400.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Space Mono";src:url(../fonts/space-mono-700.woff2) format("woff2");font-weight:700;font-display:swap}
 
+/* Letras de reserva con la anchura y la altura de las de verdad: al llegar estas, el texto no salta */
+@font-face{font-family:"Cond reserva";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("Roboto Bold");font-weight:600;size-adjust:65.3%;ascent-override:153.1%;descent-override:30.6%;line-gap-override:0%}
+@font-face{font-family:"Cond reserva";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("Roboto Bold");font-weight:800;size-adjust:68.1%;ascent-override:146.9%;descent-override:29.4%;line-gap-override:0%}
+@font-face{font-family:"Cond reserva";src:local("Arial Bold"),local("Arial-BoldMT"),local("Liberation Sans Bold"),local("Roboto Bold");font-weight:900;size-adjust:70.7%;ascent-override:141.4%;descent-override:28.3%;line-gap-override:0%}
+@font-face{font-family:"Sans reserva";src:local("Arial"),local("ArialMT"),local("Liberation Sans"),local("Roboto");size-adjust:95.3%;ascent-override:104.9%;descent-override:21%;line-gap-override:0%}
+@font-face{font-family:"Mono reserva";src:local("Courier New"),local("CourierNewPSMT"),local("Liberation Mono");size-adjust:101.7%;ascent-override:110.2%;descent-override:35.4%;line-gap-override:0%}
+@font-face{font-family:"Gotica reserva";src:local("Impact");size-adjust:69.7%;ascent-override:139.2%;descent-override:33%;line-gap-override:0%}
+
 :root{
   --tinta:#0E1A22; --mar:#123247; --mar-2:#18405A; --hielo:#EEF3F4; --blanco:#FFFFFF;
   --amanecer:#F2A65A; --amanecer-hondo:#A24E17; --rojo:#C92B25;
   --texto:#0E1A22; --texto-2:#45566A; --linea:rgba(14,26,34,.16); --linea-clara:rgba(255,255,255,.22);
-  --gotica:"League Gothic",Impact,sans-serif; --cond:"Barlow Condensed",sans-serif; --sans:Barlow,system-ui,sans-serif; --mono:"Space Mono",ui-monospace,monospace;
+  --gotica:"League Gothic","Gotica reserva",Impact,sans-serif; --cond:"Barlow Condensed","Cond reserva",sans-serif; --sans:Barlow,"Sans reserva",system-ui,sans-serif; --mono:"Space Mono","Mono reserva",ui-monospace,monospace;
   --e2:.5rem; --e3:.75rem; --e4:1rem; --e5:1.5rem; --e6:2rem; --e7:3rem; --e8:4.5rem; --e9:7rem;
   --margen:clamp(1.25rem,4vw,3rem); --ancho:76rem;
   --t-cuerpo:clamp(1rem,.96rem + .2vw,1.0625rem); --t-h2:clamp(2.6rem,1.8rem + 3.6vw,5rem);
@@ -61,10 +69,11 @@ h2{font:900 var(--t-h2)/.92 var(--cond);text-transform:uppercase;letter-spacing:
 
 /* Cabecera */
 .cabecera{position:fixed;inset:0 0 auto;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:var(--e4);height:4.75rem;padding:0 var(--margen);color:var(--blanco);transition:background-color .35s,box-shadow .35s}
+.cabecera:not(.cabecera--solida) :is(.marca,.menu a:not(.boton),.menu-boton){text-shadow:0 1px 10px rgba(8,14,22,.45)}
 .cabecera--solida{background:rgba(14,26,34,.96);box-shadow:0 1px 0 var(--linea-clara)}
 .marca{display:inline-flex;align-items:baseline;gap:.55rem;min-height:44px;padding-top:.55rem;text-decoration:none}
 .marca b{font:400 2.3rem/1 var(--gotica);letter-spacing:.04em}
-.marca span{font:400 .6875rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.marca span{font:400 .6875rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
 .menu{display:flex;align-items:center;gap:1.6rem;font:600 1rem/1 var(--cond);letter-spacing:.1em;text-transform:uppercase}
 .menu a:not(.boton){text-decoration:none;padding:.9rem 0;border-bottom:2px solid transparent}
 .menu a:not(.boton):hover{border-bottom-color:var(--amanecer)}
@@ -86,40 +95,98 @@ h2{font:900 var(--t-h2)/.92 var(--cond);text-transform:uppercase;letter-spacing:
   .cabecera--menu .menu-boton span::before{transform:translateY(-6px) rotate(-90deg)}
 }
 
-/* Portada: el puerto al amanecer */
+/* Portada: un pesquero entre gaviotas, en vídeo */
 .portada{position:relative;display:grid;grid-template-rows:1fr auto;min-height:100vh;min-height:100svh;padding:6rem var(--margen) 1.5rem;color:var(--blanco);background:var(--tinta);overflow:hidden;isolation:isolate}
-.portada__foto{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.portada::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,14,22,.35) 0%,rgba(8,14,22,0) 30%,rgba(8,14,22,.15) 55%,rgba(8,14,22,.85) 100%)}
-/* El puerto como un plano de vídeo: la cámara se acerca despacio, el barco se mece con el agua y un reflejo de
-   amanecer cruza el mar. Escala, traslación y giro van en propiedades separadas para que se sumen. Sin movimiento
-   si se pide menos movimiento (regla del final). */
-.portada__foto{will-change:transform;animation:puerto-acerca 38s ease-in-out infinite alternate,puerto-mece 7.5s ease-in-out infinite alternate}
-@keyframes puerto-acerca{from{scale:1.06}to{scale:1.16}}
-@keyframes puerto-mece{0%{translate:0 0;rotate:-.3deg}50%{translate:-.6% .7%;rotate:.15deg}100%{translate:-1.2% 0;rotate:.35deg}}
-.portada::after{content:"";position:absolute;left:0;right:0;top:45%;bottom:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(100deg,transparent 35%,rgba(255,206,160,.16) 48%,rgba(255,236,210,.24) 50%,rgba(255,206,160,.16) 52%,transparent 65%) 0 0/300% 100% no-repeat;
-  mix-blend-mode:screen;-webkit-mask-image:linear-gradient(180deg,transparent,#000 35%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 35%,#000 70%,transparent);
-  animation:puerto-brillo 11s ease-in-out infinite alternate}
-@keyframes puerto-brillo{from{background-position:100% 0}to{background-position:0 0}}
-.pausa{display:inline-flex;align-items:center;gap:.55rem;min-height:44px;padding:0 1rem;border:1px solid currentColor;border-radius:999px;background:rgba(8,14,22,.35);color:inherit;
-  font:400 .75rem/1 var(--mono);letter-spacing:.04em;cursor:pointer}
-.pausa::before{content:"";flex:none;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor;box-sizing:border-box}
-.quieto .pausa::before{width:0;height:0;border:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid currentColor}
-.quieto .portada__foto,.quieto .portada::after{animation-play-state:paused}
-@media (prefers-reduced-motion:reduce){.pausa{display:none}}
+/* Debajo, la foto (primer fotograma del vídeo); encima, el vídeo en cuanto arranca. Los dos con el mismo encuadre. */
+.portada__fondo,.portada__foto,.portada__video{position:absolute;inset:0;width:100%;height:100%}
+.portada__fondo,.portada__video{z-index:-2}
+.portada__foto,.portada__video{object-fit:cover;object-position:50% 60%}
+.portada__video{opacity:0;pointer-events:none;transition:opacity .5s linear}
+.portada__video--va{opacity:1}
+.portada::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,14,22,.6) 0%,rgba(8,14,22,.5) 6.5%,rgba(8,14,22,.22) 12%,rgba(8,14,22,0) 24%,rgba(8,14,22,0) 44%,rgba(8,14,22,.15) 58%,rgba(8,14,22,.85) 100%)}
+/* El botón: pausa mientras se mueve; «Ver el vídeo», con el borde ámbar, cuando está parado. Sin JavaScript no sale, y
+   no se ve hasta que el vídeo arranca o queda claro que espera. Los dos textos ocupan la misma celda: el ancho no cambia. */
+.pausa{display:none;align-items:center;gap:.55rem;min-height:44px;padding:0 1rem;border:1px solid currentColor;border-radius:999px;background:rgba(8,14,22,.42);color:inherit;
+  font:400 .75rem/1 var(--mono);letter-spacing:.04em;cursor:pointer;visibility:hidden}
+.js .pausa{display:inline-flex}
+.js .pausa[hidden],.shot .pausa{display:none}
+.video-listo .pausa{visibility:visible}
+.pausa i{flex:none;width:10px;height:12px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.pausa__texto{display:grid;justify-items:start}
+.pausa__texto>span{grid-area:1/1}
+.pausa__ver,.quieto .pausa__parar{visibility:hidden}
+.video-listo.quieto .pausa__ver{visibility:visible}
+.quieto .pausa{border-color:var(--amanecer)}
+.quieto .pausa i{width:10px;height:0;border:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-left:10px solid var(--amanecer)}
 /* En el móvil el titular cae sobre el cielo naranja: más sombra arriba para que se lea */
 @media (max-width:36rem){.portada::before{background:linear-gradient(180deg,rgba(8,14,22,.62) 0%,rgba(8,14,22,.45) 38%,rgba(8,14,22,.5) 62%,rgba(8,14,22,.9) 100%)}}
 .bloque{align-self:end;display:grid;grid-template-columns:auto minmax(0,27rem);align-items:end;gap:1rem clamp(2rem,4vw,3.5rem)}
-.nombre{font:400 clamp(9rem,26vw,22rem)/.78 var(--gotica);letter-spacing:.01em;margin-bottom:-.06em}
+/* En portátiles (1440×900, 1280×800) el casco queda a media altura: «AMU» no pasa de un tercio del alto para no tocarlo */
+.nombre{font:400 clamp(9rem,min(26vw,32vh),22rem)/.78 var(--gotica);letter-spacing:.01em;margin-bottom:-.06em}
 .lema{font:900 clamp(1.6rem,1.1rem + 1.6vw,2.4rem)/1 var(--cond);text-transform:uppercase}
 .chip{display:inline-flex;align-items:center;gap:.55rem;margin:1rem 0 1.1rem;padding:.5rem .8rem;border:1.5px solid rgba(255,255,255,.6);border-radius:4px;font:400 .8125rem/1 var(--mono);letter-spacing:.04em}
 .chip i{width:8px;height:8px;border-radius:50%;background:var(--amanecer);box-shadow:0 0 0 4px rgba(242,166,90,.25)}
 .texto{font-size:1.0625rem;color:#E8EEF1;margin-bottom:1.25rem}
 .portada__pie{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 2rem;margin-top:1.75rem;padding-top:1rem;border-top:1px solid var(--linea-clara);font:400 .8125rem/1.4 var(--mono);color:#D8E3E8}
+/* En escritorio la fila de abajo lleva el botón de 44 px: se recoge para que el texto no suba sobre la proa */
+@media (min-width:62rem){.portada{padding-bottom:.75rem}.portada__pie{margin-top:1rem;padding-top:.6rem}}
 .estado{display:inline-flex;align-items:center;gap:.5rem}
+/* El guion cambia el horario por «Abierto ahora…» o «Cerrado ahora…» (41 letras como mucho): con el hueco reservado,
+   la fila de abajo no pasa de dos líneas a una al cargar (eso hacía saltar la portada a unos 900 px de ancho) */
+@media (min-width:36.0625rem){.portada__pie .estado{min-width:calc(41ch + 1rem)}}
 .estado::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.45);flex:none}
 .estado--abierto::before{background:#7FD6A0;box-shadow:0 0 0 4px rgba(127,214,160,.2)}
 @media (max-width:56rem){.bloque{grid-template-columns:1fr}.nombre{font-size:clamp(8rem,42vw,14rem);margin-bottom:.1em}}
+/* Pantallas apaisadas (más de 56rem): el casco queda a un 64 % del alto y el texto de la derecha pisaba la proa
+   (1024×768, 1280×800, 1366×768, 1440×900). El vídeo sube lo justo para que el casco quede 20 px por encima del texto
+   (367 px − 35,65vh, hasta 8rem) y se funde con el fondo por abajo. Con 1080 px de alto o más no sube. */
+@media (min-width:56.0625rem){
+  .portada{--sube:clamp(0px,calc(367px - 35.65vh),8rem)}
+  .portada__fondo,.portada__video{transform:translateY(calc(var(--sube) * -1));
+    -webkit-mask-image:linear-gradient(180deg,#000 calc(100% - 5rem),transparent);mask-image:linear-gradient(180deg,#000 calc(100% - 5rem),transparent)}
+}
+/* La píldora fija «Demo» cae sobre la última fila de la portada: se le deja su hueco y, entre 992 y 1280 px, se recoge */
+@media (min-width:62rem) and (max-width:80rem){.demo__marca{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
+@media (max-width:61.99rem){.portada__pie{padding-bottom:3.5rem}}
+/* Pantallas en vertical: el botón, redondo y bajo «Menú», para que esté en la primera pantalla y no tape el barco */
+@media (max-width:56rem) and (orientation:portrait){
+  .pausa{position:absolute;top:5.5rem;right:var(--margen)}
+  .video-listo:not(.quieto) .pausa{width:44px;padding:0;justify-content:center}
+  .video-listo:not(.quieto) .pausa__texto{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
+/* En el móvil, también parado: solo el triángulo (su nombre, «Ver el vídeo», lo leen los lectores de pantalla) */
+@media (max-width:36rem) and (orientation:portrait){
+  .pausa{width:44px;padding:0;justify-content:center}
+  .pausa__texto{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
+/* Móvil y tableta en vertical: el barco arriba, entero y a la vista; el texto, abajo, sobre el mar oscuro.
+   La versión vertical (4:5) va a todo el ancho con el mástil justo bajo la cabecera y se funde con el mar.
+   Esta consulta es la misma del <source> de la foto y de js/portada.js: si cambia aquí, cambia allí. */
+@media (max-width:56rem) and (orientation:portrait) and (min-height:37.5rem){
+  .portada{grid-template-rows:auto auto;align-content:end;padding-top:calc(6.1rem + 42.4vw)}
+  .portada__fondo,.portada__video{inset:calc(5.6rem - 38.2vw) 0 auto;height:125vw;
+    -webkit-mask-image:linear-gradient(180deg,#000 67%,transparent 90%);mask-image:linear-gradient(180deg,#000 67%,transparent 90%)}
+  .portada::before{background:linear-gradient(180deg,rgba(8,14,22,.64) 0,rgba(8,14,22,.5) 4.75rem,rgba(8,14,22,0) 7.5rem)}
+  .bloque{align-self:start}
+  .nombre{font-size:min(28vw,11rem)}
+  .chip{margin:.7rem 0 .8rem}
+  .texto{margin-bottom:.9rem}
+}
+/* Móvil en horizontal: el barco a la derecha, el texto a la izquierda */
+@media (orientation:landscape) and (max-height:32rem){
+  .portada{padding-top:5.5rem}
+  /* Fundido en curva S: el lineal empezaba con un salto de pendiente que se veía como un corte */
+  .portada__fondo,.portada__video{left:34%;width:66%;transform:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.04) 3%,rgba(0,0,0,.16) 6%,rgba(0,0,0,.32) 9%,rgba(0,0,0,.5) 12%,rgba(0,0,0,.68) 15%,rgba(0,0,0,.84) 18%,rgba(0,0,0,.96) 21%,#000 24%);
+    mask-image:linear-gradient(90deg,transparent,rgba(0,0,0,.04) 3%,rgba(0,0,0,.16) 6%,rgba(0,0,0,.32) 9%,rgba(0,0,0,.5) 12%,rgba(0,0,0,.68) 15%,rgba(0,0,0,.84) 18%,rgba(0,0,0,.96) 21%,#000 24%)}
+  .portada__foto,.portada__video{object-position:50% 62%}
+  .portada::before{background:linear-gradient(90deg,rgba(8,14,22,.55),rgba(8,14,22,0) 55%),linear-gradient(180deg,rgba(8,14,22,.45),rgba(8,14,22,0) 24%,rgba(8,14,22,0) 70%,rgba(8,14,22,.7))}
+  .bloque{grid-template-columns:1fr;max-width:min(32rem,52%)}
+  .nombre{font-size:5.5rem;margin-bottom:.05em}
+  .lema{font-size:1.35rem}
+  .texto{font-size:.9375rem}
+  .pausa{position:absolute;top:5.25rem;right:var(--margen)}
+}
 
 /* Género de hoy */
 .genero{padding:var(--e9) 0;overflow-x:clip}   /* la etiqueta va girada 2°: sus esquinas no deben ensanchar la página */
@@ -230,6 +297,13 @@ h2{font:900 var(--t-h2)/.92 var(--cond);text-transform:uppercase;letter-spacing:
   .portada .botones .boton,.encargos .botones .boton{flex:1 1 100%}
   .portada__pie{flex-direction:column;align-items:flex-start;gap:.3rem;padding-bottom:3.5rem}
   .sello{right:-.4rem;width:5.6rem;height:5.6rem;font-size:1.1rem}
+}
+/* A 320–360 px la píldora fija taparía los botones de la portada: pasa a ser la última franja de la página */
+@media (max-width:22.5rem){
+  .demo{position:static;display:flex;justify-content:center;border-radius:0;box-shadow:none}
+  .demo__marca{position:static;width:auto;height:auto;margin:0;overflow:visible;clip-path:none}
+  .portada__pie{padding-bottom:0}
+  .pie-pagina{padding-bottom:var(--e8)}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 

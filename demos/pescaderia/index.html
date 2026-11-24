@@ -8,12 +8,14 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0E1A22">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="img/puerto.webp" as="image" type="image/webp">
+<link rel="preload" href="img/mar-vertical.webp" as="image" type="image/webp" media="(max-aspect-ratio: 4/5), (max-width: 56rem) and (orientation: portrait) and (min-height: 37.5rem)">
+<link rel="preload" href="img/mar.webp" as="image" type="image/webp" media="not ((max-aspect-ratio: 4/5) or ((max-width: 56rem) and (orientation: portrait) and (min-height: 37.5rem)))">
 <link rel="preload" href="fonts/league-gothic-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/estilos.css">
-<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot');if(matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData))document.documentElement.classList.add('quieto')</script>
 <script>window.LOCAL={horario:{0:[],1:[],2:[[480,840],[1020,1200]],3:[[480,840],[1020,1200]],4:[[480,840],[1020,1200]],5:[[480,840],[1020,1200]],6:[[480,840]]},mapa:{q:'43.3136,-2.0065',titulo:'Mapa de Google: Calle Sarebide 14, El Antiguo, Donostia (ejemplo)'}}</script>
 <script src="js/local.js" defer></script>
+<script src="js/portada.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Amu","description":"Pescadería en El Antiguo, Donostia (demo de La Commande)","address":{"@type":"PostalAddress","streetAddress":"Calle Sarebide 14","postalCode":"20008","addressLocality":"Donostia / San Sebastián","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":43.3136,"longitude":-2.0065},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"14:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday"],"opens":"17:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}]}</script>
 </head>
 <body>
@@ -35,7 +37,11 @@
 
 <main id="contenido">
   <section class="portada" id="inicio" aria-labelledby="titulo">
-    <img class="portada__foto" src="img/puerto.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    <picture class="portada__fondo">
+      <source media="(max-aspect-ratio: 4/5), (max-width: 56rem) and (orientation: portrait) and (min-height: 37.5rem)" srcset="img/mar-vertical.webp" type="image/webp" width="864" height="1080">
+      <img class="portada__foto" src="img/mar.webp" width="1920" height="1080" alt="" fetchpriority="high">
+    </picture>
+    <video class="portada__video" data-ancho="media/mar.mp4" data-vertical="media/mar-vertical.mp4" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" aria-hidden="true"></video>
     <div class="bloque">
       <h1 class="nombre" id="titulo"><span aria-hidden="true">AMU</span><span class="solo-lectores">Amu, pescadería en El Antiguo, Donostia</span></h1>
       <div>
@@ -48,7 +54,7 @@
         </div>
       </div>
     </div>
-    <div class="portada__pie"><span>Calle Sarebide 14 · El Antiguo</span><span class="estado" data-estado>Mar a vie, 8:00–14:00 y 17:00–20:00 · Sáb, 8:00–14:00</span><button class="pausa" type="button" data-pausa aria-pressed="false"><span>Pausar el movimiento</span></button></div>
+    <div class="portada__pie"><span>Calle Sarebide 14 · El Antiguo</span><span class="estado" data-estado>Mar a sáb, desde las 8:00</span><button class="pausa" type="button" data-pausa><i aria-hidden="true"></i><span class="pausa__texto"><span class="pausa__parar">Pausar el vídeo</span><span class="pausa__ver">Ver el vídeo</span></span></button></div>
   </section>
 
   <section class="genero" id="genero" aria-labelledby="t-genero">
@@ -204,7 +210,7 @@
     </div>
     <p>Calle Sarebide 14<br>20008 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20hacer%20un%20encargo">Encargos por WhatsApp</a></p>
     <p>Mar a vie, de 8:00 a 14:00 y de 17:00 a 20:00<br>Sáb, de 8:00 a 14:00<br>Dom y lun, cerrado</p>
-    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, género, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, género, precios e imágenes de ejemplo. Fotos de Unsplash y vídeo de Murat Güroğlu (Pexels), retocado.</p>
   </div>
 </footer>
 
@@ -218,14 +224,5 @@
     <button class="boton boton--claro">Cerrar</button>
   </form>
 </dialog>
-<script>
-/* El puerto se mueve como un vídeo; quien lo prefiera lo puede parar (WCAG 2.2.2) */
-document.querySelectorAll('[data-pausa]').forEach(function (b) {
-  b.addEventListener('click', function () {
-    var q = document.documentElement.classList.toggle('quieto');
-    b.setAttribute('aria-pressed', q ? 'true' : 'false');
-  });
-});
-</script>
 </body>
 </html>
