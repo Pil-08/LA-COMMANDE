@@ -9,7 +9,7 @@ Website of **La Commande**, my own web design service for bars, restaurants and 
 ## What is in it
 
 - 21 pages in Spanish, Basque and English: one page per kind of business (hospitality, hair and beauty, other local businesses), plans and prices, examples and contact, plus a 404 page, `robots.txt` and `sitemap.xml`.
-- 15 demo websites in [`demos/`](demos/) for fictional businesses (a tavern, a café, a barbershop, a garage, a physiotherapy clinic…), so a business owner can open a working site before asking for one.
+- 16 demo websites in [`demos/`](demos/) for fictional businesses (a tavern, a café, a barbershop, a nail salon, a garage, a physiotherapy clinic…), so a business owner can open a working site before asking for one.
 
 ## Stack
 
@@ -22,6 +22,6 @@ The fishmonger and barbershop demos open with a short looping video. Cloudflare 
 The code (HTML, CSS and JavaScript) is under the [MIT License](LICENSE). It does not cover:
 
 - the La Commande name, logo and texts;
-- the photographs in the demos, from Unsplash, used under the Unsplash License;
+- the photographs in the demos, from Unsplash and Pexels, used under the Unsplash License and the Pexels License;
 - the videos in the fishmonger and barbershop demos, from Pexels, used under the Pexels License and edited;
 - the fonts, each under the SIL Open Font License 1.1.

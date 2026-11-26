@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Orvela · Demo de salón de uñas · La Commande</title>
+  <meta name="description" content="Demo de La Commande: web de un salón de uñas inventado en Gros, Donostia. Colección de diseños, carta con duración y precio, y cita por WhatsApp con el mensaje ya escrito.">
+  <meta name="robots" content="noindex">
+  <script>if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+  <meta name="theme-color" content="#501b29">
+  <meta property="og:title" content="Orvela · Demo de salón de uñas · La Commande">
+  <meta property="og:description" content="Demo de La Commande: un salón de uñas inventado en Gros, Donostia.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/concha.svg">
+  <link rel="preload" href="assets/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/newsreader-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=1f8601ff3e50">
+  <script src="main.js?v=7adb5be30fc0" defer></script>
+</head>
+<body>
+  <svg class="symbol-bank" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="i-shell" viewBox="0 0 44 42">
+      <g fill="none" stroke="currentColor" stroke-width="1.45" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 36.3C17.9 34.2 4.3 26.3 2.8 20.1c-.7-3.1 1.1-4.8 4.1-4.1-1.5-6 2.1-9.3 6.3-6.2C13.1 4.9 17 2.6 20 6.4c1.1-4 4-4 5.3-.1 3.7-3 7.2-.3 6.5 4.4 4.6-2.9 7.7.4 5.9 5.6 3.2-.4 4.4 2.1 2.6 5.3-3.5 6-13.3 12.4-18.3 14.7Z"/>
+        <path d="M7 16c4.1 7.5 10 14.6 15 20.3M13.2 9.8c1.1 8.2 5 18.8 8.8 26.5M20 6.4c-.7 10.3.7 22.5 2 29.9M25.3 6.3c1.2 10.3-1.3 22.7-3.3 30M31.8 10.7C31.2 19 26 29.8 22 36.3M37.7 16.3c-3.4 7.2-10.4 14.8-15.7 20"/>
+      </g>
+    </symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6.5 3.5h11v17L12 17l-5.5 3.5z" stroke="currentColor" stroke-width="1.55" stroke-linejoin="round" fill="var(--bookmark-fill,none)"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" fill="none" stroke-width="1.45" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5.5 5.5 13 13m0-13-13 13" stroke="currentColor" fill="none" stroke-width="1.55" stroke-linecap="round"/></symbol>
+  </svg>
+  <a class="skip-link" href="#principal">Ir al contenido</a>
+
+  <header class="topbar">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Orvela, inicio"><svg class="icon brand-shell" aria-hidden="true" focusable="false"><use href="#i-shell"></use></svg><span>Orvela</span></a>
+      <nav id="nav" aria-label="Navegación principal">
+        <a href="#coleccion">Colección</a>
+        <a href="#tratamientos">Tratamientos</a>
+        <a href="#atelier">El atelier</a>
+        <a href="#cita">Pedir cita</a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="selection-trigger js-only" id="open-saved" aria-label="Mi selección">
+          <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg><span class="selection-label">Mi selección</span><span id="saved-count" hidden>0</span>
+        </button>
+        <button type="button" class="menu-toggle js-only" id="menu-toggle" aria-controls="nav" aria-expanded="false" aria-label="Abrir menú">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="principal" tabindex="-1">
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <svg class="icon hero-shell" aria-hidden="true" focusable="false"><use href="#i-shell"></use></svg>
+        <p class="eyebrow hero-eyebrow">Atelier de uñas <span aria-hidden="true">·</span> Gros, Donostia</p>
+        <h1 id="hero-title" class="hero-name"><span class="sr-only">Orvela</span><span class="name-letters" aria-hidden="true"><span class="name-letter" style="--i:0">O</span><span class="name-letter" style="--i:1">r</span><span class="name-letter" style="--i:2">v</span><span class="name-letter" style="--i:3">e</span><span class="name-letter" style="--i:4">l</span><span class="name-letter" style="--i:5">a</span></span></h1>
+        <p class="hero-motto">A flor de piel.</p>
+        <p class="hero-intro">Del carmín sobre seda al rosa translúcido. Cada manicura empieza con una muestra de color.</p>
+        <div class="hero-actions"><a class="button light" href="#cita">Pedir cita</a><a class="underlink" href="#coleccion">Ver la colección</a></div>
+      </div>
+    </section>
+
+    <section id="coleccion" class="collection wrap" aria-labelledby="collection-title">
+      <div class="collection-head">
+        <div><p class="eyebrow ruled">Muestrario de temporada</p><h2 id="collection-title">La <em>colección.</em></h2></div>
+        <div class="filters js-only" role="group" aria-label="Filtrar la colección">
+          <button type="button" data-filter="Todos" aria-pressed="true">Todos</button>
+          <button type="button" data-filter="Lacados" aria-pressed="false">Lacados</button>
+          <button type="button" data-filter="Francesas" aria-pressed="false">Francesas</button>
+          <button type="button" data-filter="Nail art" aria-pressed="false">Nail art</button>
+        </div>
+      </div>
+      <div id="look-grid" class="look-grid">
+        <article class="look-card" data-id="vino" data-category="Lacados" style="--lacquer:#581a23">
+          <a class="card-link" href="assets/vino-detalle.webp" data-open-look="vino" aria-label="Ver ficha de Vino profundo">
+            <div class="card-picture"><img loading="lazy" decoding="async" width="820" height="951"
+              src="assets/vino-480.webp" srcset="assets/vino-480.webp 480w, assets/vino-820.webp 820w"
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 960px) 44vw, 29vw" alt="Dos manos con uñas almendradas de color granate y anillos dorados."></div>
+            <div class="card-info">
+              <span class="card-type"><i class="chip"></i>Lacados<span aria-hidden="true">/</span>Brillo espejo</span>
+              <h3>Vino profundo</h3>
+              <svg class="icon card-plus" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            </div>
+          </a>
+          <button class="card-save js-only" type="button" data-save="vino" aria-label="Guardar Vino profundo" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg></button>
+        </article>
+        <article class="look-card" data-id="orilla" data-category="Francesas" style="--lacquer:#e5d3c9">
+          <a class="card-link" href="assets/orilla-detalle.webp" data-open-look="orilla" aria-label="Ver ficha de Orilla de sal">
+            <div class="card-picture"><img loading="lazy" decoding="async" width="820" height="951"
+              src="assets/orilla-480.webp" srcset="assets/orilla-480.webp 480w, assets/orilla-820.webp 820w"
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 960px) 44vw, 29vw" alt="Puntas francesas blancas sobre uñas de base rosada, a la luz de una ventana."></div>
+            <div class="card-info">
+              <span class="card-type"><i class="chip"></i>Francesas<span aria-hidden="true">/</span>Punta marfil</span>
+              <h3>Orilla de sal</h3>
+              <svg class="icon card-plus" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            </div>
+          </a>
+          <button class="card-save js-only" type="button" data-save="orilla" aria-label="Guardar Orilla de sal" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg></button>
+        </article>
+        <article class="look-card" data-id="arcilla" data-category="Nail art" style="--lacquer:#a1533c">
+          <a class="card-link" href="assets/arcilla-detalle.webp" data-open-look="arcilla" aria-label="Ver ficha de Arcilla en relieve">
+            <div class="card-picture"><img loading="lazy" decoding="async" width="820" height="951"
+              src="assets/arcilla-480.webp" srcset="assets/arcilla-480.webp 480w, assets/arcilla-820.webp 820w"
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 960px) 44vw, 29vw" alt="Mano junto a un rostro de perfil con uñas largas, relieves terracota y trazos marfil."></div>
+            <div class="card-info">
+              <span class="card-type"><i class="chip"></i>Nail art<span aria-hidden="true">/</span>Relieve</span>
+              <h3>Arcilla en relieve</h3>
+              <svg class="icon card-plus" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            </div>
+          </a>
+          <button class="card-save js-only" type="button" data-save="arcilla" aria-label="Guardar Arcilla en relieve" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg></button>
+        </article>
+        <article class="look-card" data-id="seda" data-category="Francesas" style="--lacquer:#a52a36">
+          <a class="card-link" href="assets/seda-detalle.webp" data-open-look="seda" aria-label="Ver ficha de Seda carmín">
+            <div class="card-picture"><img loading="lazy" decoding="async" width="820" height="951"
+              src="assets/seda-480.webp" srcset="assets/seda-480.webp 480w, assets/seda-820.webp 820w"
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 960px) 44vw, 29vw" alt="Mano sobre satén dorado con uñas esmaltadas en carmín y puntas francesas del mismo rojo."></div>
+            <div class="card-info">
+              <span class="card-type"><i class="chip"></i>Francesas<span aria-hidden="true">/</span>Francesa de color</span>
+              <h3>Seda carmín</h3>
+              <svg class="icon card-plus" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            </div>
+          </a>
+          <button class="card-save js-only" type="button" data-save="seda" aria-label="Guardar Seda carmín" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg></button>
+        </article>
+        <article class="look-card" data-id="arena" data-category="Lacados" style="--lacquer:#c69a88">
+          <a class="card-link" href="assets/arena-detalle.webp" data-open-look="arena" aria-label="Ver ficha de Rosa de arena">
+            <div class="card-picture"><img loading="lazy" decoding="async" width="820" height="951"
+              src="assets/arena-480.webp" srcset="assets/arena-480.webp 480w, assets/arena-820.webp 820w"
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 960px) 44vw, 29vw" alt="Dos manos en reposo con uñas cortas en rosa empolvado y anillos finos de oro."></div>
+            <div class="card-info">
+              <span class="card-type"><i class="chip"></i>Lacados<span aria-hidden="true">/</span>Velo translúcido</span>
+              <h3>Rosa de arena</h3>
+              <svg class="icon card-plus" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            </div>
+          </a>
+          <button class="card-save js-only" type="button" data-save="arena" aria-label="Guardar Rosa de arena" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg></button>
+        </article>
+        <article class="look-card" data-id="jade" data-category="Nail art" style="--lacquer:#648f83">
+          <a class="card-link" href="assets/jade-detalle.webp" data-open-look="jade" aria-label="Ver ficha de Jade veteado">
+            <div class="card-picture"><img loading="lazy" decoding="async" width="820" height="951"
+              src="assets/jade-480.webp" srcset="assets/jade-480.webp 480w, assets/jade-820.webp 820w"
+              sizes="(max-width: 580px) calc(100vw - 40px), (max-width: 960px) 44vw, 29vw" alt="Uñas verdes y blancas con vetas marmoleadas sobre un ramo de rosas rojas."></div>
+            <div class="card-info">
+              <span class="card-type"><i class="chip"></i>Nail art<span aria-hidden="true">/</span>Efecto mármol</span>
+              <h3>Jade veteado</h3>
+              <svg class="icon card-plus" aria-hidden="true" focusable="false"><use href="#i-plus"></use></svg>
+            </div>
+          </a>
+          <button class="card-save js-only" type="button" data-save="jade" aria-label="Guardar Jade veteado" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg></button>
+        </article></div>
+      <div class="more-line js-only"><button type="button" id="more-looks" class="button outline" aria-expanded="false" aria-controls="look-grid">Ver los seis diseños</button></div>
+    </section>
+
+    <section id="tratamientos" class="ritual" aria-labelledby="treatments-title">
+      <div class="ritual-inner wrap">
+        <div class="ritual-story">
+          <p class="eyebrow ruled">En la mesa de manicura</p>
+          <h2 id="treatments-title">Carta de<br><em>tratamientos.</em></h2>
+          <picture class="ritual-picture"><img loading="lazy" decoding="async" src="assets/manos-600.webp" srcset="assets/manos-600.webp 600w, assets/manos-1120.webp 1120w" sizes="(max-width: 760px) 85vw, 32vw" width="1120" height="941" alt="Una manicurista da forma a una uña con una lima fina bajo la luz de una lámpara."></picture>
+        </div>
+        <div class="service-list">
+          <details class="service" id="servicio-esencial" name="tratamiento" open>
+            <summary><span class="service-title">Manicura esencial</span><span class="minutes">35 min</span><span class="price">32 €</span><span class="toggle-mark" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>Damos forma a la uña, suavizamos el contorno y aplicamos un esmalte clásico. El último paso es un masaje corto con aceite de almendras.</p><a class="underlink dark-link" href="#cita" data-book-service="esencial">Pedir cita para este tratamiento<span class="sr-only">: Manicura esencial</span></a></div>
+          </details>
+          <details class="service" id="servicio-gel" name="tratamiento">
+            <summary><span class="service-title">Lacado en gel</span><span class="minutes">50 min</span><span class="price">46 €</span><span class="toggle-mark" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>Preparamos la uña y trabajamos un solo tono en capas finas de gel. Un sellado brillante deja el color uniforme hasta el borde.</p><a class="underlink dark-link" href="#cita" data-book-service="gel">Pedir cita para este tratamiento<span class="sr-only">: Lacado en gel</span></a></div>
+          </details>
+          <details class="service" id="servicio-francesa" name="tratamiento">
+            <summary><span class="service-title">Francesa a pulso</span><span class="minutes">60 min</span><span class="price">54 €</span><span class="toggle-mark" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>Sobre una base translúcida trazamos a mano una punta de marfil o de color. Ajustamos la curva al largo y a la forma de cada uña.</p><a class="underlink dark-link" href="#cita" data-book-service="francesa">Pedir cita para este tratamiento<span class="sr-only">: Francesa a pulso</span></a></div>
+          </details>
+          <details class="service" id="servicio-arte" name="tratamiento">
+            <summary><span class="service-title">Nail art de autor</span><span class="minutes">75 min</span><span class="price">68 €</span><span class="toggle-mark" aria-hidden="true"></span></summary>
+            <div class="service-body"><p>Elegimos una paleta de dos o tres tonos y dibujamos el motivo a pincel. La sesión incluye la preparación de la uña, el diseño y el acabado.</p><a class="underlink dark-link" href="#cita" data-book-service="arte">Pedir cita para este tratamiento<span class="sr-only">: Nail art de autor</span></a></div>
+          </details></div>
+      </div>
+    </section>
+
+    <section class="atelier wrap" id="atelier" aria-labelledby="atelier-title">
+      <picture class="atelier-photo"><img decoding="async" loading="lazy" src="assets/estudio-600.webp" srcset="assets/estudio-600.webp 600w, assets/estudio-1120.webp 1120w" sizes="(max-width:760px) 100vw, 47vw" width="1120" height="772" alt="Luz de ventana sobre mesas de manicura, sillones de cuero y una estantería de esmaltes."></picture>
+      <div class="atelier-copy">
+        <p class="eyebrow ruled">El atelier <span aria-hidden="true">/</span> Gros, Donostia</p>
+        <h2 id="atelier-title">Una mesa junto<br><em>a la ventana.</em></h2>
+        <p>Imaginamos Orvela en el barrio de Gros, a unos pasos del Cantábrico. Sobre la mesa descansan las limas de cristal y los pinceles. Las muestras de esmalte van junto a la ventana, donde se aprecia hasta el último matiz.</p>
+        <ul class="care-list"><li><strong>Material de un solo uso.</strong> Palitos, algodones y limas de papel nuevos en cada cita. Las de cristal se desinfectan.</li><li><strong>Instrumental esterilizado.</strong> Alicates y empujadores pasan por el esterilizador después de cada uso.</li><li><strong>Sin prisas.</strong> Cada cita tiene el tiempo que marca la carta, con un margen entre una y otra.</li></ul>
+      </div>
+    </section>
+
+    <section id="cita" class="booking" aria-labelledby="booking-title">
+      <div class="booking-inner wrap">
+        <div class="booking-intro">
+          <p class="eyebrow ruled">Reserva por WhatsApp</p>
+          <h2 id="booking-title">Pide tu<br><em>cita.</em></h2>
+          <p>Elige el tratamiento y, si quieres, un diseño de la colección. El mensaje se escribe solo: lo envías y te confirmamos el hueco.</p>
+          <div class="visit">
+            <h3>Horario</h3>
+            <dl class="hours"><div><dt>Martes a viernes</dt><dd>10:00 – 20:00</dd></div><div><dt>Sábado</dt><dd>10:00 – 14:00</dd></div><div><dt>Domingo y lunes</dt><dd>Cerrado</dd></div></dl>
+            <h3>Dónde</h3>
+            <p>Barrio de Gros, Donostia. Te mandamos la dirección exacta con la confirmación.</p>
+          </div>
+        </div>
+        <form class="booking-form" id="booking-form" action="#cita">
+          <fieldset class="options">
+            <legend>Tratamiento</legend>
+            <div class="option-grid">
+              <label class="option-card"><input type="radio" name="servicio" value="esencial" checked><span class="option-name">Manicura esencial</span><span class="option-meta">35 min · 32 €</span></label>
+              <label class="option-card"><input type="radio" name="servicio" value="gel"><span class="option-name">Lacado en gel</span><span class="option-meta">50 min · 46 €</span></label>
+              <label class="option-card"><input type="radio" name="servicio" value="francesa"><span class="option-name">Francesa a pulso</span><span class="option-meta">60 min · 54 €</span></label>
+              <label class="option-card"><input type="radio" name="servicio" value="arte"><span class="option-name">Nail art de autor</span><span class="option-meta">75 min · 68 €</span></label></div>
+          </fieldset>
+          <div class="field">
+            <label for="b-design">Diseño</label>
+            <select id="b-design" name="diseno"><option value="">Lo decidimos en el atelier</option><option value="vino">Vino profundo</option><option value="orilla">Orilla de sal</option><option value="arcilla">Arcilla en relieve</option><option value="seda">Seda carmín</option><option value="arena">Rosa de arena</option><option value="jade">Jade veteado</option></select>
+          </div>
+          <fieldset class="options">
+            <legend>Día que te viene mejor</legend>
+            <div class="chip-row"><label class="chip-option"><input type="radio" name="dia" value="martes"><span><span aria-hidden="true">Mar</span><span class="sr-only">Martes</span></span></label><label class="chip-option"><input type="radio" name="dia" value="miercoles"><span><span aria-hidden="true">Mié</span><span class="sr-only">Miércoles</span></span></label><label class="chip-option"><input type="radio" name="dia" value="jueves"><span><span aria-hidden="true">Jue</span><span class="sr-only">Jueves</span></span></label><label class="chip-option"><input type="radio" name="dia" value="viernes"><span><span aria-hidden="true">Vie</span><span class="sr-only">Viernes</span></span></label><label class="chip-option"><input type="radio" name="dia" value="sabado"><span><span aria-hidden="true">Sáb</span><span class="sr-only">Sábado</span></span></label><label class="chip-option"><input type="radio" name="dia" value="cualquiera" checked><span>Me da igual</span></label></div>
+          </fieldset>
+          <fieldset class="options">
+            <legend>Franja</legend>
+            <div class="chip-row">
+              <label class="chip-option"><input type="radio" name="franja" value="mañana" checked><span>Mañana</span></label>
+              <label class="chip-option"><input type="radio" name="franja" value="tarde" aria-describedby="franja-note"><span>Tarde</span></label>
+            </div>
+            <p class="field-note" id="franja-note" hidden>Los sábados solo abrimos por la mañana.</p>
+          </fieldset>
+          <div class="field">
+            <label for="b-name">Tu nombre <span class="optional">(opcional)</span></label>
+            <input id="b-name" name="nombre" type="text" autocomplete="given-name" maxlength="40">
+          </div>
+          <div class="ticket">
+            <p class="ticket-label">Tu mensaje</p>
+            <p id="b-message" class="ticket-text">Hola, Orvela. Me gustaría pedir cita.</p>
+          </div>
+          <div class="booking-actions">
+            <a id="b-send" class="button solid" href="https://wa.me/34604335474?text=Hola%2C%20Orvela.%20Me%20gustar%C3%ADa%20pedir%20cita." target="_blank" rel="noopener noreferrer">Abrir WhatsApp con el mensaje</a>
+          </div>
+          <p class="field-note">Es una demo: el mensaje llega al WhatsApp de La Commande.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="preguntas" class="faqs wrap" aria-labelledby="faq-title">
+      <div class="faq-head">
+        <p class="eyebrow ruled">Antes de tu cita</p>
+        <h2 id="faq-title">Lo que más<br><em>nos preguntan.</em></h2>
+      </div>
+      <div class="faq-list">
+          <details class="faq" name="pregunta"><summary><span>¿Cuánto dura el lacado en gel?</span><span class="toggle-mark" aria-hidden="true"></span></summary><p>Con cuidados normales suele aguantar entre dos y tres semanas. Te damos un aceite de cutícula para casa y te contamos cómo alargarlo.</p></details>
+          <details class="faq" name="pregunta"><summary><span>¿Puedo traer una foto de lo que quiero?</span><span class="toggle-mark" aria-hidden="true"></span></summary><p>Sí, y nos ayuda mucho. Mándala con el mensaje de la cita y te decimos qué tratamiento encaja y cuánto tiempo necesitamos.</p></details>
+          <details class="faq" name="pregunta"><summary><span>Llevo gel de otro salón. ¿Me lo quitáis?</span><span class="toggle-mark" aria-hidden="true"></span></summary><p>Claro. Avísanos al pedir la cita: la retirada con cuidado añade unos quince minutos a la sesión.</p></details>
+          <details class="faq" name="pregunta"><summary><span>¿Y si llego tarde o no puedo venir?</span><span class="toggle-mark" aria-hidden="true"></span></summary><p>Escríbenos por WhatsApp en cuanto lo sepas. Si hay hueco, movemos la cita sin problema.</p></details></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner wrap">
+      <a class="brand" href="#inicio" aria-label="Orvela, volver al inicio"><svg class="icon brand-shell" aria-hidden="true" focusable="false"><use href="#i-shell"></use></svg><span>Orvela</span></a>
+      <p>Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Pexels y Unsplash.</p>
+      <details class="credits">
+        <summary>Créditos fotográficos</summary>
+        <div class="credits-body">
+          <p>Fotografías de inspiración para este atelier ficticio. Los nombres de los diseños y los precios forman parte de la muestra.</p>
+          <ul class="credits-list"><li><span>Vino profundo</span><a href="https://www.pexels.com/photo/elegant-manicure-with-dark-red-polish-in-dubai-41062000/" target="_blank" rel="noopener noreferrer">Casa Rio Beauty Salon</a></li><li><span>Orilla de sal</span><a href="https://www.pexels.com/photo/hand-with-french-tip-nails-13038494/" target="_blank" rel="noopener noreferrer">Roman Titov</a></li><li><span>Arcilla en relieve</span><a href="https://www.pexels.com/photo/elegant-profile-with-artistic-nail-art-display-33992618/" target="_blank" rel="noopener noreferrer">Mert Coşkun</a></li><li><span>Seda carmín</span><a href="https://www.pexels.com/photo/close-up-of-a-hand-with-nail-polish-15491629/" target="_blank" rel="noopener noreferrer">Linda Markaj</a></li><li><span>Rosa de arena</span><a href="https://www.pexels.com/photo/manicure-and-rings-on-woman-hands-18706407/" target="_blank" rel="noopener noreferrer">Önder Ceneviz</a></li><li><span>Jade veteado</span><a href="https://unsplash.com/photos/hand-with-marble-nails-on-roses-uPkUaF2NhbQ" target="_blank" rel="noopener noreferrer">Stefan Vibes</a></li><li><span>El ritual</span><a href="https://unsplash.com/photos/a-woman-getting-her-nails-done-at-a-nail-salon-gb6gtiTZKB8" target="_blank" rel="noopener noreferrer">Giorgio Trovato</a></li><li><span>El atelier</span><a href="https://www.pexels.com/fr-fr/photo/interieur-vide-d-un-salon-de-manucure-avec-une-decoration-moderne-36328527/" target="_blank" rel="noopener noreferrer">Alec Adriano</a></li></ul>
+          <p class="credit-foot">Imágenes de <a href="https://www.pexels.com/license/" target="_blank" rel="noopener noreferrer">Pexels</a> y <a href="https://unsplash.com/license" target="_blank" rel="noopener noreferrer">Unsplash</a>.</p>
+        </div>
+      </details>
+    </div>
+  </footer>
+  <a class="demo" href="https://la-commande.pages.dev/peluqueria-y-estetica/">Demo<span class="demo__marca"> · La Commande</span></a>
+  <p id="status" class="sr-only" role="status" aria-live="polite"></p>
+  <dialog id="overlay" aria-labelledby="modal-title">
+    <div class="dialog-shell">
+      <button type="button" id="close-dialog" class="close-dialog" aria-label="Cerrar ventana"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"></use></svg></button>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+  <template id="detail-template">
+    <div class="look-detail">
+      <div class="detail-visual"><img data-detail-photo width="820" height="951" alt=""></div>
+      <div class="detail-copy">
+        <p class="eyebrow ruled" data-detail-category></p><h2 id="modal-title" data-detail-name></h2><p data-detail-note></p>
+        <dl class="look-facts"><div><dt>Tono</dt><dd data-detail-tone></dd></div><div><dt>Forma</dt><dd data-detail-shape></dd></div><div><dt>Acabado</dt><dd data-detail-finish></dd></div><div><dt>Tratamiento</dt><dd><span data-detail-servicename></span> · <span data-detail-servicemeta></span></dd></div></dl>
+        <div class="detail-actions"><a class="button solid" data-book-look href="#cita">Pedir cita con este diseño</a><button type="button" class="button outline detail-save"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bookmark"></use></svg><span></span></button></div>
+      </div>
+    </div>
+  </template>
+  <template id="saved-template">
+    <div class="text-dialog"><p class="eyebrow ruled">Muestrario personal</p><h2 id="modal-title">Mi <em>selección.</em></h2>
+      <div class="saved-list"></div>
+      <a href="#coleccion" class="button solid explore-saved">Explorar la colección</a>
+    </div>
+  </template>
+  <script id="looks-data" type="application/json">{"vino":{"name":"Vino profundo","category":"Lacados","finish":"Brillo espejo","color":"#581a23","shape":"Almendrada","service":"gel","tone":"Granate oscuro","alt":"Dos manos con uñas almendradas de color granate y anillos dorados.","note":"Un granate casi negro en la sombra que se vuelve rojo al girar la mano. El brillo continuo acentúa la curva de la uña.","photo":"assets/vino-detalle.webp","preview":"assets/vino-480.webp","serviceName":"Lacado en gel","serviceMeta":"50 min · 46 €"},"orilla":{"name":"Orilla de sal","category":"Francesas","finish":"Punta marfil","color":"#e5d3c9","shape":"Cuadrada suave","service":"francesa","tone":"Rosa y marfil","alt":"Puntas francesas blancas sobre uñas de base rosada, a la luz de una ventana.","note":"Un borde de marfil recorre la punta cuadrada. La base rosada deja entrever la uña y suaviza el contraste de la francesa.","photo":"assets/orilla-detalle.webp","preview":"assets/orilla-480.webp","serviceName":"Francesa a pulso","serviceMeta":"60 min · 54 €"},"arcilla":{"name":"Arcilla en relieve","category":"Nail art","finish":"Relieve","color":"#a1533c","shape":"Almendrada larga","service":"arte","tone":"Terracota y crema","alt":"Mano junto a un rostro de perfil con uñas largas, relieves terracota y trazos marfil.","note":"Sobre una base de arcilla se cruzan hilos de marfil y pequeños relieves. El motivo cambia de un dedo al siguiente.","photo":"assets/arcilla-detalle.webp","preview":"assets/arcilla-480.webp","serviceName":"Nail art de autor","serviceMeta":"75 min · 68 €"},"seda":{"name":"Seda carmín","category":"Francesas","finish":"Francesa de color","color":"#a52a36","shape":"Almendrada","service":"francesa","tone":"Carmín","alt":"Mano sobre satén dorado con uñas esmaltadas en carmín y puntas francesas del mismo rojo.","note":"Dos maneras de llevar el mismo carmín. La uña lacada de borde a borde alterna con un filo rojo sobre una base translúcida.","photo":"assets/seda-detalle.webp","preview":"assets/seda-480.webp","serviceName":"Francesa a pulso","serviceMeta":"60 min · 54 €"},"arena":{"name":"Rosa de arena","category":"Lacados","finish":"Velo translúcido","color":"#c69a88","shape":"Ovalada corta","service":"esencial","tone":"Rosa empolvado","alt":"Dos manos en reposo con uñas cortas en rosa empolvado y anillos finos de oro.","note":"Un rosa cálido que deja pasar la luz. El color acompaña la forma corta y redondeada, con un brillo suave en la punta.","photo":"assets/arena-detalle.webp","preview":"assets/arena-480.webp","serviceName":"Manicura esencial","serviceMeta":"35 min · 32 €"},"jade":{"name":"Jade veteado","category":"Nail art","finish":"Efecto mármol","color":"#648f83","shape":"Almendrada larga","service":"arte","tone":"Jade y blanco","alt":"Uñas verdes y blancas con vetas marmoleadas sobre un ramo de rosas rojas.","note":"Vetas de jade, blanco y oro atraviesan la uña como en una piedra pulida. Cada dibujo sigue un recorrido distinto.","photo":"assets/jade-detalle.webp","preview":"assets/jade-480.webp","serviceName":"Nail art de autor","serviceMeta":"75 min · 68 €"}}</script>
+  <script id="booking-data" type="application/json">{"phone":"34604335474","services":{"esencial":{"name":"Manicura esencial","phrase":"una manicura esencial"},"gel":{"name":"Lacado en gel","phrase":"un lacado en gel"},"francesa":{"name":"Francesa a pulso","phrase":"una francesa a pulso"},"arte":{"name":"Nail art de autor","phrase":"un nail art de autor"}},"days":{"martes":"Martes","miercoles":"Miércoles","jueves":"Jueves","viernes":"Viernes","sabado":"Sábado"},"morningOnly":["sabado"]}</script>
+</body>
+</html>
