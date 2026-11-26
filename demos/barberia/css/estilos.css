@@ -1,5 +1,5 @@
 /*    Zorrotz · barbería en el Centro. Hueso, negro y granate; Big Shoulders Display e Inter Tight.
-   La portada es un plano de vídeo: la foto a sangre se mueve despacio, el nombre gigante y la tablilla de precios. */
+   La portada es un vídeo a sangre (dos planos de una barbería, en bucle), el nombre gigante y la tablilla de precios. */
 :root{--fondo:#ECE6DC;--texto:#141210;--suave:#4F4842;--acento:#8C1C13;--sobre-acento:#fff;--acento-texto:#8C1C13;--oscuro:#141210;--sobre-oscuro:#ECE6DC;--suave-oscuro:#BDB4A8;
   --linea:rgba(20,18,16,.18);--linea-oscura:rgba(236,230,220,.2);--f-display:"Big Shoulders Display",Impact,sans-serif;--f-texto:"Inter Tight",system-ui,sans-serif;--f-dato:"Inter Tight",system-ui,sans-serif;
   --h2-fuente:900 clamp(2.8rem,1.9rem + 4vw,5.6rem)/.92 var(--f-display);--h3-fuente:800 clamp(1.7rem,1.4rem + 1vw,2.3rem)/1 var(--f-display);--mayus-display:uppercase;--tracking-display:.01em;--em-estilo:normal;
@@ -9,7 +9,13 @@
 .marca__nombre{font:900 1.8rem/.9 var(--f-display);letter-spacing:.06em;text-transform:uppercase}
 .marca__lugar{font:600 .625rem/1 var(--f-texto);letter-spacing:.26em;text-transform:uppercase;color:#E8907F;margin-top:.3rem}
 .portada{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:2rem;min-height:100vh;min-height:100svh;padding:7rem var(--margen) clamp(7rem,15vw,12rem);overflow:hidden;isolation:isolate;background:#141210;color:#ECE6DC}
-.portada__foto{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% 30%;animation:lento 26s ease-in-out infinite alternate}
+/* Vídeo de fondo: el póster (su primer fotograma) debajo y el vídeo encima, que aparece al arrancar (js/portada-video.js) */
+.portada__fondo,.portada__video{position:absolute;inset:0;z-index:-2;width:100%;height:100%}
+.portada__foto,.portada__video{width:100%;height:100%;object-fit:cover;object-position:62% 35%}
+.portada__video{opacity:0;pointer-events:none;transition:opacity .5s linear}
+.portada__video--va{opacity:1}
+/* Versión vertical (la misma consulta que el <source>, las precargas y js/portada-video.js): el recorte, hacia la mano y la máquina */
+@media (max-aspect-ratio:4/5),(max-width:56rem) and (orientation:portrait) and (min-height:37.5rem){.portada__foto,.portada__video{object-position:35% 50%}}
 .portada::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,18,16,.9),rgba(20,18,16,.55) 45%,rgba(20,18,16,.12)),linear-gradient(0deg,rgba(20,18,16,.95),transparent 55%)}
 .portada__texto{max-width:38rem}
 .portada .kicker{color:#E8907F}
@@ -19,6 +25,17 @@
 .portada .botones{margin:1.75rem 0 1.25rem}
 .portada .estado{font-size:.9375rem;color:#DCD3C6}
 .portada .pausa{margin-top:1rem;color:#DCD3C6}
+/* La pausa del vídeo: sin JS no sale; con JS ocupa su sitio desde el principio (sin saltos) y se ve cuando el vídeo
+   arranca o queda parado a propósito. Dice lo que hace: «Pausar el vídeo» o «Ver el vídeo» */
+.pausa--video{display:none;visibility:hidden}
+.js .pausa--video{display:inline-flex}
+.js .pausa--video[hidden],.shot .pausa--video{display:none}
+.video-listo .pausa--video{visibility:visible}
+.pausa__texto{display:grid;justify-items:start}
+.pausa__texto>span{grid-area:1/1}
+.pausa__ver,.quieto .pausa__parar{visibility:hidden}
+.video-listo.quieto .pausa__ver{visibility:visible}
+@media (prefers-reduced-motion:reduce){.js .pausa--video{display:inline-flex}.js .pausa--video[hidden]{display:none}}
 .tablilla{align-self:end;min-width:16rem;padding:1.25rem 1.4rem;background:#ECE6DC;color:#141210;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
 .tablilla li{display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;padding:.6rem 0;border-bottom:1px solid rgba(20,18,16,.2);font:700 .8125rem/1.2 var(--f-texto);letter-spacing:.1em;text-transform:uppercase}
 .tablilla li:last-child{border-bottom:0}

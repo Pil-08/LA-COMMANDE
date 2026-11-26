@@ -8,13 +8,15 @@
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#141210">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="img/portada.webp" as="image" type="image/webp">
+<link rel="preload" href="img/portada-vertical.webp" as="image" type="image/webp" media="(max-aspect-ratio: 4/5), (max-width: 56rem) and (orientation: portrait) and (min-height: 37.5rem)">
+<link rel="preload" href="img/portada.webp" as="image" type="image/webp" media="not ((max-aspect-ratio: 4/5) or ((max-width: 56rem) and (orientation: portrait) and (min-height: 37.5rem)))">
 <link rel="stylesheet" href="../fonts/fuentes.css">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/estilos.css">
-<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot')</script>
+<script>document.documentElement.classList.add('js');if(location.hash==='#shot')document.documentElement.classList.add('shot');if(matchMedia('(prefers-reduced-motion: reduce)').matches||(navigator.connection&&navigator.connection.saveData))document.documentElement.classList.add('quieto')</script>
 <script>window.LOCAL={"horario": {"1": [], "2": [[600, 840], [960, 1200]], "3": [[600, 840], [960, 1200]], "4": [[600, 840], [960, 1200]], "5": [[600, 840], [960, 1200]], "6": [[540, 840]], "0": []}, "mapa": {"q": "43.3172,-1.9819", "titulo": "Mapa de Google: Calle Gaubeltz 28, Centro, Donostia (ejemplo)"}}</script>
 <script src="js/local.js" defer></script>
+<script src="js/portada-video.js" defer></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "name": "Zorrotz", "description": "Barbería en Centro, Donostia (demo de La Commande)", "address": {"@type": "PostalAddress", "streetAddress": "Calle Gaubeltz 28", "postalCode": "20005", "addressLocality": "Donostia / San Sebastián", "addressCountry": "ES"}, "geo": {"@type": "GeoCoordinates", "latitude": 43.3172, "longitude": -1.9819}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "10:00", "closes": "14:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "16:00", "closes": "20:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00"}]}</script>
 </head>
 <body>
@@ -33,14 +35,18 @@
 
 <main id="contenido">
   <section class="portada" id="inicio" aria-labelledby="titulo">
-    <img class="portada__foto" src="img/portada.webp" width="1920" height="1080" alt="Un barbero con los brazos tatuados pasa la máquina por la nuca de un cliente" fetchpriority="high">
+    <picture class="portada__fondo">
+      <source media="(max-aspect-ratio: 4/5), (max-width: 56rem) and (orientation: portrait) and (min-height: 37.5rem)" srcset="img/portada-vertical.webp" type="image/webp" width="864" height="1080">
+      <img class="portada__foto" src="img/portada.webp" width="1920" height="1080" alt="Un barbero pasa la máquina por la nuca de un cliente en una barbería de luz cálida" fetchpriority="high">
+    </picture>
+    <video class="portada__video" data-ancho="media/corte.mp4" data-vertical="media/corte-vertical.mp4" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback tabindex="-1" aria-hidden="true"></video>
     <div class="portada__texto">
       <p class="kicker">Barbería · Centro · Donostia</p>
       <h1 id="titulo">Corte limpio, <em>sin prisa</em></h1>
       <p class="portada__sub">Degradados, navaja y barba con toalla caliente. Te vas como querías, a la primera.</p>
       <div class="botones"><a class="boton boton--acento" href="#cita">Pedir cita</a><a class="boton boton--linea" href="#carta">Ver precios</a></div>
       <p class="estado" data-estado>Martes a sábado · mejor con cita</p>
-      <button class="pausa" type="button" data-pausa aria-pressed="false"><span>Pausar el movimiento</span></button>
+      <button class="pausa pausa--video" type="button" data-video-pausa><span class="pausa__texto"><span class="pausa__parar">Pausar el vídeo</span><span class="pausa__ver">Ver el vídeo</span></span></button>
     </div>
     <ul class="tablilla" aria-label="Precios más pedidos"><li><span>Corte</span><b>18&nbsp;€</b></li><li><span>Barba</span><b>12&nbsp;€</b></li><li><span>Corte y barba</span><b>26&nbsp;€</b></li></ul>
     <p class="portada__nombre" aria-hidden="true">Zorrotz</p>
@@ -141,7 +147,7 @@
     </div>
     <p>Calle Gaubeltz 28<br>20005 Donostia / San Sebastián<br><a href="https://wa.me/34604335474?text=Hola%2C%20quiero%20pedir%20cita%20en%20la%20barbería">Pedir cita por WhatsApp</a></p>
     <p>Lunes: Cerrado<br>Martes: 10:00–14:00 · 16:00–20:00<br>Miércoles: 10:00–14:00 · 16:00–20:00<br>Jueves: 10:00–14:00 · 16:00–20:00<br>Viernes: 10:00–14:00 · 16:00–20:00<br>Sábado: 9:00–14:00<br>Domingo: Cerrado</p>
-    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash.</p>
+    <p class="pie-pagina__demo">Demo de La Commande: nombre, datos, precios e imágenes de ejemplo. Fotos de Unsplash y vídeo de Pavel Danilyuk (Pexels), retocado.</p>
   </div>
 </footer>
 
